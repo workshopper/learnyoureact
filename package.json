@@ -1,0 +1,24 @@
+{
+  "name": "learnyoureact",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tako-black/learnyoureact"
+  },
+  "license": "MIT",
+  "bin": "./learnyoureact.js",
+  "dependencies": {
+    "workshopper": "1.x",
+    "workshopper-exercise": "^0.2.2",
+    "workshopper-wrappedexec": "^0.1.1",
+    "workshopper-boilerplate": "0.0.1",
+    "hyperquest": "0.1.x",
+    "colors-tmpl": "^1.0.0",
+    "through2": "^0.4.1",
+    "bl": "^0.8.0",
+    "express": "4.12.x",
+    "body-parser": "1.12.x",
+    "express-react-views": "0.7.x",
+
+  }
+}
