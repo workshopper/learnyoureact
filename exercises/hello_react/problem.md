@@ -35,17 +35,17 @@ app.listen(app.get('port'), function() {});
 ```
 var React = require('react');
 
-var TextBox = React.createClass({
+var TodoBox = React.createClass({
   render: function() {
       return (
-            <div className="textBox">
+            <div className="todoBox">
               Hello, world!
             </div>
       );
   }
 });
 
-module.exports = TextBox;
+module.exports = TodoBox;
 ```
 
 以上の、JavaScriptの中にXMLを記述しているようなソースがReactのJSXと呼ばれる記法です。

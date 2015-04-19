@@ -1,15 +1,15 @@
 var React = require('react');
 
-var TextBox = React.createClass({
+var TodoBox = React.createClass({
   render: function() {
     return (
-      <div className="textBox">
+      <div className="todoBox">
         Hello, world!
       </div>
     );
   }
 });
 
-module.exports = TextBox;
+module.exports = TodoBox;
 
 
