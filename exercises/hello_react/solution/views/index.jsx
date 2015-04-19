@@ -1,13 +1,13 @@
 var React = require('react');
 
-var CommentBox = React.createClass({
+var TextBox = React.createClass({
   render: function() {
       return (
-            <div className="commentBox">
-              Hello, world! I am a CommentBox.
+            <div className="textBox">
+              Hello, world!
             </div>
       );
   }
 });
 
-module.exports = CommentBox;
+module.exports = TextBox;
