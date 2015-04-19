@@ -1,24 +1,35 @@
 {
   "name": "learnyoureact",
-  "version": "0.0.1",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/tako-black/learnyoureact"
-  },
-  "license": "MIT",
+  "version": "0.0.2",
+  "description": "Learn React.js and server side rendering",
+  "main": "learnyoureact.js",
   "bin": "./learnyoureact.js",
   "dependencies": {
-    "workshopper": "1.x",
-    "workshopper-exercise": "^0.2.2",
-    "workshopper-wrappedexec": "^0.1.1",
-    "workshopper-boilerplate": "0.0.1",
-    "hyperquest": "0.1.x",
-    "colors-tmpl": "^1.0.0",
-    "through2": "^0.4.1",
-    "bl": "^0.8.0",
-    "express": "4.12.x",
-    "body-parser": "1.12.x",
-    "express-react-views": "0.7.x",
-
-  }
+    "bl": "~0.8.2",
+    "body-parser": "~1.12.3",
+    "colors-tmpl": "~1.0.0",
+    "express-react-views": "~0.7.2",
+    "hyperquest": "~0.1.8",
+    "express": "~4.12.3",
+    "react": "~0.13.2",
+    "through2": "~0.4.2",
+    "workshopper": "~1.4.1",
+    "workshopper-boilerplate": "~0.0.1",
+    "workshopper-wrappedexec": "~0.1.2",
+    "workshopper-exercise": "~0.2.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tako-black/learnyoureact.git"
+  },
+  "author": "Kohei TAKATA",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tako-black/learnyoureact/issues"
+  },
+  "homepage": "https://github.com/tako-black/learnyoureact"
 }
