@@ -6,6 +6,7 @@ app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 
 app.use('/', function(req, res) {
+	console.log('test');
 	res.render('index', '');
 });
 
