@@ -13,7 +13,5 @@ workshopper({
     subtitle    : 'Learn React.js and server side rendering',
     appDir      : __dirname,
     menuItems   : [],
-    languages   : ['ja', 'en'],
-    defaultLang : 'ja',
     exerciseDir : fpath('./exercises/')
 })
