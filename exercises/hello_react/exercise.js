@@ -3,7 +3,7 @@ var through2      = require('through2')
   , exercise      = require('workshopper-exercise')()
   , filecheck     = require('workshopper-exercise/filecheck')
   , execute       = require('workshopper-exercise/execute')
-  , comparestdout = require('workshopper-exercise/comparestdout’);
+  , comparestdout = require('workshopper-exercise/comparestdout');
 
 function rndport() {
     return 1024 + Math.floor(Math.random() * 64511);

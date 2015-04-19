@@ -1,6 +1,6 @@
 {
   "name": "learnyoureact",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Learn React.js and server side rendering",
   "main": "learnyoureact.js",
   "bin": "./learnyoureact.js",
@@ -16,7 +16,8 @@
     "workshopper": "~1.4.1",
     "workshopper-boilerplate": "~0.0.1",
     "workshopper-wrappedexec": "~0.1.2",
-    "workshopper-exercise": "~0.2.3"
+    "workshopper-exercise": "~0.2.3",
+    "superagent": "~1.2.0"
   },
   "devDependencies": {},
   "scripts": {
