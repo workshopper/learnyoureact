@@ -4,7 +4,9 @@
 以下のコマンドを実行してください。
 
 `$ npm install -g express`
+
 `$ npm install -g body-parser`
+
 `$ npm install -g express-react-views`
 
 次に `app.js` を作成し、以下のように記述してください。
