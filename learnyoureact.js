@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const workshopper = require('workshopper-adventure'),
+const workshopper = require('workshopper'),
       path        = require('path')
 
 function fpath (f) {
