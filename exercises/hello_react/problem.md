@@ -3,11 +3,11 @@
 はじめに、モジュールをインストールしましょう。
 以下のコマンドを実行してください。
 
-`$ npm install -g express`
+`$ npm install express`
 
-`$ npm install -g body-parser`
+`$ npm install body-parser`
 
-`$ npm install -g express-react-views`
+`$ npm install express-react-views`
 
 次に `app.js` を作成し、以下のように記述してください。
 
@@ -25,9 +25,10 @@ app.use('/', function(req, res) {
 
 app.listen(app.get('port'), function() {});
 ```
+以上がレンダリングを行うサーバー側のコードです。 `express-react-views` というモジュールを使用して、 `/` にアクセスが来た際に `view/index.jsx` を読み込むようになっています。
 
 
-また、 `app.js` と同じディレクトリに `views` ディレクトリを作成し、その中に `index.jsx` を作成してください。
+次に、 `app.js` と同じディレクトリに `views` ディレクトリを作成し、その中に `index.jsx` を作成してください。
 `index.jsx` には以下のように記述してください。
 
 ```
@@ -45,6 +46,9 @@ var TextBox = React.createClass({
 
 module.exports = TextBox;
 ```
+
+以上の、JavaScriptの中にXMLを記述しているようなソースがReactのJSXと呼ばれる記法です。
+他の記法で書くこともできますが、このワークショッパーの中では、全てJSXを使用して記述します。
 
 
 それができたら、 `node app.js` を実行し、 `http://localhost:3000` にアクセスして、実際にhtmlが出力されていることを確認してください。
