@@ -12,10 +12,10 @@ Learn React.js and server side rendering
 `$ learnyoureact`
 
 # TODO
-- [x] hello_react
+- [x] hello_react
 - [x] components
 - [x] prop
-- [ ] prop from server
+- [x] props_from_server
 - [ ] State(event)
 - [ ] CSS
 - [ ] Prop and State
