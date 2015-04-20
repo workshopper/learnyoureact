@@ -55,7 +55,7 @@ var TodoForm = React.createClass({
 module.exports = TodoBox;
 ```
 
-その後、 `node program.js` を実行してみてください。
+その後、 `learnyoureact run program.js` を実行してみてください。
 標準出力に、 `Warning` が出力されたと思います。
 その内容を読み、 `Warning` が出なくなるように `Todo` を修正してください。
 `propTypes` は必ず使用してください。

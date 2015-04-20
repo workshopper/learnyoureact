@@ -14,7 +14,7 @@ Learn React.js and server side rendering
 - [x] hello_react
 - [x] components
 - [x] Prop
-- [x] PropTypes
+- [x] PropTypes
 - [ ] State(event)
 - [ ] CSS
 - [ ] Prop and State
