@@ -24,7 +24,7 @@ function shopping() {
     return things[Math.floor(Math.random() * things.length)];
 }
 
-function time() {
+function startTime() {
     var times = ['13:00〜', '14:00〜', '15:00〜', '09:00〜', '23:00〜'];
     return things[Math.floor(Math.random() * times.length)];
 }
@@ -36,7 +36,7 @@ exercise.addSetup(function (mode, callback) {
     this.solutionPort = this.submissionPort + 1;
 
     var thing = shopping();
-    var time = time();
+    var time = startTime();
 
     this.submissionArgs = [this.submissionPort, thing, time];
     this.solutionArgs = [this.solutionPort, thing, time];
