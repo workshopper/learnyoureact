@@ -4,6 +4,7 @@
         "HELLO_REACT"      :"HELLO_REACT",
         "COMPONENTS"       :"COMPONENTS",
         "PROPS"            :"PROPS",
+        "PROPTYPES"        :"PROPTYPES",
         "PROPS_FROM_SERVER":"PROPS_FROM_SERVER"
     }
 }
