@@ -41,8 +41,6 @@ exercise.addSetup(function (mode, callback) {
     this.submissionArgs = [this.submissionPort, thing, time];
     this.solutionArgs = [this.solutionPort, thing, time];
 
-    console.log(submissionArgs);
-
     process.nextTick(callback);
 });
 
