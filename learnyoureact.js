@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const workshopper = require('workshopper'),
+const workshopper = require('workshopper-adventure'),
       path        = require('path')
 
 function fpath (f) {
@@ -10,8 +10,10 @@ function fpath (f) {
 workshopper({
     name        : 'learnyoureact',
     title       : 'Learn React.js',
-    subtitle    : 'Learn React.js and server side rendering',
+    subtitle    : 'React.jsとサーバーサイドレンダリングを勉強しよう！',
     appDir      : __dirname,
     menuItems   : [],
+    languages   : ['en', 'ja'],
+    defaultLang : 'ja',
     exerciseDir : fpath('./exercises/')
 })

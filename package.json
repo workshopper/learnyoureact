@@ -13,7 +13,7 @@
     "express": "~4.12.3",
     "react": "~0.13.2",
     "through2": "~0.6.5",
-    "workshopper": "~2.5.0",
+    "workshopper-adventure": "~3.4.2",
     "workshopper-boilerplate": "~1.1.0",
     "workshopper-wrappedexec": "~0.1.2",
     "workshopper-exercise": "~2.3.0"

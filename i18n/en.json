@@ -1,0 +1,9 @@
+{
+    "subtitle": "Learn React.js and server side rendering",
+    "exercise": {
+        "HELLO_REACT"      :"HELLO_REACT",
+        "COMPONENTS"       :"COMPONENTS",
+        "PROPS"            :"PROPS",
+        "PROPS_FROM_SERVER":"PROPS_FROM_SERVER"
+    }
+}
