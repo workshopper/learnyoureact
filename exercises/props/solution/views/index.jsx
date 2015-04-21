@@ -16,22 +16,24 @@ var TodoList = React.createClass({
   render: function() {
     return (
       <div className = "todoList">
-        <Todo title="買い物">牛乳</Todo>
-	<Todo title="散髪">13:00〜</Todo>
+        <table style={{border: "2px solid black"}}>
+  	  <tbody>
+            <Todo title="Shopping">Milk</Todo>
+	    <Todo title="Hair cut">13:00</Todo>
+          </tbody>
+	</table>
       </div>	
     );
   }
 });
 
 var Todo = React.createClass({
-  render: function() {
+  render: function() {  
     return (
-      <div className="todo">
-        <h2 className="todoTitle">
-          {this.props.title}
-        </h2>
-	{this.props.children}
-      </div>      
+      <tr>
+        <td style={{border: "1px solid black"}}>{this.props.title}</td>
+        <td style={{border: "1px solid black"}}>{this.props.children}</td>
+      </tr>
     );	 
   }
 });

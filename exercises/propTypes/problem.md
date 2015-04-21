@@ -37,15 +37,16 @@ var Todo = React.createClass({
   propTypes: {
     title: React.PropTypes.number.isRequired         
   },
-  render: function() {
+  render: function() {  
     return (
-      <div className="todo">
-        <h2 className="todoTitle">{this.props.title}</h2>
-        {this.props.children}
-      </div>    
-    );  
-  }
-});
+      <tr>
+        <td style={{border: "1px solid black"}}>{this.props.title}</td>
+        <td style={{border: "1px solid black"}}>{this.props.children}</td>
+      </tr>
+    );   
+  }});
+
+
 
 
 var TodoForm = React.createClass({
