@@ -18,14 +18,14 @@ Learn React.js and server side rendering
 - [ ] State(event)
 - [ ] CSS
 - [ ] Prop and State
-- [x] props_from_server
+- [ ] props_from_server
 - [ ] Send data(Form) 
 
 # TODO(i18n)
-- [ ] English: hello_react
-- [ ] English: components
-- [ ] English: Prop
-- [ ] English: PropTypes
+- [x] English: hello_react
+- [x] English: components
+- [x] English: Prop
+- [x] English: PropTypes
 - [ ] English: State(event)
 - [ ] English: CSS
 - [ ] English: Prop and State
