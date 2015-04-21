@@ -1,7 +1,7 @@
 First of all, print `Hello World` !
 
-はじめに、モジュールをインストールしましょう。
-以下のコマンドを実行してください。
+Starting from installing required modules. 
+Do three commands below.
 
 `$ npm install express`
 
@@ -9,7 +9,7 @@ First of all, print `Hello World` !
 
 `$ npm install express-react-views`
 
-次に `program.js` を作成し、以下のように記述してください。
+Next, make `program.js` and write codes below into the JS file.
 
 ```
 var express = require('express');
@@ -26,11 +26,13 @@ app.use('/', function(req, res) {
 
 app.listen(app.get('port'), function() {});
 ```
-以上がレンダリングを行うサーバー側のコードです。 `express-react-views` というモジュールを使用して、 `/` にアクセスが来た際に `view/index.jsx` を読み込むようになっています。
 
+The above codes are server-side codes what does rendering. 
+This program uses `express-react-views` module and if someone access to `/`, reads `view/index.jsx`. 
 
-次に、 `program.js` と同じディレクトリに `views` ディレクトリを作成し、その中に `index.jsx` を作成してください。
-`index.jsx` には以下のように記述してください。
+Next, make `views` directory at same directory as `program.js`. 
+After that, make `index.jsx` in the directory. 
+Please write below codes in `index.jsx`
 
 ```
 var React = require('react');
@@ -48,9 +50,9 @@ var TodoBox = React.createClass({
 module.exports = TodoBox;
 ```
 
-以上の、JavaScriptの中にXMLを記述しているようなソースがReactのJSXと呼ばれる記法です。
-他の記法で書くこともできますが、このワークショッパーの中では、全てJSXを使用して記述します。
+These codes which is like writing XML in JavaScript called React.js JSX syntax. 
+You can write codes in other syntax, but use JSX syntax in this workshopper.
 
+After writing codes, do `node program.js` and access `http://localhost:3000` , check the real HTML is outputted.
 
-それができたら、 `node program.js` を実行し、 `http://localhost:3000` にアクセスして、実際にhtmlが出力されていることを確認してください。
-その後、 `learnyoureact verify program.js` を実行してください。
+After that, do `learnyoureact verify program.js`.
