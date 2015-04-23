@@ -1,19 +1,7 @@
-渡した値の型の制約を指定しましょう
+変更可能な値を定義しましょう！
 
-`React.createClass()` の中で、
-
-```
-propTypes: {
-  name:   React.PropTypes.string.isRequired,
-  id:     React.PropTypes.number.isRequired,
-  width:  React.PropTypes.number.isRequired,
-  height: React.PropTypes.number.isRequired,
-  alt:    React.PropTypes.string
-}
-```
-というように記述することで、渡されてきたpropsに制約を指定することができます。
-もしそれに違反するような値が渡された際には、 `Warning` が出力されます。
-
+動的に変更可能な値を利用する際には `state` を使用します。
+`checkbox` がチェックされているかどうかの初期値を指定し、チェックされた際やチェックが外された際の動作を実装しましょう。
 
 # 問題
 ---
@@ -35,17 +23,18 @@ var TodoList = React.createClass({
 
 var Todo = React.createClass({
   propTypes: {
-    title: React.PropTypes.number.isRequired         
+    title: React.PropTypes.string.isRequired     
   },
-  render: function() {  
+  render: function() {
     return (
       <tr>
+        <td style={{border: "1px solid black"}}><input type="checkbox" checked={this.state.checked} onChange={this.handleChange} /></td>
         <td style={{border: "1px solid black"}}>{this.props.title}</td>
         <td style={{border: "1px solid black"}}>{this.props.children}</td>
       </tr>
     );   
-  }});
-
+  }
+});
 
 
 
@@ -56,10 +45,9 @@ var TodoForm = React.createClass({
 module.exports = TodoBox;
 ```
 
-その後、 `learnyoureact run program.js` を実行してみてください。
-標準出力に、 `Warning` が出力されたと思います。
-その内容を読み、 `Warning` が出なくなるように `Todo` を修正してください。
-`propTypes` は必ず使用してください。
+`Todo` の中に、 `checked` の初期値を指定する箇所と、チェックされた際やチェックが外された際の動作を記述してください。
+初期値は `getIntialState` で設定できます。
+また、データに変更があった場合には `handleChange` 関数を作成し、その中で `this.setState` を行うことで更新ができます。
 
 
 それができたら、 `node program.js` を実行し、 `http://localhost:3000` にアクセスして、実際にhtmlが出力されていることを確認してください。

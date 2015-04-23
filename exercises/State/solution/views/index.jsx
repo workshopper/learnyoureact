@@ -24,7 +24,8 @@ var TodoList = React.createClass({
         </table>
       </div>    
     );
-  });
+  }
+});
 
 var Todo = React.createClass({
   propTypes: {

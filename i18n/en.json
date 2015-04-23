@@ -4,6 +4,7 @@
         "HELLO_REACT"      :"HELLO_REACT",
         "COMPONENTS"       :"COMPONENTS",
         "PROPS"            :"PROPS",
-        "PROPTYPES"        :"PROPTYPES"
+        "PROPTYPES"        :"PROPTYPES",
+        "STATE"            :"STATE"
     }
 }

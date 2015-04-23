@@ -1,20 +1,7 @@
-Let's add validation to passed values.
+Let's define mutable values!
 
-In `React.createClass()` ,
-
-```
-propTypes: {
-  name:   React.PropTypes.string.isRequired,
-  id:     React.PropTypes.number.isRequired,
-  width:  React.PropTypes.number.isRequired,
-  height: React.PropTypes.number.isRequired,
-  alt:    React.PropTypes.string
-}
-```
-
-You can add validations to props which is passed from parent Component by writting like above. 
-If unexpected values is passed, React.js prints `Warning` in console.
-
+You can use `state` to define mutable values.
+Let's set initial value of `checkbox`, and define behavior of check event.
 
 # Question
 ---
@@ -36,17 +23,18 @@ var TodoList = React.createClass({
 
 var Todo = React.createClass({
   propTypes: {
-    title: React.PropTypes.number.isRequired         
+    title: React.PropTypes.string.isRequired     
   },
-  render: function() {  
+  render: function() {
     return (
       <tr>
+        <td style={{border: "1px solid black"}}><input type="checkbox" checked={this.state.checked} onChange={this.handleChange} /></td>
         <td style={{border: "1px solid black"}}>{this.props.title}</td>
         <td style={{border: "1px solid black"}}>{this.props.children}</td>
       </tr>
     );   
-  }});
-
+  }
+});
 
 
 
@@ -57,11 +45,10 @@ var TodoForm = React.createClass({
 module.exports = TodoBox;
 ```
 
-After writing codes, try to do `learnyoureact run program.js.` 
-You can see that React.js print `Warning` in console. 
-Read the sentence and fix Todo that React.js doesn't print `Warning` in console 
-You must use `propTypes`.
+Write code to set initial value of `checked` and behavior of check event in `Todo`.
+You can set initial value by `getIntialState `.
+You can update the data by writing `handleChange` function and writing `this.setState` in the function.
 
-After fixing codes, do `node program.js` and access `http://localhost:3000` , check the real HTML is outputted.
+After writing codes, do `node program.js` and access `http://localhost:3000` , check the real HTML is outputted.
 
 After that, do `learnyoureact verify program.js`.
