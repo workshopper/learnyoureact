@@ -15,7 +15,7 @@ Learn React.js and server side rendering
 - [x] components
 - [x] Prop
 - [x] PropTypes
-- [ ] State(event)
+- [x] State(event)
 - [ ] CSS
 - [ ] Prop and State
 - [ ] props_from_server
@@ -26,7 +26,7 @@ Learn React.js and server side rendering
 - [x] English: components
 - [x] English: Prop
 - [x] English: PropTypes
-- [ ] English: State(event)
+- [x] English: State(event)
 - [ ] English: CSS
 - [ ] English: Prop and State
 - [ ] English: props_from_server
