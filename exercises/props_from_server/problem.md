@@ -53,6 +53,10 @@ var TodoForm = React.createClass({
   // 省略
 });
 
+var style = {
+  // 省略
+};
+
 module.exports = TodoBox;
 ```
 
