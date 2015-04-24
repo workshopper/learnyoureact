@@ -16,7 +16,7 @@ Learn React.js and server side rendering
 - [x] Prop
 - [x] PropTypes
 - [x] State(event)
-- [ ] CSS
+- [x] CSS
 - [ ] Prop and State
 - [ ] props_from_server
 - [ ] Send data(Form) 

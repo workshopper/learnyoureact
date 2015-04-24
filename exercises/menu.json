@@ -3,5 +3,6 @@
     "COMPONENTS",
     "PROPS",
     "PROPTYPES",
-    "STATE"
+    "STATE",
+    "CSS"
 ]

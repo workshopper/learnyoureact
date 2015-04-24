@@ -5,6 +5,7 @@
         "COMPONENTS"       :"COMPONENTS",
         "PROPS"            :"PROPS",
         "PROPTYPES"        :"PROPTYPES",
-        "STATE"            :"STATE"
+        "STATE"            :"STATE",
+        "CSS"              :"CSS"
     }
 }
