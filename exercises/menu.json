@@ -4,5 +4,6 @@
     "PROPS",
     "PROPTYPES",
     "STATE",
-    "CSS"
+    "CSS",
+    "PROPS_FROM_SERVER"
 ]

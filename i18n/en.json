@@ -6,6 +6,7 @@
         "PROPS"            :"PROPS",
         "PROPTYPES"        :"PROPTYPES",
         "STATE"            :"STATE",
-        "CSS"              :"CSS"
+        "CSS"              :"CSS",
+        "PROPS_FROM_SERVER":"PROPS_FROM_SERVER"
     }
 }

@@ -11,6 +11,8 @@ jsxにベタ書きしていたデータをサーバーから渡すよう変更�
 
 `TodoBox` が今回の最も上位のComponentなので、 `TodoList` の `{this.props.data}` にサーバー側から値が渡されてきます。
 それを下位の `TodoList` で `Todo` タグに変換します。
+`Todo` タグの中に記述してある `key` はVirtualDOMのdiffから実際のDOMに反映させるときに変更を最小限にするために使われます。
+`key` を指定していないと、 `Warning` が出力されます。
 
 
 ```
@@ -30,10 +32,14 @@ var TodoBox = React.createClass({
 
 var TodoList = React.createClass({
   render: function() {
-    var todo = this.props.data.map(function(obj) { return <Todo title={obj.title}>{obj.detail}</Todo>});
+    var todo = this.props.data.map(function(obj) { return <Todo title={obj.title} key={obj.title}>{obj.detail}</Todo>});
     return (
       <div className = "todoList">
-        {todo}
+        <table style={{border: "2px solid black"}}>
+          <tbody>
+            {todo}    
+          </tbody>
+        </table>
       </div>    
     );
   }
@@ -52,7 +58,7 @@ module.exports = TodoBox;
 
 次に、サーバー側のコードを変更しましょう。
 `app.use()` のコールバック関数を変更しましょう。
-また、 `data` という変数を作成し、その中で `title` が「買い物」で `detail` が3つ目のコマンドライン引数、 `title` が「散髪」で `detail` が5つ目のコマンドライン引数であるJSONを記述してください。
+また、 `data` という変数を作成し、その中で `title` が「Shopping」で `detail` が3つ目のコマンドライン引数、 `title` が「Hair cut」で `detail` が5つ目のコマンドライン引数であるJSONを記述してください。
 ※2つ目のコマンドライン引数はport番号になっています。ソースのどこかに記述してあるので、それを参考にしてみてください。
 
 
@@ -76,5 +82,6 @@ app.listen(app.get('port'), function() {});
 
 ```
 
-それができたら、 `node program.js 3000 牛乳 13:00〜` を実行し、 `http://localhost:3000` にアクセスして、実際にhtmlが出力されていることを確認してください。
+それができたら、 `node program.js 3000 Milk 13:00` を実行し、 `http://localhost:3000` にアクセスして、実際にhtmlが出力されていることを確認してください。
 その後、 `learnyoureact verify program.js` を実行してください。
+余裕があったら、上記の `key` を指定していなかった際に `Warning` が出力されることも確認してみてください。

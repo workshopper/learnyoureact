@@ -7,8 +7,8 @@ app.set('views', __dirname + '/views');
 app.engine('jsx', require('express-react-views').createEngine());
 
 var data = [
-	{ title: '買い物', detail: process.argv[3] },
-	{ title: '散髪', detail: [process.argv[4]] }
+	{ title: 'Shopping', detail: process.argv[3] },
+	{ title: 'Hair cut', detail: [process.argv[4]] }
 ];
 
 app.use('/', function(req, res) {

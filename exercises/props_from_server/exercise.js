@@ -20,12 +20,12 @@ function rndport() {
 }
 
 function shopping() {
-    var things = ['牛乳', 'パン', '人参', 'MacBook', '車'];
+    var things = ['Milk', 'Bread', 'Carrot', 'MacBook', 'Car'];
     return things[Math.floor(Math.random() * things.length)];
 }
 
 function startTime() {
-    var times = ['13:00〜', '14:00〜', '15:00〜', '09:00〜', '23:00〜'];
+    var times = ['13:00', '14:00', '15:00', '09:00', '23:00'];
     return times[Math.floor(Math.random() * times.length)];
 }
 
