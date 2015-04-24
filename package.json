@@ -31,5 +31,12 @@
   "bugs": {
     "url": "https://github.com/tako-black/learnyoureact/issues"
   },
-  "homepage": "https://github.com/tako-black/learnyoureact"
+  "homepage": "https://github.com/tako-black/learnyoureact",
+  "preferGlobal": true,
+  "keywords": [
+    "react",
+    "learn",
+    "tutorial",
+    "workshopper"
+  ]
 }
