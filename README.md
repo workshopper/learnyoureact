@@ -1,7 +1,7 @@
 learnyoureact
 ================
 
-Let's learn React.js and server side rendering
+Let's learn React.js and server side rendering!
 
 ※ここにスクリーンショットを貼る(put screenshot here)
 
@@ -18,8 +18,6 @@ Let's learn React.js and server side rendering
 - [x] State
 - [x] CSS
 - [x] props_from_server
-- [ ] Prop and State
-- [ ] Send data(Form) 
 
 # TODO(i18n)
 - [x] English: hello_react
@@ -29,5 +27,3 @@ Let's learn React.js and server side rendering
 - [x] English: State
 - [ ] English: CSS
 - [ ] English: props_from_server
-- [ ] English: Prop and State
-- [ ] English: Send data(Form)
