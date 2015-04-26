@@ -28,7 +28,7 @@ app.listen(app.get('port'), function() {});
 ```
 
 The above codes are server-side codes what does rendering. 
-This program uses `express-react-views` module and if someone access to `/`, reads `view/index.jsx`. 
+This program uses `express-react-views` module and if someone access to `/`, reads `views/index.jsx`.
 
 Next, make `views` directory at same directory as `program.js`. 
 After that, make `index.jsx` in the directory. 
