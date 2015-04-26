@@ -26,7 +26,7 @@ app.use('/', function(req, res) {
 
 app.listen(app.get('port'), function() {});
 ```
-以上がレンダリングを行うサーバー側のコードです。 `express-react-views` というモジュールを使用して、 `/` にアクセスが来た際に `view/index.jsx` を読み込むようになっています。
+以上がレンダリングを行うサーバー側のコードです。 `express-react-views` というモジュールを使用して、 `/` にアクセスが来た際に `views/index.jsx` を読み込むようになっています。
 
 
 次に、 `program.js` と同じディレクトリに `views` ディレクトリを作成し、その中に `index.jsx` を作成してください。
