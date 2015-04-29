@@ -1,4 +1,4 @@
-Let's pass values form parent Component to child Component.
+Let's pass values from parent Component to child Component.
 
 Child Component can get values which is defined as attribute in parent Component, or element which is nested by parent Component
 
