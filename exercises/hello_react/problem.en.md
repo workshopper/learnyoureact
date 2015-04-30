@@ -21,7 +21,7 @@ app.set('views', __dirname + '/views');
 app.engine('jsx', require('express-react-views').createEngine());
 
 app.use('/', function(req, res) {
-        res.render('index', '');
+  res.render('index', '');
 });
 
 app.listen(app.get('port'), function() {});
@@ -39,11 +39,11 @@ var React = require('react');
 
 var TodoBox = React.createClass({
   render: function() {
-      return (
-            <div className="todoBox">
-              Hello, world!
-            </div>
-      );
+    return (
+      <div className="todoBox">
+        Hello, world!
+      </div>
+    );
   }
 });
 

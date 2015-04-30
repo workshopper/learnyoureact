@@ -46,7 +46,7 @@ module.exports = TodoBox;
 ```
 
 `Todo` 안에 `checked`의 초기값을 지정하는 곳과 체크했을 때나 체크를 해제할 때의 동작을 구현하세요.
-초기값은 `getIntialState`로 설정할 수 있습니다.
+초기값은 `getInitialState`로 설정할 수 있습니다.
 또, 데이터의 변경이 있을 경우엔 `handleChange` 함수를 만들어, 그 안에서 `this.setState`를 해서 업데이트 할 수 있습니다.
 
 

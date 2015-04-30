@@ -20,13 +20,13 @@ var React = require('react');
 
 var TodoBox = React.createClass({
   render: function() {
-      return (
-        <div className="todoBox">
-          <h1>Todos</h1>
-          <TodoList data = {this.props.data} />
-          <TodoForm />
-        </div>
-      );
+    return (
+      <div className="todoBox">
+        <h1>Todos</h1>
+        <TodoList data = {this.props.data} />
+        <TodoForm />
+      </div>
+    );
   }
 });
 
@@ -37,10 +37,10 @@ var TodoList = React.createClass({
       <div className = "todoList">
         <table style={{border: "2px solid black"}}>
           <tbody>
-            {todo}    
+            {todo}
           </tbody>
         </table>
-      </div>    
+      </div>
     );
   }
 });
@@ -62,7 +62,7 @@ module.exports = TodoBox;
 
 次に、サーバー側のコードを変更しましょう。
 `app.use()` のコールバック関数を変更しましょう。
-また、 `data` という変数を作成し、その中で `title` が「Shopping」で `detail` が3つ目のコマンドライン引数、 `title` が「Hair cut」で `detail` が5つ目のコマンドライン引数であるJSONを記述してください。
+また、 `data` という変数を作成し、その中で `title` が「Shopping」で `detail` が3つ目のコマンドライン引数、 `title` が「Hair cut」で `detail` が4つ目のコマンドライン引数であるJSONを記述してください。
 ※2つ目のコマンドライン引数はport番号になっています。ソースのどこかに記述してあるので、それを参考にしてみてください。
 
 
@@ -79,7 +79,7 @@ app.engine('jsx', require('express-react-views').createEngine());
 var data = [];
 
 app.use('/', function(req, res) {
-        res.render('index', {data: data});
+  res.render('index', {data: data});
 });
 
 app.listen(app.get('port'), function() {});

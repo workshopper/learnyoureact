@@ -1,6 +1,6 @@
 Let's combine multi Components.
 
-You can make application with combining multi Component in React.js. 
+You can make application with combining multi Component in React.js.
 You can use HTML tags and JSX together.
 
 
@@ -16,13 +16,13 @@ var React = require('react');
 
 var TodoBox = React.createClass({
   render: function() {
-      return (
-        <div className="todoBox">
-          <h1>Todos</h1>
-          <TodoList />
-          <TodoForm />
-        </div>
-      );
+    return (
+      <div className="todoBox">
+        <h1>Todos</h1>
+        <TodoList />
+        <TodoForm />
+      </div>
+    );
   }
 });
 
@@ -37,7 +37,7 @@ var TodoForm = React.createClass({
 module.exports = TodoBox;
 ```
 
-Write JSX syntax what outputs HTML below at two commentouts "Write code here" of the above code. 
+Write JSX syntax what outputs HTML below at two commentouts "Write code here" of the above code.
 You don't have to change server-side code.
 
 ```

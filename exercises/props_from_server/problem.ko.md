@@ -20,13 +20,13 @@ var React = require('react');
 
 var TodoBox = React.createClass({
   render: function() {
-      return (
-        <div className="todoBox">
-          <h1>Todos</h1>
-          <TodoList data = {this.props.data} />
-          <TodoForm />
-        </div>
-      );
+    return (
+      <div className="todoBox">
+        <h1>Todos</h1>
+        <TodoList data = {this.props.data} />
+        <TodoForm />
+      </div>
+    );
   }
 });
 
@@ -62,7 +62,7 @@ module.exports = TodoBox;
 
 그런 다음, 서버 쪽의 코드를 변경합시다.
 `app.use()`의 콜백 함수를 변경합시다.
-또, `data`라는 변수를 만들어, 그 안에 `title`이 "Shopping"이고 `detail`에 3번째의 커맨드라인 인자, `title`이 "Hair cut", `detail`이 5번째의 커맨드라인 인자인 JSON을 넣으세요.
+또, `data`라는 변수를 만들어, 그 안에 `title`이 "Shopping"이고 `detail`에 3번째의 커맨드라인 인자, `title`이 "Hair cut", `detail`이 4번째의 커맨드라인 인자인 JSON을 넣으세요.
 * 2번째 커맨드라인 인자는 포트 번호입니다. 소스의 어딘가에 있으니 참고하세요.
 
 
@@ -79,7 +79,7 @@ app.engine('jsx', require('express-react-views').createEngine());
 var data = [];
 
 app.use('/', function(req, res) {
-        res.render('index', {data: data});
+  res.render('index', {data: data});
 });
 
 app.listen(app.get('port'), function() {});
