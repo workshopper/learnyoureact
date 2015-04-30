@@ -62,7 +62,7 @@ module.exports = TodoBox;
 
 次に、サーバー側のコードを変更しましょう。
 `app.use()` のコールバック関数を変更しましょう。
-また、 `data` という変数を作成し、その中で `title` が「Shopping」で `detail` が3つ目のコマンドライン引数、 `title` が「Hair cut」で `detail` が5つ目のコマンドライン引数であるJSONを記述してください。
+また、 `data` という変数を作成し、その中で `title` が「Shopping」で `detail` が3つ目のコマンドライン引数、 `title` が「Hair cut」で `detail` が5つ目のコマンドライン引数であるJSONを記述してください。
 ※2つ目のコマンドライン引数はport番号になっています。ソースのどこかに記述してあるので、それを参考にしてみてください。
 
 
