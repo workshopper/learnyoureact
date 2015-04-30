@@ -13,7 +13,7 @@ workshopper({
     subtitle    : 'React.jsとサーバーサイドレンダリングを勉強しよう！',
     appDir      : __dirname,
     menuItems   : [],
-    languages   : ['en', 'ja'],
+    languages   : ['en', 'ja', 'ko'],
     defaultLang : 'ja',
     exerciseDir : fpath('./exercises/')
 })

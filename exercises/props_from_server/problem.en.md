@@ -20,13 +20,13 @@ var React = require('react');
 
 var TodoBox = React.createClass({
   render: function() {
-      return (
-        <div className="todoBox">
-          <h1>Todos</h1>
-          <TodoList data = {this.props.data} />
-          <TodoForm />
-        </div>
-      );
+    return (
+      <div className="todoBox">
+        <h1>Todos</h1>
+        <TodoList data = {this.props.data} />
+        <TodoForm />
+      </div>
+    );
   }
 });
 
@@ -37,10 +37,10 @@ var TodoList = React.createClass({
       <div className = "todoList">
         <table style={{border: "2px solid black"}}>
           <tbody>
-            {todo}    
+            {todo}
           </tbody>
         </table>
-      </div>    
+      </div>
     );
   }
 });
@@ -62,7 +62,7 @@ module.exports = TodoBox;
 
 Next, change code of server.
 Change callback function of `app.use()`.
-After that, make variable `data`, and define JSON which `title` is "Shopping", and `detail` is the third command line argument and which `title` is "Hair cut", and `detail` is the fifth command line argument in the variable.
+After that, make variable `data`, and define JSON which `title` is "Shopping", and `detail` is the third command line argument and which `title` is "Hair cut", and `detail` is the fourth command line argument in the variable.
 
 *NOTE* the second command line argument is port number.
 You can use the usage of command line argument, which is written in somewhere of the code.
@@ -81,7 +81,7 @@ app.engine('jsx', require('express-react-views').createEngine());
 var data = [];
 
 app.use('/', function(req, res) {
-        res.render('index', {data: data});
+  res.render('index', {data: data});
 });
 
 app.listen(app.get('port'), function() {});

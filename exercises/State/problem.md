@@ -32,7 +32,7 @@ var Todo = React.createClass({
         <td style={{border: "1px solid black"}}>{this.props.title}</td>
         <td style={{border: "1px solid black"}}>{this.props.children}</td>
       </tr>
-    );   
+    );
   }
 });
 
@@ -46,7 +46,7 @@ module.exports = TodoBox;
 ```
 
 `Todo` の中に、 `checked` の初期値を指定する箇所と、チェックされた際やチェックが外された際の動作を記述してください。
-初期値は `getIntialState` で設定できます。
+初期値は `getInitialState` で設定できます。
 また、データに変更があった場合には `handleChange` 関数を作成し、その中で `this.setState` を行うことで更新ができます。
 
 

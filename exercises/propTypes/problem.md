@@ -35,16 +35,17 @@ var TodoList = React.createClass({
 
 var Todo = React.createClass({
   propTypes: {
-    title: React.PropTypes.number.isRequired         
+    title: React.PropTypes.number.isRequired
   },
-  render: function() {  
+  render: function() {
     return (
       <tr>
         <td style={{border: "1px solid black"}}>{this.props.title}</td>
         <td style={{border: "1px solid black"}}>{this.props.children}</td>
       </tr>
-    );   
-  }});
+    );
+  }
+});
 
 
 
