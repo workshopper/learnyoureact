@@ -1,4 +1,4 @@
-First of all, print `Hello World` !
+First, we will print `Hello World` !
 
 Start by installing the required modules. 
 Run the three commands below.
