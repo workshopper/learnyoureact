@@ -1,7 +1,7 @@
 First of all, print `Hello World` !
 
-Starting from installing required modules. 
-Do three commands below.
+Start by installing the required modules. 
+Run the three commands below.
 
 `$ npm install express`
 
@@ -9,7 +9,7 @@ Do three commands below.
 
 `$ npm install express-react-views`
 
-Next, make `program.js` and write codes below into the JS file.
+Next, create `program.js` and copy the code below into the file.
 
 ```
 var express = require('express');
@@ -27,12 +27,14 @@ app.use('/', function(req, res) {
 app.listen(app.get('port'), function() {});
 ```
 
-The above codes are server-side codes what does rendering. 
-This program uses `express-react-views` module and if someone access to `/`, reads `views/index.jsx`.
+The above code is a small Express server that renders our React components. 
+This program uses the `express-react-views` module.  
 
-Next, make `views` directory at same directory as `program.js`. 
-After that, make `index.jsx` in the directory. 
-Please write below codes in `index.jsx`
+Next, create a `views` directory in the same directory as `program.js`. 
+After that, create `index.jsx` in the 'views' directory.
+If someone navigates to `/`, `views/index.jsx` will be rendered.
+
+Please copy the code below into `index.jsx`
 
 ```
 var React = require('react');
@@ -50,9 +52,9 @@ var TodoBox = React.createClass({
 module.exports = TodoBox;
 ```
 
-These codes which is like writing XML in JavaScript called React.js JSX syntax. 
-You can write codes in other syntax, but use JSX syntax in this workshopper.
+This code, which is like writing HTML in JavaScript, is called React.js JSX syntax. 
+You can create your views without JSX syntax, but use the JSX syntax in this workshop.
 
-After writing codes, do `node program.js` and access `http://localhost:3000` , check the real HTML is outputted.
+After copying all of the code, run `node program.js` and access `http://localhost:3000`, check out the real HTML that is outputted!
 
-After that, do `learnyoureact verify program.js`.
+After that, run `learnyoureact verify program.js`.
