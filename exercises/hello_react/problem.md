@@ -9,6 +9,8 @@
 
 `$ npm install express-react-views`
 
+`$ npm install node-jsx`
+
 次に `program.js` を作成し、以下のように記述してください。
 
 ```
