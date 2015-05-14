@@ -16,7 +16,8 @@
     "workshopper-adventure": "~3.4.2",
     "workshopper-boilerplate": "~1.1.0",
     "workshopper-wrappedexec": "~0.1.2",
-    "workshopper-exercise": "~2.3.0"
+    "workshopper-exercise": "~2.3.0",
+    "node-jsx": "~0.13.3"
   },
   "devDependencies": {},
   "scripts": {

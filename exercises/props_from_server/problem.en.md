@@ -77,6 +77,8 @@ app.set('view engine', 'jsx');
 app.set('views', __dirname + '/views'); 
 app.engine('jsx', require('express-react-views').createEngine());
 
+require('node-jsx').install();
+
 // write below
 var data = [];
 

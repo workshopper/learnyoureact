@@ -6,6 +6,8 @@ app.set('view engine', 'jsx');
 app.set('views', __dirname + '/views'); 
 app.engine('jsx', require('express-react-views').createEngine());
 
+require('node-jsx').install();
+
 var data = [
 	{ title: 'Shopping', detail: process.argv[3] },
 	{ title: 'Hair cut', detail: process.argv[4] }
