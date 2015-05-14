@@ -9,6 +9,8 @@ Run the three commands below.
 
 `$ npm install express-react-views`
 
+`$ npm install node-jsx`
+
 Next, create `program.js` and copy the code below into the file.
 
 ```

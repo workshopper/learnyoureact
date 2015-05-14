@@ -9,6 +9,8 @@
 
 `$ npm install express-react-views`
 
+`$ npm install node-jsx`
+
 그런 다음, `program.js`를 만들어 다음과 같은 내용을 적습니다.
 
 ```
