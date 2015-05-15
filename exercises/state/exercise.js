@@ -5,6 +5,8 @@ var exercise = require('workshopper-exercise')();
 var filecheck = require('workshopper-exercise/filecheck');
 var execute = require('workshopper-exercise/execute');
 var comparestdout = require('workshopper-exercise/comparestdout');
+var path = require('path');
+var fs = require('fs');
 
 // the output will be long lines so make the comparison take that into account
 exercise.longCompareOutput = true;
@@ -14,6 +16,18 @@ exercise = filecheck(exercise);
 
 // execute the solution and submission in parallel with spawn()
 exercise = execute(exercise);
+exercise.getSolutionFiles= function (callback) { 
+  var solutionDir = path.join(this.dir, './solution');
+
+  fs.readdir(solutionDir, function (err, list) { 
+    if (err) return callback(err);
+      list.push("views/index.jsx"); 
+      list = list 
+        .filter(function (f) { return (/\.js.*$/).test(f) }) 
+        .map(function (f) { return path.join(solutionDir, f)});
+      callback(null, list); 
+  });
+}
 
 function rndport() {
     return 1024 + Math.floor(Math.random() * 64511);
