@@ -36,8 +36,8 @@ var Todo = React.createClass({
       checked: false
     };
   },
-  handleChange: function() {
-    this.setState({checked: !this.state.checked});
+  handleChange: function(e) {
+    this.setState({checked: e.target.checked});
   },
   render: function() {
     return (
