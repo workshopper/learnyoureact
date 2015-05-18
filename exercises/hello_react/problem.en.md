@@ -1,7 +1,7 @@
 First things first, let's print `Hello World` !
 
 Start by installing the required modules. 
-Run the three commands below.
+Run the four commands below.
 
 `$ npm install express`
 
