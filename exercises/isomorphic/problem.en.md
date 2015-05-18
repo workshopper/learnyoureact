@@ -1,87 +1,99 @@
-フロントエンド側でもReactを利用してみましょう。
+Let's use React also at front-end.
 
-今回からはサーバーサイドだけでなく、フロントエンド側でもReactを使用していきます。
-フロントエンド側でイベントを発生させ、その動作を見ていきましょう。
-今までのエクササイズの中で1箇所、イベントを発生させていますが上手く動作していなかった箇所があります。それはどこでしょうか。
-`State` で記述した、 `checkbox` のチェックイベントです。
-`State` では実は、どんな記述をしても無視され、チェックができていました。正しく記述できていたか確認してみましょう。
-少し修正する箇所が多いですが、頑張っていきましょう！
+From this excercises, we use React not only at server side but also at front-end. 
+Let's raise the event at front-end, and see what will happen. 
+In the past excercises, there are a code which raises the front-end event, but that does not work. Where is that?
 
-# 問題
+The code is the check event of `checkbox` you wrote in `State`. 
+At `State`, to tell the truth, you can check the `checkbox` whatever code you write. 
+In this excercises, let's confirm which you could write the right code or not. 
+There are a bit many code that you have to change. 
+Let's make the best of it!
+
+# Question 
 ---
 
-`program.js` と同じディレクトリに `app.js` を作成してください。 `app.js` には以下のように記述してください。
+Start by installing the required modules. Run the four commands below.
 
 ```
-var React = require('react');
+$ npm install browserify
+$ npm install reactify
+```
+
+Next, let's create `app.js` at the same directory as `program.js` and copy the code below into the file.
+
+``` 
+var React = require('react'); 
 var TodoBox = require('./views/index.jsx');
 
-var data = JSON.parse(document.getElementById('initial-data').getAttribute('data-json'));
-React.render(<TodoBox data={data} />, document.getElementById("app"));
+var data = JSON.parse(document.getElementById('initial-data').getAttribute('data-json')); 
+React.render(<TodoBox data={data} />, document.getElementById("app")); 
 ```
-これが、フロントエンド側でReactを使用するためのコードです。 `app` というIDを持つ要素に、  `index.jsx` から読み込んだ `TodoBox` と、 `initial-data` というIDで渡される、サーバーからのデータを渡しています。
 
-次に `program.js` を修正しましょう。
-新しくファイルを作成しても構いません。
+The above code is to use React at front-end. This code passes `TodoBox`  from `index.jsx`, and data from server that are passed in the id of `initial-data` to element that has the id of `app`.
 
-まず、以下の `require` を追加してください。
+Next, let's fix `program.js`. 
+You can also make new `program.js` file and write code in that.
 
-```
-var React = require('react');
-var DOM = React.DOM;
-var body = DOM.body;
-var div = DOM.div;
+First of all, let's add `require` like below.
+
+``` 
+var React = require('react'); 
+var DOM = React.DOM; 
+var body = DOM.body; 
+var div = DOM.div; 
 var script = DOM.script;
 
-var browserify = require('browserify');
+var browserify = require('browserify'); 
 ```
 
-次に `node-jsx` を `require` している文の下に以下のように `index.jsx` を読み込む処理を1行追加してください。
+Next, add a line that reads `index.jsx` under the sentence that `require` s `node-jsx`.
 
+``` 
+require('node-jsx').install(); 
+var TodoBox = require('./views/index.jsx'); 
 ```
-require('node-jsx').install();
-var TodoBox = require('./views/index.jsx');
-```
 
-最後に `/bundle.js` と `/` にアクセスが来た際の動作を以下のように修正してください。
-`/bundle.js` にアクセスが来た際には、上記の `app.js` をフロントエンドでも動作するような形に変換してレスポンスを返します。
+Finally, fix the router of `/bundle.js` and `/` like below. 
+If you have an access to `/bundle.js`, you change `app.js` that can work at front-end and response. 
+If you have an access to `/`, you response HTML that consists of readed `index.jsx`, and data from server, and `bundle.js`.
 
-`/` にアクセスが来た際には、 `index.jsx` を読み込んだものと、サーバーから渡すデータ、そして `bundle.js` をHTMLの形にして、レスポンスを返します。
-
-```
-app.use('/bundle.js', function(req, res) {
-  res.setHeader('content-type', 'application/javascript');
-  browserify('./app.js')
-    .transform('reactify')
-    .bundle()
-    .pipe(res);
+``` 
+app.use('/bundle.js', function(req, res) { 
+  res.setHeader('content-type', 'application/javascript'); 
+  browserify('./app.js') 
+    .transform('reactify') 
+    .bundle() 
+    .pipe(res); 
 });
 
-app.use('/', function(req, res) {
-  var initialData = JSON.stringify(data);
+app.use('/', function(req, res) { 
+  var initialData = JSON.stringify(data); 
   var markup = React.renderToString(React.createElement(TodoBox, {data: data}));
 
-  res.setHeader('Content-Type', 'text/html');
-  
-  var html = React.renderToStaticMarkup(body(null,
-      div({id: 'app', dangerouslySetInnerHTML: {__html: markup}}),
-      script({id: 'initial-data',
-              type: 'text/plain',
-              'data-json': initialData
-            }),
-      script({src: '/bundle.js'})
-  ));
-      
-  res.end(html);
-});
+  res.setHeader('Content-Type', 'text/html'); 
+   
+  var html = React.renderToStaticMarkup(body(null, 
+      div({id: 'app', dangerouslySetInnerHTML: {__html: markup}}), 
+      script({id: 'initial-data', 
+              type: 'text/plain', 
+              'data-json': initialData 
+            }), 
+      script({src: '/bundle.js'}) 
+  )); 
+       
+  res.end(html); 
+}); 
 ```
 
-それができたら、 `node program.js 3000 Milk 13:00` を実行し、 `http://localhost:3000` にアクセスして、実際にhtmlが出力されていることを確認してください。
-チェックボックスを何度かクリックしてみて、正しくチェックされることを確認してください。
-その後、 `learnyoureact verify program.js` を実行してください。
+After writing codes, run `node program.js 3000 Milk 13:00` and access `http://localhost:3000` , check the real HTML is outputted.
 
-※ `verify` を行った際に出力されるHTMLが、 `http://localhost:3000` にアクセスした時に表示されていたHTMLと異なっていることに気づいた方もいらっしゃると思います。
-DOMを一意に識別するための `data-react-checksum` や `data-reactid` はその性質上、正答とあなたが記述したファイルを比較する際にも異なる値を持つので、比較ができません。
-そのため、 `verify` の際にはそれ以外の部分を用いて比較を行っています。 
+Click the checkbox some times, and confirm whether you can check the checkbox rightly.
 
-余裕があったら、 `handleChange` の `setState` で `true` や `false` といった固定の変数を指定して、正しくチェックボックスが使えないことも確認してみてください。
+After that, run `learnyoureact verify program.js`.
+
+NOTE:I think some of you notice that the difference of HTML in which you run  `verify` and access `http://localhost:3000`. 
+`data-react-checksum` or  `data-reactid` that keep the DOM unique make the compare of right answer and the code you write fail in the quality. 
+So if you run `verify`, this code compare the code at other part of HTML.
+
+If you have time, confirm the checkbox does not work when you set `true` or `false` in `setState` in `handleChange`.
