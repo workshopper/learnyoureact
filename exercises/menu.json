@@ -8,5 +8,6 @@
     "PROPS_FROM_SERVER",
     "ISOMORPHIC",
     "CSS2",
-    "EVENT"
+    "EVENT",
+    "PROP_AND_STATE"
 ]
