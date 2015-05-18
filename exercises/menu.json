@@ -6,5 +6,6 @@
     "STATE",
     "CSS",
     "PROPS_FROM_SERVER",
-    "ISOMORPHIC"
+    "ISOMORPHIC",
+    "CSS2"
 ]
