@@ -10,7 +10,15 @@
 # 問題
 ---
 
-`program.js` と同じディレクトリに `app.js` を作成してください。 `app.js` には以下のように記述してください。
+まずはモジュールをインストールしましょう。
+
+```
+$ npm install browserify
+$ npm install reactify
+```
+
+
+次に `program.js` と同じディレクトリに `app.js` を作成してください。 `app.js` には以下のように記述してください。
 
 ```
 var React = require('react');
