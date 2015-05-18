@@ -7,6 +7,9 @@
         "PROPTYPES"        :"PROPTYPES",
         "STATE"            :"STATE",
         "CSS"              :"CSS",
-        "PROPS_FROM_SERVER":"PROPS_FROM_SERVER"
+        "PROPS_FROM_SERVER":"PROPS_FROM_SERVER",
+        "ISOMORPHIC"       :"ISOMORPHIC",
+        "CSS2"             :"CSS2",
+        "EVENT"            :"EVENT"
     }
 }
