@@ -10,6 +10,7 @@
         "PROPS_FROM_SERVER":"PROPS_FROM_SERVER",
         "ISOMORPHIC"       :"ISOMORPHIC",
         "CSS2"             :"CSS2",
-        "EVENT"            :"EVENT"
+        "EVENT"            :"EVENT",
+        "PROP_AND_STATE"   :"PROP_AND_STATE"
     }
 }
