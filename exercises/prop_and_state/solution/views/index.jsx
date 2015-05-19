@@ -37,16 +37,15 @@ var TodoList = React.createClass({
     this.setState({detailValue: ""});
   },
   deleteTodo: function (title) {
-    var newData = this.state.data;
-    newData.filter(function (todo) {
+    var newData = this.state.data.filter(function (todo) {
       return todo.title !== title;
-    })
+    });
     this.setState({data: newData});
   },
   render: function() {
     var todo = this.state.data.map(function(obj) {
       return <Todo title={obj.title} key={obj.title} onDelete={this.deleteTodo}>{obj.detail}</Todo>;
-    });
+    }.bind(this));
     return (
       <div className = "todoList">
         <div>
