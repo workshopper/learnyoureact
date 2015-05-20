@@ -11,7 +11,14 @@
 # 문제
 ---
 
-`program.js`와 같은 디렉터리에 `app.js`를 작성해 주세요. `app.js`는 다음과 같이 작성합니다.
+우선 모듈을 설치합시다.
+
+```
+$ npm install browserify
+$ npm install reactify
+```
+
+그런 다음 `program.js`와 같은 디렉터리에 `app.js`를 작성해 주세요. `app.js`는 다음과 같이 작성합니다.
 
 ```
 var React = require('react');
