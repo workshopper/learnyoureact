@@ -31,7 +31,7 @@ app.use('/', function(req, res) {
 app.listen(app.get('port'), function() {});
 ```
 
-The above code is a small Express server that renders our React components. 
+The code above creates a small Express server that renders our React components.
 This program uses the `express-react-views` module.  
 
 Next, create a `views` directory in the same directory as `program.js`. 
@@ -56,9 +56,8 @@ var TodoBox = React.createClass({
 module.exports = TodoBox;
 ```
 
-This code, which is like writing HTML in JavaScript, is called React.js JSX syntax. 
-You can create your views without JSX syntax, but use the JSX syntax in this workshop.
+This code uses the optional React.js JSX syntax to create our views, which we shall use throughout the rest of this workshop.
 
-After copying all of the code, run `node program.js` and access `http://localhost:3000`, check out the real HTML that is outputted!
+After copying all of the code, run `node program.js` and access `http://localhost:3000`. Check out the real HTML in the browser!
 
-After that, run `learnyoureact verify program.js`.
+After that, run `learnyoureact verify program.js` to check your solution.
