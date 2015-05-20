@@ -58,6 +58,6 @@ module.exports = TodoBox;
 
 This code uses the optional React.js JSX syntax to create our views, which we shall use throughout the rest of this workshop.
 
-After copying all of the code, run `node program.js` and access `http://localhost:3000`. Check out the real HTML in the browser!
+When you are ready run `node program.js` and access `http://localhost:3000` to see the HTML output in the browser.
 
-After that, run `learnyoureact verify program.js` to check your solution.
+Finally, run `learnyoureact verify program.js` to check your solution.
