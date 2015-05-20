@@ -1,14 +1,13 @@
-Let's combine multi Components.
+Let's start using React components!
 
-You can make application with combining multi Component in React.js.
-You can use HTML tags and JSX together.
+You can make web applications with React.js by combining several components.
+These use HTML tags together with JSX notation.
 
 
-# Question 
+# Challenge
 ---
 
-Fix `index.jsx` like below. 
-You can also make new `index.jsx` file and write code in that.
+Update `index.jsx` as shown below.
 
 
 ```
@@ -37,8 +36,8 @@ var TodoForm = React.createClass({
 module.exports = TodoBox;
 ```
 
-Write JSX syntax what outputs HTML below at two commentouts "Write code here" of the above code.
-You don't have to change server-side code.
+Implement the missing code above using JSX notation to output the HTML below.
+Note, you don't have to change server-side code.
 
 ```
 <div class = "todoList">
@@ -51,6 +50,6 @@ You don't have to change server-side code.
 </div>
 ```
 
-After writing codes, do `node program.js` and access `http://localhost:3000` , check the real HTML is outputted.
+When you are ready run `node program.js` and access `http://localhost:3000` to see the HTML output in the browser.
 
-After that, do `learnyoureact verify program.js`.
+Finally, run `learnyoureact verify program.js` to check your solution.
