@@ -39,7 +39,8 @@ module.exports = TodoBox;
 
 위의 "여기에 작성"이라 적혀있는 두 곳에, 다음과 같은 HTML을 각각 출력하는 JSX를
 작성해 보세요.
-서버 측의 코드는 변경할 필요가 없습니다.
+서버 측의 코드는 변경할 필요가 없습니다. HTML뿐만 아니라 `render`와 `return`도
+작성하실 필요가 있습니다.
 
 ```
 <div class = "todoList">

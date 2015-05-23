@@ -37,7 +37,8 @@ module.exports = TodoBox;
 ```
 
 Implement the missing code above using JSX notation to output the HTML below.
-Note, you don't have to change server-side code.
+Note, you don't have to change server-side code and make sure don't forgot
+`render` and `return`.
 
 ```
 <div class = "todoList">
