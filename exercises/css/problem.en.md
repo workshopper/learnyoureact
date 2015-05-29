@@ -44,3 +44,5 @@ Change the code to use the `style` you added.
 
 After improving the code, do `node program.js` and access `http://localhost:3000` , check the real HTML is outputted.
 The HTML should not have changed.
+
+After that, do `learnyoureact verify program.js`.
