@@ -38,11 +38,11 @@ var style = {
 module.exports = TodoBox;
 ```
 
-Change the parts of code where define same styles to use `style` you added.
-*NOTE* There are code which is a little different from the style you added, so you should pay attention.
+Change the code to use the `style` you added.
+*NOTE* Some code is a little different from this style, so you should pay attention.
 
 
-After fixing codes, do `node program.js` and access `http://localhost:3000` , check the real HTML is outputted.
-I think you cannot see the HTML has changed.
+After improving the code, do `node program.js` and access `http://localhost:3000` , check the real HTML is outputted.
+The HTML should not have changed.
 
 After that, do `learnyoureact verify program.js`.
