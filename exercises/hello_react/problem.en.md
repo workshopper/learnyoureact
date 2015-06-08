@@ -1,6 +1,6 @@
 First things first, let's print `Hello World` !
 
-Start by installing the required modules. 
+Start by installing the required modules.
 Run the four commands below.
 
 `$ npm install express`
@@ -19,7 +19,7 @@ var app = express();
 
 app.set('port', (process.argv[2] || 3000));
 app.set('view engine', 'jsx');
-app.set('views', __dirname + '/views'); 
+app.set('views', __dirname + '/views');
 app.engine('jsx', require('express-react-views').createEngine());
 
 require('node-jsx').install();
@@ -32,9 +32,9 @@ app.listen(app.get('port'), function() {});
 ```
 
 The code above creates a small Express server that renders our React components.
-This program uses the `express-react-views` module.  
+This program uses the `express-react-views` module.
 
-Next, create a `views` directory in the same directory as `program.js`. 
+Next, create a `views` directory in the same directory as `program.js`.
 After that, create `index.jsx` in the 'views' directory.
 If someone navigates to `/`, `views/index.jsx` will be rendered.
 
@@ -57,6 +57,10 @@ module.exports = TodoBox;
 ```
 
 This code uses the optional React.js JSX syntax to create our views, which we shall use throughout the rest of this workshop.
+
+You can find the React.js docs here: https://facebook.github.io/react/docs/getting-started.html
+
+Read more about the JSX syntax here: https://facebook.github.io/react/docs/jsx-in-depth.html
 
 When you are ready run `node program.js` and access `http://localhost:3000` to see the HTML output in the browser.
 
