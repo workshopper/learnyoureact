@@ -50,5 +50,5 @@ module.exports = TodoBox;
 또, 데이터의 변경이 있을 경우엔 `handleChange` 함수를 만들어, 그 안에서 `this.setState`를 해서 업데이트 할 수 있습니다.
 
 
-그런 다음, `node program.js`를 실행해 `http://localhost:3000`으로 들어가, 실제로 HTML이 출력되는 것을 확인하세요.
+준비가 되면, `node program.js`를 실행해 `http://localhost:3000`으로 들어가, 실제로 HTML이 출력되는 것을 확인하세요.
 그런 다음, `learnyoureact verify program.js`를 실행하세요.

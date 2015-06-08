@@ -42,6 +42,6 @@ module.exports = TodoBox;
 같은 스타일을 여러 곳에서 지정하는 부분을, 추가한 `style`을 사용하도록 변경하세요.
 *비슷한 스타일이긴 하지만, 조금 다른 스타일인 곳이 있으니 주의하세요.
 
-그런 다음, `node program.js`를 실행해 `http://localhost:3000`으로 들어가, 실제로 HTML이 출력되는 것을 확인하세요.
+준비가 되면, `node program.js`를 실행해 `http://localhost:3000`으로 들어가, 실제로 HTML이 출력되는 것을 확인하세요.
 겉으로 보기엔 차이가 없을 거라 생각합니다.
 그런 다음, `learnyoureact verify program.js`를 실행하세요.
