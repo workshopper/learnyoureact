@@ -60,7 +60,7 @@ This code uses the optional React.js JSX syntax to create our views, which we sh
 
 You can find the React.js docs here: https://facebook.github.io/react/docs/getting-started.html
 
-and read more about the JSX syntax here: https://facebook.github.io/react/docs/jsx-in-depth.html
+Read more about the JSX syntax here: https://facebook.github.io/react/docs/jsx-in-depth.html
 
 When you are ready run `node program.js` and access `http://localhost:3000` to see the HTML output in the browser.
 
