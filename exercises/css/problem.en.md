@@ -1,7 +1,7 @@
 Let's define styles as variables!
 
-Now, we define same styles at multi parts of code.
-Make code smart with cutting the styles down as variables.
+Variables are a smart way to make changes to multiple places in our code.
+Lets assign some styles to a variable and see which parts of our code we can replace.
 
 # Question
 ---
@@ -41,8 +41,8 @@ module.exports = TodoBox;
 Change the code to use the `style` you added.
 *NOTE* Some code is a little different from this style, so you should pay attention.
 
+Inline Styles: https://facebook.github.io/react/tips/inline-styles.html
 
-After improving the code, do `node program.js` and access `http://localhost:3000` , check the real HTML is outputted.
-The HTML should not have changed.
+After fixing your code, test it locally by running `node program.js` and then access `http://localhost:3000` in your browser. You should see the HTML you expect.
 
 After that, do `learnyoureact verify program.js`.
