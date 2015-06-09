@@ -1,26 +1,31 @@
 Let's add validation to passed values.
 
-In `React.createClass()` ,
+Input data that is passed into the component can be accessed by `render()` via `this.props`
+
+As you build and rely on your common components (buttons, form fields etc.) it's helpful to ensure the components are being used correctly.
+
+You can do this by specifying `propTypes`. While in development mode `React.PropTypes` exports a range of validators that can be used to make sure the data you receive is valid.
 
 ```
-propTypes: {
-  name:   React.PropTypes.string.isRequired,
-  id:     React.PropTypes.number.isRequired,
-  width:  React.PropTypes.number.isRequired,
-  height: React.PropTypes.number.isRequired,
-  alt:    React.PropTypes.string
-}
+React.createClass({
+  propTypes: {
+    name:   React.PropTypes.string.isRequired,
+    id:     React.PropTypes.number.isRequired,
+    width:  React.PropTypes.number.isRequired,
+    height: React.PropTypes.number.isRequired,
+    alt:    React.PropTypes.string
+  },
+  /* ... */
 ```
 
-You can add validations to props which is passed from parent Component by writting like above. 
-If unexpected values is passed, React.js prints `Warning` in console.
+When an invalid value is provided for a prop, a warning will be shown in the JavaScript console.
 
 
 # Question
 ---
 
-Fix `Todo` of `index.jsx` like below. 
-You can also make new `index.jsx` file and write code in that.
+Fix `Todo` of `index.jsx` like the example below.
+You can also write your code into a new `index.jsx` file.
 
 
 ```
@@ -58,11 +63,13 @@ var TodoForm = React.createClass({
 module.exports = TodoBox;
 ```
 
-After writing codes, try to do `learnyoureact run program.js.` 
-You can see that React.js print `Warning` in console. 
-Read the sentence and fix Todo that React.js doesn't print `Warning` in console 
+After editing the `index.jsx` file, run your code with `learnyoureact run program.js.`
+You can see that React.js prints `Warning` in the console.
+Read the error and fix Todo so that React.js doesn't print `Warning` in the console any more.
 You must use `propTypes`.
 
-After fixing codes, do `node program.js` and access `http://localhost:3000` , check the real HTML is outputted.
+After fixing your code, test it locally by running `node program.js` and then access `http://localhost:3000` in your browser. You should see the HTML you expect.
+
+Reusable Components: https://facebook.github.io/react/docs/reusable-components.html
 
 After that, do `learnyoureact verify program.js`.
