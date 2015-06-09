@@ -1,13 +1,15 @@
 Let's define mutable values!
 
-You can use `state` to define mutable values.
-Let's set initial value of `checkbox`, and define behavior of check event.
+So far we've rendered components with imutable properties using `this.props`.
+But what about if we want to update components?
+`this.state` is private to each component and allows us to define mutable values.
+Let's set the initial value of `checkbox` to false and define a function to control the behavior of check events.
 
 # Question
 ---
 
-Fix `Todo` of `index.jsx` like below.
-You can also make new `index.jsx` file and write code in that.
+Fix `Todo` of `index.jsx` like the example below.
+You can also write your code into a new `index.jsx` file.
 
 
 ```
@@ -45,10 +47,13 @@ var TodoForm = React.createClass({
 module.exports = TodoBox;
 ```
 
-Write code to set initial value of `checked` and behavior of check event in `Todo`.
-You can set initial value by `getInitialState`.
-You can update the data by writing `handleChange` function and writing `this.setState` in the function.
+Write code to set the initial value of `checked` and behavior of the check event in `Todo`.
+You can set initial value of `checked` by defining `getInitialState`.
+You can update a components `state` by creating a function that makes use of `this.setState`.
 
-After writing codes, do `node program.js` and access `http://localhost:3000`, check the real HTML is outputted.
+Component API: https://facebook.github.io/react/docs/component-api.html
+Component Specs and Lifecycle: https://facebook.github.io/react/docs/component-specs.html
+
+After fixing your code, test it locally by running `node program.js` and then access `http://localhost:3000` in your browser. You should see the HTML you expect.
 
 After that, do `learnyoureact verify program.js`.
