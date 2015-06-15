@@ -16,16 +16,16 @@ exercise = filecheck(exercise);
 
 // execute the solution and submission in parallel with spawn()
 exercise = execute(exercise);
-exercise.getSolutionFiles= function (callback) { 
+exercise.getSolutionFiles= function (callback) {
   var solutionDir = path.join(this.dir, './solution');
 
-  fs.readdir(solutionDir, function (err, list) { 
+  fs.readdir(solutionDir, function (err, list) {
     if (err) return callback(err);
-      list.push("views/index.jsx"); 
-      list = list 
-        .filter(function (f) { return (/\.js.*$/).test(f) }) 
+      list.push("views/index.jsx");
+      list = list
+        .filter(function (f) { return (/\.js.*$/).test(f) })
         .map(function (f) { return path.join(solutionDir, f)});
-      callback(null, list); 
+      callback(null, list);
   });
 }
 
