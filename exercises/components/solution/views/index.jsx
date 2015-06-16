@@ -17,7 +17,7 @@ var TodoList = React.createClass({
     return (
       <div className = "todoList">
         I am a TodoList.
-      </div>	
+      </div>
     );
   }
 });
@@ -27,7 +27,7 @@ var TodoForm = React.createClass({
     return (
       <div className = "todoForm">
         I am a TodoForm.
-      </div>	
+      </div>
     );
   }
 });

@@ -22,14 +22,14 @@ var TodoList = React.createClass({
             <Todo title="Hair cut">13:00</Todo>
           </tbody>
         </table>
-      </div>    
+      </div>
     );
   }
 });
 
 var Todo = React.createClass({
   propTypes: {
-    title: React.PropTypes.string.isRequired	 
+    title: React.PropTypes.string.isRequired
   },
   getInitialState: function() {
     return {
@@ -46,7 +46,7 @@ var Todo = React.createClass({
         <td style={style.tableContent}>{this.props.title}</td>
         <td style={style.tableContent}>{this.props.children}</td>
       </tr>
-    );	 
+    );
   }
 });
 
@@ -55,14 +55,14 @@ var TodoForm = React.createClass({
     return (
       <div className = "todoForm">
         I am a TodoForm.
-      </div>	
+      </div>
     );
   }
 });
 
 var style = {
   tableContent: {
-    border: "1px solid black"		
+    border: "1px solid black"
   }
 };
 
