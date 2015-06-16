@@ -1,18 +1,23 @@
 넘긴 값의 타입을 제약해 봅시다.
 
-`React.createClass()` 안에서
+컴포넌트에 넘겨진 데이터는 일반 컴포넌트(버튼, 폼 필드 등)에서 만들고 의존하는 `this.props`를 통해 `render()`에서 접근할 수 있습니다.
+
+이는 컴포넌트가 재대로 사용되고 있는지 확인하는데 도움이 됩니다.
+
+제약은 `propTypes`을 지정해 할 수 있습니다. 개발 모드에서 `React.PropTypes`는 재대로된 데이터를 받았는지 확인하는 벨리데이터를 범위를 명시합니다.
 
 ```
-propTypes: {
-  name:   React.PropTypes.string.isRequired,
-  id:     React.PropTypes.number.isRequired,
-  width:  React.PropTypes.number.isRequired,
-  height: React.PropTypes.number.isRequired,
-  alt:    React.PropTypes.string
-}
+React.createClass({
+  propTypes: {
+    name:   React.PropTypes.string.isRequired,
+    id:     React.PropTypes.number.isRequired,
+    width:  React.PropTypes.number.isRequired,
+    height: React.PropTypes.number.isRequired,
+    alt:    React.PropTypes.string
+  },
+  /* ... */
 ```
-라고 작성해, 넘겨진 props에 제약을 거는 것이 가능합니다.
-여기에 위반되는 값이 들어온 경우에는, `Warning`이 출력됩니다.
+props에 잘못된 값이 들어온 경우에는 JavaScript 콘솔에 경고가 출력됩니다.
 
 
 # 문제
@@ -57,11 +62,14 @@ var TodoForm = React.createClass({
 module.exports = TodoBox;
 ```
 
-그런 다음, `learnyoureact run program.js`를 실행해 주세요.
-표준 출력에 `Warning`이 출력될 것입니다.
+`index.jsx`를 수정한 다음, `learnyoureact run program.js`를 실행해 주세요.
+React.js가 콘솔에 `Warning`을 출력하는 것을 볼 수 있습니다.
 그 내용을 읽어, `Warning`이 나오지 않도록 `Todo`를 수정해 주세요.
 `propTypes`는 반드시 사용하세요.
 
 
-그런 다음, `node program.js`를 실행해 `http://localhost:3000`으로 들어가, 실제로 HTML이 출력되는 것을 확인하세요.
+코드를 고쳤으면, `node program.js`를 실행해 `http://localhost:3000`으로 들어가, 실제로 HTML이 출력되는 것을 확인하세요.
+
+재사용가능한 컴포넌트: https://facebook.github.io/react/docs/reusable-components-ko-KR.html
+
 그런 다음, `learnyoureact verify program.js`를 실행하세요.

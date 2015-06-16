@@ -3,6 +3,15 @@
 React.js에서는 컴포넌트를 조합해 애플리케이션을 만듭니다.
 또, HTML의 태그와 JSX를 조합할 수도 있습니다.
 
+React 컴포넌트를 렌더하려면, 대문자로 시작하는 지역 변수를 만들면 됩니다.
+
+React JSX는 지역 컴포넌트 클래스와 HTML 태그를 구별하기 위해 대소문자 규칙을 사용합니다.
+
+```
+var MyComponent = React.createClass({/*...*/});
+var myElement = <MyComponent someProperty={true} />;
+React.render(myElement, document.getElementById('example'));
+```
 
 # 문제
 ---
@@ -53,5 +62,7 @@ module.exports = TodoBox;
 </div>
 ```
 
-그런 다음, `node program.js`를 실행해 `http://localhost:3000`으로 들어가, 실제로 HTML이 출력되는 것을 확인하세요.
+JSX 문서: https://facebook.github.io/react/docs/getting-started-ko-KR.html
+
+준비가 되면, `node program.js`를 실행해 `http://localhost:3000`으로 들어가, 실제로 HTML이 출력되는 것을 확인하세요.
 그런 다음, `learnyoureact verify program.js`를 실행하세요.

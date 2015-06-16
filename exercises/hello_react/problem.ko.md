@@ -19,7 +19,7 @@ var app = express();
 
 app.set('port', (process.argv[2] || 3000));
 app.set('view engine', 'jsx');
-app.set('views', __dirname + '/views'); 
+app.set('views', path.join(__dirname, '/views'));
 app.engine('jsx', require('express-react-views').createEngine());
 
 require('node-jsx').install();
@@ -55,6 +55,9 @@ module.exports = TodoBox;
 위의 JavaScript 안에 XML을 작성하는 듯한 코드가 React의 JSX라 불리는 방법입니다.
 다르게 적는 방법도 있지만, 이 워크숍에서는 전부 JSX로 작성하도록 하겠습니다.
 
+React.js 문서는 여기서 찾으실 수 있습니다. https://facebook.github.io/react/docs/getting-started-ko-KR.html
 
-그런 다음, `node program.js`를 실행해 `http://localhost:3000`으로 들어가, 실제로 HTML이 출력되는 것을 확인하세요.
+JSX 문법에 관한 더 자세한 내용은 여기서 읽으실 수 있습니다. https://facebook.github.io/react/docs/jsx-in-depth-ko-KR.html
+
+준비가 되면, `node program.js`를 실행해 `http://localhost:3000`으로 들어가, 실제로 HTML이 출력되는 것을 확인하세요.
 그런 다음, `learnyoureact verify program.js`를 실행하세요.
