@@ -1,18 +1,27 @@
-Let's pass values from server to Component!
+Let's pass data from the server into a component!
 
-Change your code which define data in jsx to pass data from server.
-We will change code both view and server.
+We're going to remove the data from our JSX, and pass it from the server instead.
+This will require changing code on the server (`program.js`).
 
-# Question
+# Challenge
 ---
 
-Fix `TodoBox` and `TodoList` of `index.jsx` like below. 
-You can also make new `index.jsx` file and write code in that.
+Modify `TodoBox` and `TodoList` in `index.jsx` like below. 
 
-In this code, `TodoBox` is the highest-rank Component, so server pass the value to `{this.props.data}` int `TodoList`.
-We should change the values to `Todo` tag in `TodoList` which is the child of `TodoBox`.
-You can use `key` in `Todo` tag to minimize the change from diff of VirtualDOM to real DOM.
-If you do not use `key`, React.js print `Warning` in console.
+Before you start, you may want to check your current `index.jsx` into source
+control, or create a new `index.jsx` for this exercise.
+
+In this code, `TodoBox` is the parent of all other components, so the server
+will pass data into it, which it can access as `{this.props.data}`, and then
+pass on down to `TodoList`.
+
+In `TodoList`, we'll need to stop passing static values into our `Todo`
+components. Instead, we'll loop through all of the values we're passed and
+dynamically create `Todo` components for each. When dynamically creating
+components like this, React makes use of a `key` attribute to keep track of
+each component in the VirtualDOM. This allows it to update the real DOM as
+sensibly and infrequently as possible. If you do not use `key`, React will
+print a `Warning` in the console.
 
 
 ```
@@ -60,12 +69,8 @@ var style = {
 module.exports = TodoBox;
 ```
 
-Next, change code of server.
-Change callback function of `app.use()`.
-After that, make variable `data`, and define JSON which `title` is "Shopping", and `detail` is the third command line argument and which `title` is "Hair cut", and `detail` is the fourth command line argument in the variable.
-
-*NOTE* the second command line argument is port number.
-You can use the usage of command line argument, which is written in somewhere of the code.
+Next, we'll change the code on our server, `program.js`. Specifically, we'll change the
+callback function of `app.use()` and pass it a `data` variable.
 
 
 ```
@@ -90,7 +95,22 @@ app.listen(app.get('port'), function() {});
 
 ```
 
-After writing codes, do `node program.js 3000 Milk 13:00` and access `http://localhost:3000` , check the real HTML is outputted.
+Now modify `data` to contain two objects. Each should have a `title` attribute,
+defined as "Shopping" and "Hair cut" respectively. Each should also have
+a `detail` attribute. These we want to make more dynamic.
 
-After that, do `learnyoureact verify program.js`.
-If you have time, check print of `Warning` in console when you do not define `key`.
+See in `program.js` where we define which port to use? That's some Node.js that
+allows passing values into your program from the command line. Specifically, it
+says that the third command line argument is the port, and if it doesn't exist,
+it defaults to `3000`.
+
+Make the value of `detail` for the first object equal the fourth command line
+argument, and `detail` for the second object equal the fifth.
+
+Verify your code by running `node program.js 3000 Milk 13:00` and visiting
+`http://localhost:3000`.
+
+Once you're confident, run `learnyoureact verify program.js`.
+
+Bonus challenge: try removing the `key` attribute, and observe the `Warning`
+printed to the console.

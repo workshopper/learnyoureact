@@ -1,13 +1,17 @@
-Let's pass values from parent Component to child Component.
+Now let's learn to pass values from a parent component to a child component.
 
-Child Component can get values which is defined as attribute in parent Component, or element which is nested by parent Component
+A child component can have values handed to it either through attributes, or
+through nested content.
 
-# Question 
+`<ChildComponent some-attribute="this gets passed">So does this</ChildComponent>`
+
+# Challenge 
 ---
 
-Fix `TodoList` of `index.jsx` like below, and add `Todo`. 
-You can also make new `index.jsx` file and write code in that.
+Modify `TodoList` in `index.jsx` like below, adding `Todo`. 
 
+Before you start, you may want to check your current `index.jsx` into source
+control, or create a new `index.jsx` for this exercise.
 
 ```
 var React = require('react');
@@ -42,11 +46,14 @@ var TodoForm = React.createClass({
 module.exports = TodoBox;
 ```
 
-Write JSX syntax what outputs HTML below at two commentouts "Write code here" of the above code. 
-You can get value of `title` in `Todo` tag which is written in `TodoList` (parent Component) by `{this.props.title}`. 
-Also, You can get value of `Milk`, `13:00` which is nested by  `{this.props.children}` 
-You don't have to change server-side code too.
+Now at each of the "Write code here" comments, write some JSX that results in
+the following HTML.
 
+Within `Todo`, you can get the value of the `title` attribute set in `TodoList`
+(the parent component) by using `{this.props.title}`. Likewise, you can get the
+values `Milk` and `13:00` by using `{this.props.children}`.
+
+Note: you don't have to change server-side code (`program.js`).
 
 ```
 <div class="todoList">
@@ -65,6 +72,7 @@ You don't have to change server-side code too.
 </div>
 ```
 
-After writing codes, do `node program.js` and access `http://localhost:3000` , check the real HTML is outputted.
+After writing code, run `node program.js` and visit `http://localhost:3000` to
+make sure it looks right.
 
-After that, do `learnyoureact verify program.js`.
+Once you're confident, run `learnyoureact verify program.js`.

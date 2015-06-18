@@ -1,13 +1,15 @@
 Let's define styles as variables!
 
 Variables are a smart way to make changes to multiple places in our code.
-Lets assign some styles to a variable and see which parts of our code we can replace.
+Lets assign some styles to a variable and see which parts of our code we can simplify.
 
-# Question
+# Challenge
 ---
 
-Add `index.jsx` `style` like below.
-You can also make new `index.jsx` file and write code in that.
+Add `style` to `index.jsx` like below.
+
+Before you start, you may want to check your current `index.jsx` into source
+control, or create a new `index.jsx` for this exercise.
 
 
 ```
@@ -38,11 +40,12 @@ var style = {
 module.exports = TodoBox;
 ```
 
-Change the code to use the `style` you added.
-*NOTE* Some code is a little different from this style, so you should pay attention.
+Now change the code to use the `style` variable you added.
+*NOTE* Some code is a little different from this style - be careful!
 
 Inline Styles: https://facebook.github.io/react/tips/inline-styles.html
 
-After fixing your code, test it locally by running `node program.js` and then access `http://localhost:3000` in your browser. You should see the HTML you expect.
+After fixing your code, test it locally by running `node program.js` and
+visiting `http://localhost:3000` in your browser.
 
-After that, do `learnyoureact verify program.js`.
+Once you're confident, run `learnyoureact verify program.js`.

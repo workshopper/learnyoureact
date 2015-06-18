@@ -1,10 +1,10 @@
-Let's add validation to passed values.
+Let's learn to validate that our components get passed all needed properties.
 
-Input data that is passed into the component can be accessed by `render()` via `this.props`
+As you build and rely on common components (buttons, form fields etc.), it's
+helpful to ensure the components are being used correctly.
 
-As you build and rely on your common components (buttons, form fields etc.) it's helpful to ensure the components are being used correctly.
-
-You can do this by specifying `propTypes`. While in development mode `React.PropTypes` exports a range of validators that can be used to make sure the data you receive is valid.
+You can do this by specifying `propTypes`. `React.PropTypes` contains a range
+of validators that can be used to make sure the passed-in data is valid.
 
 ```
 React.createClass({
@@ -18,14 +18,17 @@ React.createClass({
   /* ... */
 ```
 
-When an invalid value is provided for a prop, a warning will be shown in the JavaScript console.
+In development mode, when an invalid value is provided for a prop, a warning
+will be shown in your browser's JavaScript console.
 
 
-# Question
+# Challenge
 ---
 
-Fix `Todo` of `index.jsx` like the example below.
-You can also write your code into a new `index.jsx` file.
+Modify `TodoList` in `index.jsx` like below. 
+
+Before you start, you may want to check your current `index.jsx` into source
+control, or create a new `index.jsx` for this exercise.
 
 
 ```
@@ -53,9 +56,6 @@ var Todo = React.createClass({
   }
 });
 
-
-
-
 var TodoForm = React.createClass({
   // Omitted
 });
@@ -64,12 +64,12 @@ module.exports = TodoBox;
 ```
 
 After editing the `index.jsx` file, run your code with `learnyoureact run program.js.`
-You can see that React.js prints `Warning` in the console.
-Read the error and fix Todo so that React.js doesn't print `Warning` in the console any more.
-You must use `propTypes`.
+You can see that React.js prints a `Warning` in the console.
+Read the warning and modify `Todo` to fix it.
 
-After fixing your code, test it locally by running `node program.js` and then access `http://localhost:3000` in your browser. You should see the HTML you expect.
+After fixing your code, test it locally by running `node program.js` and
+visiting `http://localhost:3000` in your browser.
 
 Reusable Components: https://facebook.github.io/react/docs/reusable-components.html
 
-After that, do `learnyoureact verify program.js`.
+Once you're confident, run `learnyoureact verify program.js`.
