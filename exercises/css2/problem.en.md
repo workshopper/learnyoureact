@@ -1,11 +1,12 @@
-Let's change CSS by the event.
-
-Let's add line-through to Todo if the checkbox is checked.
+Hey, wouldn't it be nice if todos got crossed out when we checked them off? Let's add that!
 
 # Challenge
 ---
 
 Update `style` in `index.jsx` as shown below.
+
+Before you start, you may want to check your current `index.jsx` into source
+control, or create a new `index.jsx` for this exercise.
 
 ``` 
 var style = { 
@@ -21,11 +22,12 @@ var style = {
 }; 
 ```
 
-Let's fix `Todo` to add line-through to `tr` if the checkbox is checked. 
-And If the checkbox is unchecked, remove line-through.
+Now modify `Todo` to add line-through to `tr` if the checkbox is checked. And
+if the checkbox is unchecked, remove line-through.
 
-When you are ready run `node program.js 3000 Milk 13:00` and access `http://localhost:3000` to see the HTML output in the browser.
+When you are ready, run `node program.js 3000 Milk 13:00` and visit
+`http://localhost:3000` to see the HTML output in the browser.
 
-Click the checkbox some times, and confirm whether the line-through is added rightly.
+Click the checkbox on and off, and confirm whether the line-through is added correctly.
 
-Finally, run `learnyoureact verify program.js` to check your solution.
+When you feel confident, run `learnyoureact verify program.js` to check your solution.
