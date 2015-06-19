@@ -1,15 +1,19 @@
 Let's define mutable values!
 
-So far we've rendered components with imutable properties using `this.props`.
-But what about if we want to update components?
-`this.state` is private to each component and allows us to define mutable values.
-Let's set the initial value of `checkbox` to false and define a function to control the behavior of check events.
+So far we've rendered components with immutable properties using `this.props`.
+But what if we want to update components?
 
-# Question
+`this.state` is private to each component and allows us to define mutable
+values. Let's set the initial value of `checkbox` to `false` and define
+a function to control the behavior of check events.
+
+# Challenge
 ---
 
-Fix `Todo` of `index.jsx` like the example below.
-You can also write your code into a new `index.jsx` file.
+Modify `Todo` in `index.jsx` like below. 
+
+Before you start, you may want to check your current `index.jsx` into source
+control, or create a new `index.jsx` for this exercise.
 
 
 ```
@@ -38,8 +42,6 @@ var Todo = React.createClass({
   }
 });
 
-
-
 var TodoForm = React.createClass({
   // Omitted
 });
@@ -47,13 +49,15 @@ var TodoForm = React.createClass({
 module.exports = TodoBox;
 ```
 
-Write code to set the initial value of `checked` and behavior of the check event in `Todo`.
-You can set initial value of `checked` by defining `getInitialState`.
-You can update a components `state` by creating a function that makes use of `this.setState`.
+Write code to set the initial value of `checked` and define `handleChange`.
+You can set the initial value of `checked` in a special `getInitialState` function.
+Within `handleChange`, you should update the component's `state` by using `this.setState`.
 
+The resources are always recommended, but may be especially helpful here:
 Component API: https://facebook.github.io/react/docs/component-api.html
 Component Specs and Lifecycle: https://facebook.github.io/react/docs/component-specs.html
 
-After fixing your code, test it locally by running `node program.js` and then access `http://localhost:3000` in your browser. You should see the HTML you expect.
+After fixing your code, test it locally by running `node program.js` and
+visiting `http://localhost:3000` in your browser.
 
-After that, do `learnyoureact verify program.js`.
+Once you're confident, run `learnyoureact verify program.js`.

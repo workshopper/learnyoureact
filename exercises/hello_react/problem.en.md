@@ -1,15 +1,8 @@
-First things first, let's print `Hello World` !
+First things first, let's print `Hello World`!
 
-Start by installing the required modules.
-Run the four commands below.
+Start by installing the required modules. Run this command:
 
-`$ npm install express`
-
-`$ npm install body-parser`
-
-`$ npm install express-react-views`
-
-`$ npm install node-jsx`
+    $ npm install express body-parser express-react-views node-jsx
 
 Next, create `program.js` and copy the code below into the file.
 
@@ -31,8 +24,8 @@ app.use('/', function(req, res) {
 app.listen(app.get('port'), function() {});
 ```
 
-The code above creates a small Express server that renders our React components.
-This program uses the `express-react-views` module.
+The code above creates a small Express server that renders our React
+components. This program uses the `express-react-views` module.
 
 Next, create a `views` directory in the same directory as `program.js`.
 After that, create `index.jsx` in the 'views' directory.
@@ -56,7 +49,8 @@ var TodoBox = React.createClass({
 module.exports = TodoBox;
 ```
 
-This code uses the optional React.js JSX syntax to create our views, which we shall use throughout the rest of this workshop.
+This code uses the optional React.js JSX syntax to create our views, which we
+shall use throughout the rest of this workshop.
 
 You can find the React.js docs here: https://facebook.github.io/react/docs/getting-started.html
 
