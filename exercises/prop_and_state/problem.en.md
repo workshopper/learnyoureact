@@ -1,10 +1,10 @@
-Let’s transfer the implementation of event to the parent element.
+Too many todos! Let's allow ourselves to delete old ones.
 
-Let's make buttons to delete Todo. 
-Every Todo should have a delete button. 
-So, where should we write the code to delete Todos?
+To do that, we'll need to deal with a child component's event from within its
+parent component.
 
 # Challenge 
+
 ---
 Update `Todo` in `index.jsx` as shown below.
 
@@ -36,11 +36,13 @@ var Todo = React.createClass({
 }); 
 ```
 
-Now, we made delete button to every `Todo`. 
-Next, Let's write codes to delete Todo in `TodoList`.
+This adds a delete button to every `Todo`. 
 
-When you are ready run `node program.js 3000 Milk 13:00` and access `http://localhost:3000` to see the HTML output in the browser.
+Now, write some code to do the actual deleting. It will live in `TodoList`.
 
-Click the delete button some times, and confirm whether the Todo is deleted rightly.
+To check your work, run `node program.js 3000 Milk 13:00` and visit
+`http://localhost:3000`.
 
-Finally, run `learnyoureact verify program.js` to check your solution.
+Add and delete some todos, and make sure it all works as expected.
+
+When you're confident, run `learnyoureact verify program.js` to check your solution.

@@ -1,6 +1,4 @@
-Let's make the event which change the value of data.
-
-Let's make an input form, and we can add Todo.
+It's time to add new todos! Let's make a form for adding new ones.
 
 # Challenge 
 ---
@@ -47,11 +45,12 @@ var TodoList = React.createClass({
 }); 
 ```
 
-Let's write codes to add `Todo` to `table` in three  `// Write code here.`s. 
-You should write code thinking of how to do `setState`.
+Now change the three `Write code here` comments into some real code. You'll
+want to make each of them use `setState`.
 
-When you are ready run `node program.js 3000 Milk 13:00` and access `http://localhost:3000` to see the HTML output in the browser.
+When you are ready, run `node program.js 3000 Milk 13:00` and visit
+`http://localhost:3000` to see the HTML output in the browser.
 
-Write a Todo and click the button for add Todo some times, and confirm whether the Todo is added rightly.
+Create a few new `Todo`s and verify that everything works as expected.
 
-Finally, run `learnyoureact verify program.js` to check your solution.
+Once you're confident, run `learnyoureact verify program.js` to check your solution.
