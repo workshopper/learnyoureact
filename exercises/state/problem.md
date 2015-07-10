@@ -1,5 +1,8 @@
 変更可能な値を定義しましょう！
 
+今まで、 `this.props` を使って値を変更不可能なコンポーネントを作成してきました。
+コンポーネントを更新したい場合はどうしたらよいでしょうか？
+
 動的に変更可能な値を利用する際には `state` を使用します。
 `checkbox` がチェックされているかどうかの初期値を指定し、チェックされた際やチェックが外された際の動作を実装しましょう。
 
@@ -49,6 +52,9 @@ module.exports = TodoBox;
 初期値は `getInitialState` で設定できます。
 また、データに変更があった場合には `handleChange` 関数を作成し、その中で `this.setState` を行うことで更新ができます。
 
+以下のドキュメントが参考になるでしょう。
+コンポーネントAPI : https://facebook.github.io/react/docs/component-api-ja-JP.html
+コンポーネントのスペックとライフサイクル : https://facebook.github.io/react/docs/component-specs-ja-JP.html
 
 それができたら、 `node program.js` を実行し、 `http://localhost:3000` にアクセスして、実際にhtmlが出力されていることを確認してください。
 その後、 `learnyoureact verify program.js` を実行してください。

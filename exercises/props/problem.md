@@ -1,6 +1,10 @@
-親Componentから子Componentに値を渡してみましょう。
+親Componentから子Componentに値を渡す方法を勉強しましょう。
 
 親Componentでattributeとして定義したものや、ネストしている要素を子Componentから取得できます。
+
+```
+<ChildComponent some-attribute="this gets passed">So does this</ChildComponent>
+```
 
 # 問題
 ---

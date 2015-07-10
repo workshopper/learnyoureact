@@ -67,9 +67,9 @@ After editing the `index.jsx` file, run your code with `learnyoureact run progra
 You can see that React.js prints a `Warning` in the console.
 Read the warning and modify `Todo` to fix it.
 
+Reusable Components: https://facebook.github.io/react/docs/reusable-components.html
+
 After fixing your code, test it locally by running `node program.js` and
 visiting `http://localhost:3000` in your browser.
-
-Reusable Components: https://facebook.github.io/react/docs/reusable-components.html
 
 Once you're confident, run `learnyoureact verify program.js`.

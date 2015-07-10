@@ -25,11 +25,10 @@ app.listen(app.get('port'), function() {});
 ```
 
 The code above creates a small Express server that renders our React
-components. This program uses the `express-react-views` module.
+components. If someone navigates to `/`, `views/index.jsx` will be rendered. This program uses the `express-react-views` module.
 
 Next, create a `views` directory in the same directory as `program.js`.
 After that, create `index.jsx` in the 'views' directory.
-If someone navigates to `/`, `views/index.jsx` will be rendered.
 
 Please copy the code below into `index.jsx`
 
