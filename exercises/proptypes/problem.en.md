@@ -63,7 +63,7 @@ var TodoForm = React.createClass({
 module.exports = TodoBox;
 ```
 
-After editing the `index.jsx` file, run your code with `learnyoureact run program.js.`
+After editing the `index.jsx` file, run your code with `learnyoureact run program.js`.
 You can see that React.js prints a `Warning` in the console.
 Read the warning and modify `Todo` to fix it.
 
