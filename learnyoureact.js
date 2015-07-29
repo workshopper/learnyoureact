@@ -14,6 +14,6 @@ workshopper({
     appDir      : __dirname,
     menuItems   : [],
     languages   : ['en', 'ja', 'ko'],
-    defaultLang : 'ja',
+    defaultLang : 'en',
     exerciseDir : fpath('./exercises/')
 })
