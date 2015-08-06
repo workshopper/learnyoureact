@@ -1,4 +1,4 @@
-Let's use React also at front-end.
+Let's use React on the front-end too!
 
 From this excercises, we use React not only at server side but also at front-end. 
 Let's raise the event at front-end, and see what will happen. 
