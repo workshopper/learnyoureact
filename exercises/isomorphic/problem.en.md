@@ -7,7 +7,7 @@ In the past exercises, there was a code which raised the front-end event, but it
 The code is the check of the `checkbox` event you wrote in `State`. 
 At `State`, to tell the truth, you can check the `checkbox` no matter what code you write. 
 In this excercise, let's confirm if you can write the right code or not. 
-There are a bit of code that you have to change. 
+There is a lot of code to change !
 Let's try it!
 
 # Question 
