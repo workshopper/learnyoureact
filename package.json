@@ -8,7 +8,7 @@
     "bl": "~0.9.4",
     "body-parser": "~1.12.3",
     "colors-tmpl": "~1.0.0",
-    "express-react-views": "~0.7.2",
+    "express-react-views": "~0.8.2",
     "hyperquest": "~1.2.0",
     "express": "~4.12.3",
     "react": "~0.13.2",
