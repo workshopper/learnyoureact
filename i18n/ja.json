@@ -1,0 +1,16 @@
+{
+    "subtitle": "React.jsとサーバサイドレンダリングについて学びましょう！",
+    "exercise": {
+        "HELLO_REACT"      :"HELLO_REACT",
+        "COMPONENTS"       :"COMPONENTS",
+        "PROPS"            :"PROPS",
+        "PROPTYPES"        :"PROPTYPES",
+        "STATE"            :"STATE",
+        "CSS"              :"CSS",
+        "PROPS_FROM_SERVER":"PROPS_FROM_SERVER",
+        "ISOMORPHIC"       :"ISOMORPHIC",
+        "CSS2"             :"CSS2",
+        "EVENT"            :"EVENT",
+        "PROP_AND_STATE"   :"PROP_AND_STATE"
+    }
+}
