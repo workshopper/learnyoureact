@@ -11,3 +11,6 @@ Let's learn React.js and server side rendering!
 `$ npm install -g learnyoureact`
 
 `$ learnyoureact`
+
+# License
+MIT
