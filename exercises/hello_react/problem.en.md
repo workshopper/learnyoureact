@@ -1,10 +1,25 @@
 First things first, let's print `Hello World`!
 
+Make directory you write codes in that.
+You can change `learnyoureact` to any name you like.
+`$ mkdir learnyoureact`
+
 Start by installing the required modules. Run this command:
 
     $ npm install express body-parser express-react-views node-jsx
 
-Next, create `program.js` and copy the code below into the file.
+You can see `node_modules` directory maked.
+Files of module is in the directory.
+
+Next, create `program.js`.
+Folder structure is below.
+
+```
+learnyoureact -- program.js
+              |- node_modules
+```
+
+Copy the code below into `program.js`.
 
 ```
 var express = require('express');

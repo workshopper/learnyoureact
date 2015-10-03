@@ -1,11 +1,25 @@
 まずは `Hello World` を出力してみましょう！
 
-はじめに、モジュールをインストールしましょう。
+前準備として、今回作業を行うフォルダを作成しましょう。以下のコマンドで作成できます。
+`learnyoureact` をお好きなフォルダ名に変更してください。
+`$ mkdir learnyoureact`
+
+それができたら、そのフォルダの中にモジュールをインストールしましょう。
 以下のコマンドを実行してください。
 
 `$ npm install express body-parser express-react-views node-jsx`
 
-次に `program.js` を作成し、以下のように記述してください。
+`node_modules` というフォルダが作成されたかと思います。その中にモジュールのフォルダがあります。
+
+次に `program.js` を作成します。
+フォルダ構成は以下のようになります。
+
+```
+learnyoureact -- program.js
+              |- node_modules
+```
+
+`program.js` には以下のように記述してください。
 
 ```
 var express = require('express');
