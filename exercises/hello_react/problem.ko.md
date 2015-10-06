@@ -1,17 +1,27 @@
 먼저 `Hello World`를 출력해 봅시다!
 
-제일 먼저, 모듈을 설치합시다.
-밑의 명령을 실행해 보세요.
+다음 명령을 실행해 코드를 넣을 디렉터리를 만듭니다.
 
-`$ npm install express`
+```
+$ mkdir learnyoureact
+```
 
-`$ npm install body-parser`
+`learnyoureact`를 좋아하는 이름으로 바꾸셔도 됩니다.
 
-`$ npm install express-react-views`
+필요한 모듈을 설치하려면 밑의 명령을 실행해 보세요.
 
-`$ npm install node-jsx`
+    $ npm install express body-parser express-react-views node-jsx
 
-그런 다음, `program.js`를 만들어 다음과 같은 내용을 적습니다.
+이제 `node_modules` 디렉터리가 만들어진 것을 볼 수 있습니다.
+
+그런 다음, `program.js`를 만듭니다 폴더 구조는 다음과 같습니다.
+
+```
+learnyoureact -- program.js
+              |- node_modules
+```
+
+`program.js`에 다음 코드를 복사하세요.
 
 ```
 var express = require('express');
@@ -30,7 +40,8 @@ app.use('/', function(req, res) {
 
 app.listen(app.get('port'), function() {});
 ```
-위의 코드가 렌더링을 하는 서버 쪽의 코드입니다. `express-react-views`라는 모듈을 사용해, `/`에 들어올 때 `views/index.jsx`을 읽어오도록 되어 있습니다.
+위의 코드는 React 컴포넌트를 렌더링을 하는 작은 Express 서버의 코드입니다.
+누군가 `/`에 들어오면 `views/index.jsx`을 렌더합니다. 이 프로그램은 `express-react-views` 모듈을 사용합니다.
 
 
 다음으로 `program.js`이 있는 디렉터리에서 `views` 디렉터리를 만들어, 그 안에서 `index.jsx`를 만들어 주세요.

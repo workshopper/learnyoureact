@@ -1,4 +1,4 @@
-넘긴 값의 타입을 제약해 봅시다.
+넘긴 값의 타입을 제약하는 법을 배워봅시다.
 
 컴포넌트에 넘겨진 데이터는 일반 컴포넌트(버튼, 폼 필드 등)에서 만들고 의존하는 `this.props`를 통해 `render()`에서 접근할 수 있습니다.
 
@@ -17,14 +17,17 @@ React.createClass({
   },
   /* ... */
 ```
-props에 잘못된 값이 들어온 경우에는 JavaScript 콘솔에 경고가 출력됩니다.
+
+개발 모드에서 props에 잘못된 값이 들어온 경우에는 브라우저의 JavaScript 콘솔에 경고가 출력됩니다.
 
 
-# 문제
+# 도전과제
 ---
 
 `index.jsx`의 `Todo`를 다음과 같이 수정해주세요.
-새로운 파일을 작성하셔도 됩니다.
+
+시작하기 전에, 현재 `index.jsx`를 커밋하거나 이 도전과제를 위한 새로운 파일을
+작성하셔도 됩니다.
 
 
 ```
@@ -65,11 +68,10 @@ module.exports = TodoBox;
 `index.jsx`를 수정한 다음, `learnyoureact run program.js`를 실행해 주세요.
 React.js가 콘솔에 `Warning`을 출력하는 것을 볼 수 있습니다.
 그 내용을 읽어, `Warning`이 나오지 않도록 `Todo`를 수정해 주세요.
-`propTypes`는 반드시 사용하세요.
 
-
-코드를 고쳤으면, `node program.js`를 실행해 `http://localhost:3000`으로 들어가, 실제로 HTML이 출력되는 것을 확인하세요.
 
 재사용가능한 컴포넌트: https://facebook.github.io/react/docs/reusable-components-ko-KR.html
 
-그런 다음, `learnyoureact verify program.js`를 실행하세요.
+코드를 고쳤으면, `node program.js`를 실행해 브라우저에서 `http://localhost:3000`으로 들어가 확인해보세요.
+
+확인 후에, `learnyoureact verify program.js`를 실행하세요.

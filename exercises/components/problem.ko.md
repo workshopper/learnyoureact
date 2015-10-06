@@ -4,8 +4,8 @@ React.js에서는 컴포넌트를 조합해 애플리케이션을 만듭니다.
 또, HTML의 태그와 JSX를 조합할 수도 있습니다.
 
 React 컴포넌트를 렌더하려면, 대문자로 시작하는 지역 변수를 만들면 됩니다.
-
-React JSX는 지역 컴포넌트 클래스와 HTML 태그를 구별하기 위해 대소문자 규칙을 사용합니다.
+HTML 태그를 작성할 때는 소문자로 시작하는 지역 변수를 작성하세요.
+React JSX는 지역 컴포넌트 클래스와 HTML 태그를 대문자와 소문자로 구별합니다.
 
 ```
 var MyComponent = React.createClass({/*...*/});
@@ -48,15 +48,14 @@ module.exports = TodoBox;
 
 위의 "여기에 작성"이라 적혀있는 두 곳에, 다음과 같은 HTML을 각각 출력하는 JSX를
 작성해 보세요.
-서버 측의 코드는 변경할 필요가 없습니다. HTML뿐만 아니라 `render`와 `return`도
-작성하실 필요가 있습니다.
+서버 측의 코드(`program.js`)는 변경할 필요가 없습니다.
+`render`와 `return`도 잊지마세요. 'ㅁ'/
 
 ```
 <div class = "todoList">
   I am a TodoList.
 </div>
-```
-```
+
 <div class = "todoForm">
   I am a TodoForm.
 </div>
