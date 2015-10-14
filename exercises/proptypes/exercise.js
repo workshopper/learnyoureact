@@ -7,6 +7,7 @@ var execute = require('workshopper-exercise/execute');
 var comparestdout = require('workshopper-exercise/comparestdout');
 var path = require('path');
 var fs = require('fs');
+var beautify_html = require('js-beautify').html;
 
 // the output will be long lines so make the comparison take that into account
 exercise.longCompareOutput = true;
@@ -84,7 +85,8 @@ function query (mode) {
                 if (err)
                     return stream.emit('error', err)
 
-                stream.write(data.toString() + '\n');
+                var data = beautify_html(data.toString(), null);
+                stream.write(data + '\n');
                 stream.end();
             }));
     }

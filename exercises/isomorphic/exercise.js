@@ -7,6 +7,7 @@ var execute = require('workshopper-exercise/execute');
 var comparestdout = require('workshopper-exercise/comparestdout');
 var path = require('path');
 var fs = require('fs');
+var beautify_html = require('js-beautify').html;
 
 // the output will be long lines so make the comparison take that into account
 exercise.longCompareOutput = true;
@@ -103,6 +104,7 @@ function query (mode) {
                 while(data.match(/data-reactid=".{1,35}"/)){ 
                   data = data.replace(/data-reactid=".{1,35}"/, ""); 
                 }
+                var data = beautify_html(data, null);
                 stream.write(data + '\n');
                 stream.end();
             }));
