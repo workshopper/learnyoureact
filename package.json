@@ -7,19 +7,21 @@
   "dependencies": {
     "bl": "~0.9.4",
     "body-parser": "~1.12.3",
+    "browserify": "~10.1.3",
     "colors-tmpl": "~1.0.0",
-    "express-react-views": "~0.8.2",
-    "hyperquest": "~1.2.0",
     "express": "~4.12.3",
-    "react": "~0.13.2",
+    "express-react-views": "~0.9.0",
+    "hyperquest": "~1.2.0",
+    "js-beautify": "^1.5.10",
+    "node-jsx": "~0.13.3",
+    "react": "~0.14.0",
+    "reactify": "~1.1.1",
+    "react-dom": "~0.14.0",
     "through2": "~0.6.5",
     "workshopper-adventure": "~3.4.5",
     "workshopper-boilerplate": "~1.1.0",
-    "workshopper-wrappedexec": "~0.1.2",
     "workshopper-exercise": "~2.3.0",
-    "node-jsx": "~0.13.3",
-    "browserify": "~10.1.3",
-    "reactify": "~1.1.1"
+    "workshopper-wrappedexec": "~0.1.2"
   },
   "devDependencies": {},
   "scripts": {
