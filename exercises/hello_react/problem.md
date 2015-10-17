@@ -15,8 +15,9 @@
 フォルダ構成は以下のようになります。
 
 ```
-learnyoureact -- program.js
-              |- node_modules
+learnyoureact
+├── program.js
+└── node_modules
 ```
 
 `program.js` には以下のように記述してください。

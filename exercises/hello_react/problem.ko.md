@@ -17,8 +17,9 @@ $ mkdir learnyoureact
 그런 다음, `program.js`를 만듭니다 폴더 구조는 다음과 같습니다.
 
 ```
-learnyoureact -- program.js
-              |- node_modules
+learnyoureact
+├── program.js
+└── node_modules
 ```
 
 `program.js`에 다음 코드를 복사하세요.
