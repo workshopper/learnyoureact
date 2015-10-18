@@ -15,8 +15,9 @@ Next, create `program.js`.
 Folder structure is below.
 
 ```
-learnyoureact -- program.js
-              |- node_modules
+learnyoureact
+├── program.js
+└── node_modules
 ```
 
 Copy the code below into `program.js`.
