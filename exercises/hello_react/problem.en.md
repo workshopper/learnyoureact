@@ -2,7 +2,8 @@ First things first, let's print `Hello World`!
 
 Make directory you write codes in that.
 You can change `learnyoureact` to any name you like.
-`$ mkdir learnyoureact`
+
+`$ mkdir learnyoureact`
 
 Start by installing the required modules. Run this command:
 
