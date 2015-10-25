@@ -7,7 +7,7 @@ You can change `learnyoureact` to any name you like.
 
 Start by installing the required modules. Run this command:
 
-    $ npm install  react react-dom express body-parser express-react-views node-jsx
+    $ npm install react react-dom express body-parser express-react-views node-jsx
 
 You can see `node_modules` directory maked.
 Files of module is in the directory.
