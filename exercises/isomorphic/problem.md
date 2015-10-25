@@ -20,10 +20,11 @@ $ npm install browserify reactify
 
 ```
 var React = require('react');
+var ReactDOM = require('react-dom');
 var TodoBox = require('./views/index.jsx');
 
 var data = JSON.parse(document.getElementById('initial-data').getAttribute('data-json'));
-React.render(<TodoBox data={data} />, document.getElementById("app"));
+ReactDOM.render(<TodoBox data={data} />, document.getElementById("app"));
 ```
 これが、フロントエンド側でReactを使用するためのコードです。 `app` というIDを持つ要素に、  `index.jsx` から読み込んだ `TodoBox` と、 `initial-data` というIDで渡される、サーバーからのデータを渡しています。
 
@@ -34,6 +35,7 @@ React.render(<TodoBox data={data} />, document.getElementById("app"));
 
 ```
 var React = require('react');
+var ReactDOMServer = require('react-dom/server');
 var DOM = React.DOM;
 var body = DOM.body;
 var div = DOM.div;
@@ -65,11 +67,11 @@ app.use('/bundle.js', function(req, res) {
 
 app.use('/', function(req, res) {
   var initialData = JSON.stringify(data);
-  var markup = React.renderToString(React.createElement(TodoBox, {data: data}));
+  var markup = ReactDOMServer.renderToString(React.createElement(TodoBox, {data: data}));
 
   res.setHeader('Content-Type', 'text/html');
-  
-  var html = React.renderToStaticMarkup(body(null,
+
+  var html = ReactDOMServer.renderToStaticMarkup(body(null,
       div({id: 'app', dangerouslySetInnerHTML: {__html: markup}}),
       script({id: 'initial-data',
               type: 'text/plain',
@@ -77,7 +79,7 @@ app.use('/', function(req, res) {
             }),
       script({src: '/bundle.js'})
   ));
-      
+
   res.end(html);
 });
 ```
@@ -88,6 +90,6 @@ app.use('/', function(req, res) {
 
 ※ `verify` を行った際に出力されるHTMLが、 `http://localhost:3000` にアクセスした時に表示されていたHTMLと異なっていることに気づいた方もいらっしゃると思います。
 DOMを一意に識別するための `data-react-checksum` や `data-reactid` はその性質上、正答とあなたが記述したファイルを比較する際にも異なる値を持つので、比較ができません。
-そのため、 `verify` の際にはそれ以外の部分を用いて比較を行っています。 
+そのため、 `verify` の際にはそれ以外の部分を用いて比較を行っています。
 
 余裕があったら、 `handleChange` の `setState` で `true` や `false` といった固定の変数を指定して、正しくチェックボックスが使えないことも確認してみてください。
