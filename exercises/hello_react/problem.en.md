@@ -1,6 +1,6 @@
 First things first, let's print `Hello World`!
 
-Make directory you write codes in that.
+Make a directory to store your code for this workshop.
 You can change `learnyoureact` to any name you like.
 
 `$ mkdir learnyoureact`
@@ -9,11 +9,9 @@ Start by installing the required modules. Run this command:
 
     $ npm install express body-parser express-react-views node-jsx
 
-You can see `node_modules` directory maked.
-Files of module is in the directory.
+This will create your `node_modules` directory and store a bunch of modules in it.
 
-Next, create `program.js`.
-Folder structure is below.
+Next, create `program.js`. Folder structure is below.
 
 ```
 learnyoureact
@@ -42,12 +40,13 @@ app.listen(app.get('port'), function() {});
 ```
 
 The code above creates a small Express server that renders our React
-components. If someone navigates to `/`, `views/index.jsx` will be rendered. This program uses the `express-react-views` module.
+components. If someone navigates to `/`, it will render `views/index.jsx`.
+This program uses the `express-react-views` module for view rendering.
 
-Next, create a `views` directory in the same directory as `program.js`.
-After that, create `index.jsx` in the 'views' directory.
+Next, create a `views` directory in the same directory as `program.js`,
+and create `index.jsx` in the 'views' directory.
 
-Please copy the code below into `index.jsx`
+Copy the code below into `index.jsx`:
 
 ```
 var React = require('react');
@@ -65,8 +64,8 @@ var TodoBox = React.createClass({
 module.exports = TodoBox;
 ```
 
-This code uses the optional React.js JSX syntax to create our views, which we
-shall use throughout the rest of this workshop.
+This code uses the optional React.js JSX syntax to create our views,
+which we shall use throughout the rest of this workshop.
 
 You can find the React.js docs here: https://facebook.github.io/react/docs/getting-started.html
 
