@@ -17,15 +17,7 @@ control, or create a new `index.jsx` for this exercise.
 var React = require('react');
 
 var TodoBox = React.createClass({
-	render: function() {
-		return (
-			<div className="todoBox">
-				<h1>Todos</h1>
-				<TodoList />
-				<TodoForm />
-			</div>
-		);
-	}
+  // Omitted
 });
 
 var TodoList = React.createClass({
@@ -48,19 +40,15 @@ var Todo = React.createClass({
 });
 
 var TodoForm = React.createClass({
-	render: function() {
-		return (
-			<div className="todoForm">
-				I am a TodoForm.
-			</div>
-		);
-	}
+  // Omitted
 });
 
 module.exports = TodoBox;
 ```
 
-Now at the "Write code here" comment, write some JSX that results in the following HTML.
+At the "Write code here" comment, write some JSX that results in the HTML below.
+The "Omitted" comments are sections that are omitted here to save space, but should
+remain the same as your previous solution -- don't change them.
 
 Within `Todo`, you can get the value of the `title` attribute set in `TodoList`
 (the parent component) by using `{this.props.title}`. Likewise, you can get the
