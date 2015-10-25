@@ -44,8 +44,7 @@ class TodoForm extends React.Component {
 }
 ```
 
-Now at each of the "Write code here" comments, write some JSX that results in
-the following HTML.
+Now at the "Write code here" comment, write some JSX that results in the following HTML.
 
 Within `Todo`, you can get the value of the `title` attribute set in `TodoList`
 (the parent component) by using `{this.props.title}`. Likewise, you can get the
