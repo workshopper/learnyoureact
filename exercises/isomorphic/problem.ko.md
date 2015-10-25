@@ -21,10 +21,11 @@ $ npm install browserify reactify
 
 ```
 var React = require('react');
+var ReactDOM = require('react-dom');
 var TodoBox = require('./views/index.jsx');
 
 var data = JSON.parse(document.getElementById('initial-data').getAttribute('data-json'));
-React.render(<TodoBox data={data} />, document.getElementById("app"));
+ReactDOM.render(<TodoBox data={data} />, document.getElementById("app"));
 ```
 이것이 프론트엔드 측에서 React를 사용하기 위한 코드입니다. `app`라는 ID를 가지는 HTML 요소에, `index.jsx`에서 읽은 `TodoBox`와 서버측에서 넘긴 `initial-data`라는 ID를 가지는 데이터를 넘기고 있습니다.
 
@@ -35,6 +36,7 @@ React.render(<TodoBox data={data} />, document.getElementById("app"));
 
 ```
 var React = require('react');
+var ReactDOMServer = require('react-dom/server');
 var DOM = React.DOM;
 var body = DOM.body;
 var div = DOM.div;
@@ -66,11 +68,11 @@ app.use('/bundle.js', function(req, res) {
 
 app.use('/', function(req, res) {
   var initialData = JSON.stringify(data);
-  var markup = React.renderToString(React.createElement(TodoBox, {data: data}));
+  var markup = ReactDOMServer.renderToString(React.createElement(TodoBox, {data: data}));
 
   res.setHeader('Content-Type', 'text/html');
 
-  var html = React.renderToStaticMarkup(body(null,
+  var html = ReactDOMServer.renderToStaticMarkup(body(null,
       div({id: 'app', dangerouslySetInnerHTML: {__html: markup}}),
       script({id: 'initial-data',
               type: 'text/plain',
