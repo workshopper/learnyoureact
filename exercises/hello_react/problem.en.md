@@ -2,6 +2,7 @@ First things first, let's print `Hello World`!
 
 First, create the directory where you will write your code. It needs to contain a [package.json](https://docs.npmjs.com/getting-started/using-a-package.json) file
 for npm to know in which folder to install the subsequent packages - `npm init` does this for us.
+
 You can change `learnyoureact` to any name you like.
 
 `$ mkdir learnyoureact; cd learnyoureact; npm init -y;`
@@ -10,11 +11,9 @@ Start by installing the required modules. Run this command:
 
 `$ npm install --save react react-dom express body-parser express-react-views@0.9.0 babel@5.8.23`
 
-You can see `node_modules` directory made.
-Files of module is in the directory.
+This will create your `node_modules` directory and store a bunch of modules in it.
 
-Next, create `program.js`.
-Folder structure is below.
+Next, create `program.js`. Folder structure is below.
 
 ```
 learnyoureact
@@ -48,12 +47,13 @@ app.listen(app.get('port'), function() {
 ```
 
 The code above creates a small Express server that renders our React
-components. If someone navigates to `/`, `views/index.jsx` will be rendered. This program uses the `express-react-views` module.
+components. If someone navigates to `/`, it will render `views/index.jsx`.
+This program uses the `express-react-views` module for view rendering.
 
-Next, create a `views` directory in the same directory as `program.js`.
-After that, create `index.jsx` in the 'views' directory.
+Next, create a `views` directory in the same directory as `program.js`,
+and create `index.jsx` in the 'views' directory.
 
-Please copy the code below into `index.jsx`
+Copy the code below into `index.jsx`:
 
 ```
 import React from 'react';
@@ -67,8 +67,8 @@ export default class TodoBox extends React.Component{
 }
 ```
 
-This code uses the optional React.js JSX syntax to create our views, which we
-shall use throughout the rest of this workshop.
+This code uses the optional React.js JSX syntax to create our views,
+which we shall use throughout the rest of this workshop.
 
 You can find the React.js docs here: https://facebook.github.io/react/docs/getting-started.html
 
