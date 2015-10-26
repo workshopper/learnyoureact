@@ -2,24 +2,26 @@ Let's use React on the front-end too!
 
 From this exercise on, we'll use React not only on the server side but also on the front-end.
 Let's raise the event on the front-end, and see what will happen.
-In the past exercises, there was some code that raised a front-end event, but it did not work. Where is that?
 
-The code is the check of the `checkbox` event you wrote in `State`.
-At `State`, to tell the truth, you can check the `checkbox` no matter what code you write.
-In this exercise, let's confirm if you can write the right code or not.
-There is a lot of code to change !
-Let's try it!
+In the past exercises, there was code that raised the front-end event, but did nothing. Do you know what it was?
+
+It was interactions with the `checkbox` you wrote in the `State` lesson.
+In the `State` lesson, to be honest, checking the `checkbox` doesn't actually update the state.
+
+In this excercise, let's make it run on the front-end too.
+
+There is a lot of code to change ! Let's try it!
 
 # Question
 ---
 
-Start by installing the required modules. Run the four commands below.
+Start by installing the required modules. Run the command below:
 
 ```
 $ npm install browserify babelify babel-preset-react babel-preset-es2015
 ```
 
-Next, let's create `app.js` at the same directory as `program.js` and copy the code below into the file.
+Next, create `app.js` in the same directory as `program.js` and copy the code below into it:
 
 ```
 import React from 'react';
@@ -30,12 +32,11 @@ let data = JSON.parse(document.getElementById('initial-data').getAttribute('data
 ReactDOM.render(<TodoBox data={data} />, document.getElementById("app"));
 ```
 
-The above code is to use React at front-end. This code passes `TodoBox`  from `index.jsx`, and data from server that are passed in the id of `initial-data` to the element that has the id of `app`.
+The above code is to use React on the front-end. This code assumes that there will be some data attached to a DOM element with the id `initial-data`, and passes it into a `TodoBox` from `index.jsx`, and renders the whole component in the element with id `app`.
 
-Next, let's fix `program.js`.
-You can also make a new `program.js` file and write all the code there.
+Next, let's fix `program.js`. You can change your existing one, or make a new `program.js` file and write all the code there.
 
-First of all, let's add these `require` statements - like this:
+First of all, let's add these `require` statements at the top:
 
 ```
 var React = require('react');
@@ -49,7 +50,7 @@ var browserify = require('browserify');
 var babelify = require("babelify");
 ```
 
-Next, add a line that reads `index.jsx` under the sentence that `require` s `babel/register`.
+Next, add a line that `require`s `index.jsx` under the line that `require`s `node-jsx`:
 
 ```
 require('babel/register');
@@ -57,9 +58,9 @@ require('babel/register');
 var TodoBox = require('./views/index.jsx');
 ```
 
-Finally, add routes for `/bundle.js` and `/` by copying the code below.
-`/bundle.js` will contain `app.js` and dependencies (view template and react) transformed to ES5 and bundled for the browser.
-Requests to `/` will render the corresponding react view on the server and respond with HTML, including a script tag with `bundle.js` and data from the server for the react view.
+Finally, fix the routes for `/bundle.js` and `/` as shown below.
+When `/bundle.js` is requested, you want to respond with the browserified version of `app.js`, which is transformed to ES5 and will work on the front-end.
+When `/` is requested, you want to respond with a combination of `index.jsx` and the server-side data, and `bundle.js`. This renders the initial state of the application on the server, but allows React to run in the client to continue support state changes.
 
 ```
 app.use('/bundle.js', function (req, res) {
