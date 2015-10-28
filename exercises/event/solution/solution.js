@@ -15,7 +15,7 @@ app.set('view engine', 'jsx');
 app.set('views', __dirname + '/views');
 app.engine('jsx', require('express-react-views').createEngine());
 
-require('node-jsx').install();
+require('babel/register');
 var TodoBox = require('./views/index.jsx');
 
 var data = [

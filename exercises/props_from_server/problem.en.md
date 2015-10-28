@@ -6,7 +6,7 @@ This will require changing code on the server (`program.js`).
 # Challenge
 ---
 
-Modify `TodoBox` and `TodoList` in `index.jsx` like below. 
+Modify `TodoBox` and `TodoList` in `index.jsx` like below.
 
 Before you start, you may want to check your current `index.jsx` into source
 control, or create a new `index.jsx` for this exercise.
@@ -79,10 +79,10 @@ var app = express();
 
 app.set('port', (process.argv[2] || 3000));
 app.set('view engine', 'jsx');
-app.set('views', __dirname + '/views'); 
+app.set('views', __dirname + '/views');
 app.engine('jsx', require('express-react-views').createEngine());
 
-require('node-jsx').install();
+require('babel/register');
 
 // write below
 var data = [];

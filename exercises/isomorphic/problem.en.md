@@ -48,10 +48,10 @@ var script = DOM.script;
 var browserify = require('browserify');
 ```
 
-Next, add a line that reads `index.jsx` under the sentence that `require` s `node-jsx`.
+Next, add a line that reads `index.jsx` under the sentence that `require` s `babel/register`.
 
 ```
-require('node-jsx').install();
+require('babel/register');
 var TodoBox = require('./views/index.jsx');
 ```
 

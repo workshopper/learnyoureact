@@ -72,10 +72,10 @@ var app = express();
 
 app.set('port', (process.argv[2] || 3000));
 app.set('view engine', 'jsx');
-app.set('views', __dirname + '/views'); 
+app.set('views', __dirname + '/views');
 app.engine('jsx', require('express-react-views').createEngine());
 
-require('node-jsx').install();
+require('babel/register');
 
 // ↓に記述
 var data = [];
