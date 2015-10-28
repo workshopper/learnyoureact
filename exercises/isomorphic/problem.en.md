@@ -1,16 +1,16 @@
 Let's use React on the front-end too!
 
-From this exercise on, we'll use React not only on the server side but also on the front-end.
-Let's raise the event on the front-end, and see what will happen.
+From this excercise on, we'll use React not only on the server side but also on the front-end.
+In fact, we'll use the very same view files for rendering both the server-side initial response, and on the front-end for any DOM manipulation necessary. Sharing the code between the front end and the server is a concept known as Isomorphic JavaScript.
 
-In the past exercises, there was code that raised the front-end event, but did nothing. Do you know what it was?
+In past exercises, there was code that triggered an event in the front-end, but nothing happened. Do you know what it was?
 
 It was interactions with the `checkbox` you wrote in the `State` lesson.
 In the `State` lesson, to be honest, checking the `checkbox` doesn't actually update the state.
 
-In this excercise, let's make it run on the front-end too.
+In this excercise, let's make it update `this.state`, which will require running React on the front-end too.
 
-There is a lot of code to change ! Let's try it!
+There is a lot of code to change!
 
 # Question
 ---
@@ -36,7 +36,7 @@ The above code is to use React on the front-end. This code assumes that there wi
 
 Next, let's fix `program.js`. You can change your existing one, or make a new `program.js` file and write all the code there.
 
-First of all, let's add these `require` statements at the top:
+First of all, let's add some new variables at the top:
 
 ```
 var React = require('react');
