@@ -13,36 +13,34 @@
 작성하셔도 됩니다.
 
 ```
-var React = require('react');
+import React from 'react';
 
-var TodoBox = React.createClass({
+export default class TodoBox extends React.Component {
   // 생략
-});
+}
 
-var TodoList = React.createClass({
-  render: function() {
-    return (
-      <div className = "todoList">
-        <table style={{border: "2px solid black"}}>
-          <tbody>
-            <Todo title="Shopping">Milk</Todo>
-            <Todo title="Hair cut">13:00</Todo>
-          </tbody>
-        </table>
-      </div>
-    );
-  }
-});
+class TodoList extends React.Component {
+    render() {
+        return (
+            <div className="todoList">
+                <table style={{border: "2px solid black"}}>
+                    <tbody>
+                    <Todo title="Shopping">Milk</Todo>
+                    <Todo title="Hair cut">13:00</Todo>
+                    </tbody>
+                </table>
+            </div>
+        );
+    }
+}
 
-var Todo = React.createClass({
+class Todo extends React.Component {
   // 여기에 작성
-});
+}
 
-var TodoForm = React.createClass({
+class TodoForm extends React.Component {
   // 생략
-});
-
-module.exports = TodoBox;
+}
 ```
 
 위의 "여기에 작성"이라 적혀있는 곳에, 다음과 같은 HTML을 출력하도록 JSX를 넣어주세요.

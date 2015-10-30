@@ -14,36 +14,34 @@ Before you start, you may want to check your current `index.jsx` into source
 control, or create a new `index.jsx` for this exercise.
 
 ```
-var React = require('react');
+import React from 'react';
 
-var TodoBox = React.createClass({
+export default class TodoBox extends React.Component {
   // Omitted
-});
+}
 
-var TodoList = React.createClass({
-  render: function() {
-    return (
-      <div className = "todoList">
-        <table style={{border: "2px solid black"}}>
-          <tbody>
-            <Todo title="Shopping">Milk</Todo>
-            <Todo title="Hair cut">13:00</Todo>
-          </tbody>
-        </table>
-      </div>
-    );
-  }
-});
+class TodoList extends React.Component {
+    render() {
+        return (
+            <div className="todoList">
+                <table style={{border: "2px solid black"}}>
+                    <tbody>
+                    <Todo title="Shopping">Milk</Todo>
+                    <Todo title="Hair cut">13:00</Todo>
+                    </tbody>
+                </table>
+            </div>
+        );
+    }
+}
 
-var Todo = React.createClass({
+class Todo extends React.Component {
   // Write code here
-});
+}
 
-var TodoForm = React.createClass({
+class TodoForm extends React.Component {
   // Omitted
-});
-
-module.exports = TodoBox;
+}
 ```
 
 Now at each of the "Write code here" comments, write some JSX that results in
