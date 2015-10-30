@@ -13,31 +13,29 @@ control, or create a new `index.jsx` for this exercise.
 
 
 ```
-var React = require('react');
+import React from 'react';
 
-var TodoBox = React.createClass({
+export default class TodoBox extends React.Component {
   // Omitted
-});
+}
 
-var TodoList = React.createClass({
+class TodoList extends React.Component {
   // Omitted
-});
+}
 
-var Todo = React.createClass({
+class Todo extends React.Component {
   // Omitted
-});
+}
 
-var TodoForm = React.createClass({
+class TodoForm extends React.Component {
   // Omitted
-});
+}
 
-var style = {
-  tableContent: {
-    border: "1px solid black"
-  }
+let style = {
+    tableContent: {
+        border: "1px solid black"
+    }
 };
-
-module.exports = TodoBox;
 ```
 
 Now change the code to use the `style` variable you added.
