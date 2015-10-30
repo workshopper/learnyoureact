@@ -45,10 +45,10 @@ var script = DOM.script;
 var browserify = require('browserify');
 ```
 
-그런 다음 `node-jsx`를 `require`하고 있는 구문 밑에 다음과 같이 `index.jsx`를 불러 오도록 추가해 주세요.
+그런 다음 `babel/register`를 `require`하고 있는 구문 밑에 다음과 같이 `index.jsx`를 불러 오도록 추가해 주세요.
 
 ```
-require('node-jsx').install();
+require('babel/register');
 var TodoBox = require('./views/index.jsx');
 ```
 

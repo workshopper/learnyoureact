@@ -44,10 +44,10 @@ var script = DOM.script;
 var browserify = require('browserify');
 ```
 
-次に `node-jsx` を `require` している文の下に以下のように `index.jsx` を読み込む処理を1行追加してください。
+次に `babel/register` を `require` している文の下に以下のように `index.jsx` を読み込む処理を1行追加してください。
 
 ```
-require('node-jsx').install();
+require('babel/register');
 var TodoBox = require('./views/index.jsx');
 ```
 

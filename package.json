@@ -13,7 +13,6 @@
     "express-react-views": "~0.9.0",
     "hyperquest": "~1.2.0",
     "js-beautify": "^1.5.10",
-    "node-jsx": "~0.13.3",
     "react": "~0.14.0",
     "reactify": "~1.1.1",
     "react-dom": "~0.14.0",
