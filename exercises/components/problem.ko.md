@@ -8,9 +8,9 @@ HTML 태그를 작성할 때는 소문자로 시작하는 지역 변수를 작�
 React JSX는 지역 컴포넌트 클래스와 HTML 태그를 대문자와 소문자로 구별합니다.
 
 ```
-var MyComponent = React.createClass({/*...*/});
-var myElement = <MyComponent someProperty={true} />;
-React.render(myElement, document.getElementById('example'));
+export default class MyComponent extends React.Component {/*...*/};
+let myElement = <MyComponent someProperty={true} />;
+ReactDOM.render(myElement, document.getElementById('example'));
 ```
 
 # 문제
@@ -21,29 +21,27 @@ React.render(myElement, document.getElementById('example'));
 
 
 ```
-var React = require('react');
+import React from 'react';
 
-var TodoBox = React.createClass({
-  render: function() {
-    return (
-      <div className="todoBox">
-        <h1>Todos</h1>
-        <TodoList />
-        <TodoForm />
-      </div>
-    );
-  }
-});
+export default class TodoBox extends React.Component {
+    render() {
+        return (
+            <div className="todoBox">
+                <h1>Todos</h1>
+                <TodoList />
+                <TodoForm />
+            </div>
+        );
+    }
+}
 
-var TodoList = React.createClass({
+class TodoList extends React.Component {
   // 여기에 작성
-});
+}
 
-var TodoForm = React.createClass({
+class TodoForm extends React.Component {
   // 여기에 작성
-});
-
-module.exports = TodoBox;
+}
 ```
 
 위의 "여기에 작성"이라 적혀있는 두 곳에, 다음과 같은 HTML을 각각 출력하는 JSX를

@@ -1,35 +1,33 @@
-var React = require('react');
+import React from 'react';
 
-var TodoBox = React.createClass({
-  render: function() {
-      return (
-        <div className="todoBox">
-          <h1>Todos</h1>
-	  <TodoList />
-	  <TodoForm />
-        </div>
-      );
-  }
-});
+export default class TodoBox extends React.Component {
+    render() {
+        return (
+            <div className="todoBox">
+                <h1>Todos</h1>
+                <TodoList />
+                <TodoForm />
+            </div>
+        );
+    }
+}
 
-var TodoList = React.createClass({
-  render: function() {
-    return (
-      <div className = "todoList">
-        I am a TodoList.
-      </div>
-    );
-  }
-});
+class TodoList extends React.Component {
+    render() {
+        return (
+            <div className="todoList">
+                I am a TodoList.
+            </div>
+        );
+    }
+}
 
-var TodoForm = React.createClass({
-  render: function() {
-    return (
-      <div className = "todoForm">
-        I am a TodoForm.
-      </div>
-    );
-  }
-});
-
-module.exports = TodoBox;
+class TodoForm extends React.Component {
+    render() {
+        return (
+            <div className="todoForm">
+                I am a TodoForm.
+            </div>
+        );
+    }
+}

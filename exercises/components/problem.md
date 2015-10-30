@@ -10,9 +10,9 @@ ReactのJSXではローカルのコンポーネントのクラスとHTMLのタ�
 例:
 
 ```
-var MyComponent = React.createClass({/*...*/});
-var myElement = <MyComponent someProperty={true} />;
-React.render(myElement, document.getElementById('example'));
+export default class MyComponent extends React.Component {/*...*/};
+let myElement = <MyComponent someProperty={true} />;
+ReactDOM.render(myElement, document.getElementById('example'));
 ```
 
 # 問題
@@ -23,29 +23,27 @@ React.render(myElement, document.getElementById('example'));
 
 
 ```
-var React = require('react');
+import React from 'react';
 
-var TodoBox = React.createClass({
-  render: function() {
-    return (
-      <div className="todoBox">
-        <h1>Todos</h1>
-        <TodoList />
-        <TodoForm />
-      </div>
-    );
-  }
-});
+export default class TodoBox extends React.Component {
+    render() {
+        return (
+            <div className="todoBox">
+                <h1>Todos</h1>
+                <TodoList />
+                <TodoForm />
+            </div>
+        );
+    }
+}
 
-var TodoList = React.createClass({
+class TodoList extends React.Component {
   // ここに記述
-});
+}
 
-var TodoForm = React.createClass({
+class TodoForm extends React.Component {
   // ここに記述
-});
-
-module.exports = TodoBox;
+}
 ```
 
 上記の「ここに記述」と書いてある2箇所に、以下のようなHTMLをそれぞれ出力するようにJSXシンタックスを記述してください。
