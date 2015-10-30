@@ -7,14 +7,14 @@
 제약은 `propTypes`을 지정해 할 수 있습니다. 개발 모드에서 `React.PropTypes`는 재대로된 데이터를 받았는지 확인하는 벨리데이터를 범위를 명시합니다.
 
 ```
-React.createClass({
+class MyComponent extends React.Component {
   propTypes: {
     name:   React.PropTypes.string.isRequired,
     id:     React.PropTypes.number.isRequired,
     width:  React.PropTypes.number.isRequired,
     height: React.PropTypes.number.isRequired,
     alt:    React.PropTypes.string
-  },
+  }
   /* ... */
 ```
 
@@ -31,38 +31,34 @@ React.createClass({
 
 
 ```
-var React = require('react');
+import React from 'react';
 
-var TodoBox = React.createClass({
+export default class TodoBox extends React.Component {
   // 생략
-});
+}
 
-var TodoList = React.createClass({
+class TodoList extends React.Component {
   // 생략
-});
+}
 
-var Todo = React.createClass({
-  propTypes: {
-    title: React.PropTypes.number.isRequired
-  },
-  render: function() {
-    return (
-      <tr>
-        <td style={{border: "1px solid black"}}>{this.props.title}</td>
-        <td style={{border: "1px solid black"}}>{this.props.children}</td>
-      </tr>
-    );
-  }
-});
+class Todo extends React.Component {
+    propTypes:{
+        title: React.PropTypes.string.isRequired
+    }
 
+    render() {
+        return (
+            <tr>
+                <td style={{border: "1px solid black"}}>{this.props.title}</td>
+                <td style={{border: "1px solid black"}}>{this.props.children}</td>
+            </tr>
+        );
+    }
+}
 
-
-
-var TodoForm = React.createClass({
+class TodoForm extends React.Component {
   // 생략
-});
-
-module.exports = TodoBox;
+}
 ```
 
 `index.jsx`를 수정한 다음, `learnyoureact run program.js`를 실행해 주세요.
