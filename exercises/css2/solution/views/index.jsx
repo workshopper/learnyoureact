@@ -32,7 +32,10 @@ class TodoList extends React.Component {
 class Todo extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {checked: false};
+        this.state = {
+            checked: false,
+            TodoStyle: style.notCheckedTodo
+        };
         this.handleChange = this.handleChange.bind(this);
     }
 
