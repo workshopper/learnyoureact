@@ -9,21 +9,17 @@ parent component.
 Update `Todo` in `index.jsx` as shown below.
 
 ``` 
-var Todo = React.createClass({ 
-  propTypes: { 
-    title: React.PropTypes.string.isRequired, 
-    onDelete: React.PropTypes.func.isRequired 
-  }, 
-  getInitialState: function () { 
+class Todo extends React.Component {
+  constructor(props) {
+    // Omitted
+  }
+  handleChange(e) {
     // Omitted 
   }, 
-  handleChange: function (e) { 
-    // Omitted 
-  }, 
-  _onDelete: function () { 
+  _onDelete() {
     this.props.onDelete(this.props.title); 
   }, 
-  render: function () { 
+  render() {
     return ( 
       <tr style={this.state.TodoStyle}> 
         <td style={style.tableContent}><button onClick={this._onDelete}>X</button></td> 
@@ -33,7 +29,7 @@ var Todo = React.createClass({
       </tr> 
     ); 
   } 
-}); 
+}
 ```
 
 This adds a delete button to every `Todo`. 

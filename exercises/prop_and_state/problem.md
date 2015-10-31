@@ -11,21 +11,17 @@ Todoを削除するボタンを作成しましょう。
 新しくファイルを作成しても構いません。
 
 ```
-var Todo = React.createClass({
-  propTypes: {
-    title: React.PropTypes.string.isRequired,
-    onDelete: React.PropTypes.func.isRequired
-  },
-  getInitialState: function () {
+class Todo extends React.Component {
+  constructor(props) {
+    // 省略
+  }
+  handleChange(e) {
     // 省略
   },
-  handleChange: function (e) {
-    // 省略
-  },
-  _onDelete: function () {
+  _onDelete() {
     this.props.onDelete(this.props.title);
   },
-  render: function () {
+  render() {
     return (
       <tr style={this.state.TodoStyle}>
         <td style={style.tableContent}><button onClick={this._onDelete}>X</button></td>
@@ -35,7 +31,7 @@ var Todo = React.createClass({
       </tr>
     );
   }
-});
+}
 ```
 
 これで、個々の `Todo` に削除ボタンができました。

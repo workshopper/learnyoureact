@@ -9,21 +9,17 @@ Todo가 너무 많네요! 이제 오래된 Todo를 지울 수 있도록 해봅�
 새로운 파일을 작성하셔도 됩니다.
 
 ```
-var Todo = React.createClass({
-  propTypes: {
-    title: React.PropTypes.string.isRequired,
-    onDelete: React.PropTypes.func.isRequired
-  },
-  getInitialState: function () {
+class Todo extends React.Component {
+  constructor(props) {
+    // 생략
+  }
+  handleChange(e) {
     // 생략
   },
-  handleChange: function (e) {
-    // 생략
-  },
-  _onDelete: function () {
+  _onDelete() {
     this.props.onDelete(this.props.title);
   },
-  render: function () {
+  render() {
     return (
       <tr style={this.state.TodoStyle}>
         <td style={style.tableContent}><button onClick={this._onDelete}>X</button></td>
@@ -33,7 +29,7 @@ var Todo = React.createClass({
       </tr>
     );
   }
-});
+}
 ```
 
 이것으로 모든 `Todo`에 삭제 버튼이 만들어졌습니다.
