@@ -8,14 +8,15 @@ of validators that can be used to make sure the passed-in data is valid.
 
 ```
 class MyComponent extends React.Component {
-  propTypes: {
+  /* ... */
+}
+MyComponent.propTypes = {
     name:   React.PropTypes.string.isRequired,
     id:     React.PropTypes.number.isRequired,
     width:  React.PropTypes.number.isRequired,
     height: React.PropTypes.number.isRequired,
     alt:    React.PropTypes.string
-  }
-  /* ... */
+};
 ```
 
 In development mode, when an invalid value is provided for a prop, a warning
@@ -43,10 +44,6 @@ class TodoList extends React.Component {
 }
 
 class Todo extends React.Component {
-    propTypes:{
-        title: React.PropTypes.string.isRequired
-    }
-
     render() {
         return (
             <tr>
@@ -56,6 +53,9 @@ class Todo extends React.Component {
         );
     }
 }
+Todo.propTypes = {
+    title: React.PropTypes.string.isRequired
+};
 
 class TodoForm extends React.Component {
   // Omitted

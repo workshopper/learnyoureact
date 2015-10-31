@@ -8,14 +8,15 @@
 
 ```
 class MyComponent extends React.Component {
-  propTypes: {
+  /* ... */
+}
+MyComponent.propTypes = {
     name:   React.PropTypes.string.isRequired,
     id:     React.PropTypes.number.isRequired,
     width:  React.PropTypes.number.isRequired,
     height: React.PropTypes.number.isRequired,
     alt:    React.PropTypes.string
-  }
-  /* ... */
+};
 ```
 
 개발 모드에서 props에 잘못된 값이 들어온 경우에는 브라우저의 JavaScript 콘솔에 경고가 출력됩니다.
@@ -42,10 +43,6 @@ class TodoList extends React.Component {
 }
 
 class Todo extends React.Component {
-    propTypes:{
-        title: React.PropTypes.string.isRequired
-    }
-
     render() {
         return (
             <tr>
@@ -55,6 +52,9 @@ class Todo extends React.Component {
         );
     }
 }
+Todo.propTypes = {
+    title: React.PropTypes.string.isRequired
+};
 
 class TodoForm extends React.Component {
   // 생략

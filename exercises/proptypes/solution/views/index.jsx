@@ -28,10 +28,6 @@ class TodoList extends React.Component {
 }
 
 class Todo extends React.Component {
-    propTypes:{
-        title: React.PropTypes.string.isRequired
-    }
-
     render() {
         return (
             <tr>
@@ -41,6 +37,9 @@ class Todo extends React.Component {
         );
     }
 }
+Todo.propTypes = {
+    title: React.PropTypes.string.isRequired
+};
 
 class TodoForm extends React.Component {
     render() {

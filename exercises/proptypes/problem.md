@@ -6,14 +6,15 @@ componentが渡された値を正しく利用していることを保証する�
 
 ```
 class MyComponent extends React.Component {
-  propTypes: {
+  /* ... */
+}
+MyComponent.propTypes = {
     name:   React.PropTypes.string.isRequired,
     id:     React.PropTypes.number.isRequired,
     width:  React.PropTypes.number.isRequired,
     height: React.PropTypes.number.isRequired,
     alt:    React.PropTypes.string
-  }
-  /* ... */
+};
 ```
 
 というように記述することで、渡されてきたpropsに制約を指定することができます。
@@ -39,10 +40,6 @@ class TodoList extends React.Component {
 }
 
 class Todo extends React.Component {
-    propTypes:{
-        title: React.PropTypes.string.isRequired
-    }
-
     render() {
         return (
             <tr>
@@ -52,6 +49,9 @@ class Todo extends React.Component {
         );
     }
 }
+Todo.propTypes = {
+    title: React.PropTypes.string.isRequired
+};
 
 class TodoForm extends React.Component {
   // 省略

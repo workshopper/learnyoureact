@@ -33,10 +33,6 @@ class Todo extends React.Component {
         this.state = {checked: false};
     }
 
-    propTypes:{
-        title: React.PropTypes.string.isRequired
-    }
-
     handleChange(e) {
         this.setState({checked: e.target.checked});
     }
@@ -53,6 +49,9 @@ class Todo extends React.Component {
         );
     }
 }
+Todo.propTypes = {
+    title: React.PropTypes.string.isRequired
+};
 
 class TodoForm extends React.Component {
     render() {

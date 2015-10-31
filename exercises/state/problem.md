@@ -29,9 +29,6 @@ class Todo extends React.Component {
         super(props);
         this.state = {checked: false};
     }
-    propTypes:{
-        title: React.PropTypes.string.isRequired
-    }
 
     handleChange(e) {
         this.setState({checked: e.target.checked});
@@ -49,10 +46,13 @@ class Todo extends React.Component {
         );
     }
 }
+Todo.propTypes = {
+    title: React.PropTypes.string.isRequired
+};
 
 class TodoForm extends React.Component {
   // 省略
-}s
+}
 ```
 
 `Todo` の中に、 `checked` の初期値を指定する箇所と、チェックされた際やチェックが外された際の動作を記述してください。

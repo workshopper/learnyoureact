@@ -27,6 +27,9 @@ class TodoList extends React.Component {
 class Todo extends React.Component {
   // 생략
 }
+Todo.propTypes = {
+  // 생략
+};
 
 class TodoForm extends React.Component {
   // 생략

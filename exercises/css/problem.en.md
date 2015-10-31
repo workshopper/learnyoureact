@@ -26,6 +26,9 @@ class TodoList extends React.Component {
 class Todo extends React.Component {
   // Omitted
 }
+Todo.propTypes = {
+  // Omitted
+};
 
 class TodoForm extends React.Component {
   // Omitted
