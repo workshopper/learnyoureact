@@ -9,16 +9,16 @@
 新しくファイルを作成しても構いません。
 
 ```
-var style = {
-  checkedTodo: {
-    textDecoration: "line-through"
-  },
-  notCheckedTodo: {
-    textDecoration: "none"
-  },
-  tableContent: {
-    border: "1px solid black"
-  }
+let style = {
+    checkedTodo: {
+        textDecoration: "line-through"
+    },
+    notCheckedTodo: {
+        textDecoration: "none"
+    },
+    tableContent: {
+        border: "1px solid black"
+    }
 };
 ```
 
