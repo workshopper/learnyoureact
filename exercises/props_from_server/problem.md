@@ -16,10 +16,10 @@ jsxにベタ書きしていたデータをサーバーから渡すよう変更�
 
 
 ```
-var React = require('react');
+import React from 'react';
 
-var TodoBox = React.createClass({
-  render: function() {
+export default class TodoBox extends React.Component {
+    render() {
     return (
       <div className="todoBox">
         <h1>Todos</h1>
@@ -28,10 +28,10 @@ var TodoBox = React.createClass({
       </div>
     );
   }
-});
+}
 
-var TodoList = React.createClass({
-  render: function() {
+class TodoList extends React.Component {
+    render() {
     var todo = this.props.data.map(function(obj) { return <Todo title={obj.title} key={obj.title}>{obj.detail}</Todo>});
     return (
       <div className = "todoList">
@@ -43,21 +43,22 @@ var TodoList = React.createClass({
       </div>
     );
   }
-});
+}
 
-var Todo = React.createClass({
+class Todo extends React.Component {
   // 省略
-});
-
-var TodoForm = React.createClass({
-  // 省略
-});
-
-var style = {
+}
+Todo.propTypes = {
   // 省略
 };
 
-module.exports = TodoBox;
+class TodoForm extends React.Component {
+  // 省略
+}
+
+let style = {
+  // 省略
+};
 ```
 
 次に、サーバー側のコードを変更しましょう。
@@ -73,7 +74,7 @@ var app = express();
 app.set('port', (process.argv[2] || 3000));
 app.set('view engine', 'jsx');
 app.set('views', __dirname + '/views');
-app.engine('jsx', require('express-react-views').createEngine());
+app.engine('jsx', require('express-react-views').createEngine({ transformViews: false }));
 
 require('babel/register');
 

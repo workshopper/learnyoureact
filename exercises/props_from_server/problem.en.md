@@ -25,10 +25,10 @@ print a `Warning` in the console.
 
 
 ```
-var React = require('react');
+import React from 'react';
 
-var TodoBox = React.createClass({
-  render: function() {
+export default class TodoBox extends React.Component {
+    render() {
     return (
       <div className="todoBox">
         <h1>Todos</h1>
@@ -37,10 +37,10 @@ var TodoBox = React.createClass({
       </div>
     );
   }
-});
+}
 
-var TodoList = React.createClass({
-  render: function() {
+class TodoList extends React.Component {
+    render() {
     var todo = this.props.data.map(function(obj) { return <Todo title={obj.title} key={obj.title}>{obj.detail}</Todo>});
     return (
       <div className = "todoList">
@@ -52,21 +52,22 @@ var TodoList = React.createClass({
       </div>
     );
   }
-});
+}
 
-var Todo = React.createClass({
+class Todo extends React.Component {
   // Omitted
-});
-
-var TodoForm = React.createClass({
-  // Omitted
-});
-
-var style = {
+}
+Todo.propTypes = {
   // Omitted
 };
 
-module.exports = TodoBox;
+class TodoForm extends React.Component {
+  // Omitted
+}
+
+let style = {
+  // Omitted
+};
 ```
 
 Next, we'll change the code on our server, `program.js`. Specifically, we'll change the
@@ -80,7 +81,7 @@ var app = express();
 app.set('port', (process.argv[2] || 3000));
 app.set('view engine', 'jsx');
 app.set('views', __dirname + '/views');
-app.engine('jsx', require('express-react-views').createEngine());
+app.engine('jsx', require('express-react-views').createEngine({ transformViews: false }));
 
 require('babel/register');
 
