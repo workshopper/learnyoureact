@@ -7,7 +7,7 @@ You can change `learnyoureact` to any name you like.
 
 Start by installing the required modules. Run this command:
 
-`$ npm install react react-dom express body-parser express-react-views babel`
+`$ npm install react react-dom express body-parser express-react-views babel@5.8.23`
 
 You can see `node_modules` directory maked.
 Files of module is in the directory.
@@ -30,7 +30,7 @@ var app = express();
 app.set('port', (process.argv[2] || 3000));
 app.set('view engine', 'jsx');
 app.set('views', __dirname + '/views');
-app.engine('jsx', require('express-react-views').createEngine());
+app.engine('jsx', require('express-react-views').createEngine({ transformViews: false }));
 
 require('babel/register');
 

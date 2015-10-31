@@ -10,7 +10,7 @@ $ mkdir learnyoureact
 
 필요한 모듈을 설치하려면 밑의 명령을 실행해 보세요.
 
-`$ npm install react react-dom express body-parser express-react-views babel`
+`$ npm install react react-dom express body-parser express-react-views babel@5.8.23`
 
 이제 `node_modules` 디렉터리가 만들어진 것을 볼 수 있습니다.
 
@@ -31,7 +31,7 @@ var app = express();
 app.set('port', (process.argv[2] || 3000));
 app.set('view engine', 'jsx');
 app.set('views', __dirname + '/views');
-app.engine('jsx', require('express-react-views').createEngine());
+app.engine('jsx', require('express-react-views').createEngine({ transformViews: false }));
 
 require('babel/register');
 
