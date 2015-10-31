@@ -14,31 +14,32 @@
 
 
 ```
-var React = require('react');
+import React from 'react';
 
-var TodoBox = React.createClass({
+export default class TodoBox extends React.Component {
   // 생략
-});
+}
 
-var TodoList = React.createClass({
+class TodoList extends React.Component {
   // 생략
-});
+}
 
-var Todo = React.createClass({
+class Todo extends React.Component {
   // 생략
-});
-
-var TodoForm = React.createClass({
+}
+Todo.propTypes = {
   // 생략
-});
-
-var style = {
-  tableContent: {
-    border: "1px solid black"
-  }
 };
 
-module.exports = TodoBox;
+class TodoForm extends React.Component {
+  // 생략
+}
+
+let style = {
+    tableContent: {
+        border: "1px solid black"
+    }
+};
 ```
 
 추가한 `style`을 사용하도록 코드를 변경하세요.

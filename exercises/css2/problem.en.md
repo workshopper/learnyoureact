@@ -8,18 +8,18 @@ Update `style` in `index.jsx` as shown below.
 Before you start, you may want to check your current `index.jsx` into source
 control, or create a new `index.jsx` for this exercise.
 
-``` 
-var style = { 
-  checkedTodo: { 
-    textDecoration: "line-through" 
-  }, 
-  notCheckedTodo: { 
-    textDecoration: "none" 
-  }, 
-  tableContent: { 
-    border: "1px solid black" 
-  } 
-}; 
+```
+let style = {
+    checkedTodo: {
+        textDecoration: "line-through"
+    },
+    notCheckedTodo: {
+        textDecoration: "none"
+    },
+    tableContent: {
+        border: "1px solid black"
+    }
+};
 ```
 
 Now modify `Todo` to add line-through to `tr` if the checkbox is checked. And

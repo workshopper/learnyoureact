@@ -1,15 +1,9 @@
-var React = require('react');
+import React from 'react';
 
-var TodoBox = React.createClass({
-  render: function() {
-    return (
-      <div className="todoBox">
+export default class TodoBox extends React.Component{
+  render() {
+    return <div className="todoBox">
         Hello, world!
       </div>
-    );
   }
-});
-
-module.exports = TodoBox;
-
-
+}

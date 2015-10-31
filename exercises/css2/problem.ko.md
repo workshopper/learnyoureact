@@ -9,16 +9,16 @@
 작성하셔도 됩니다.
 
 ```
-var style = {
-  checkedTodo: {
-    textDecoration: "line-through"
-  },
-  notCheckedTodo: {
-    textDecoration: "none"
-  },
-  tableContent: {
-    border: "1px solid black"
-  }
+let style = {
+    checkedTodo: {
+        textDecoration: "line-through"
+    },
+    notCheckedTodo: {
+        textDecoration: "none"
+    },
+    tableContent: {
+        border: "1px solid black"
+    }
 };
 ```
 

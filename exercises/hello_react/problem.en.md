@@ -7,7 +7,7 @@ You can change `learnyoureact` to any name you like.
 
 Start by installing the required modules. Run this command:
 
-    $ npm install react react-dom express body-parser express-react-views
+`$ npm install react react-dom express body-parser express-react-views babel@5.8.23`
 
 You can see `node_modules` directory maked.
 Files of module is in the directory.
@@ -30,7 +30,7 @@ var app = express();
 app.set('port', (process.argv[2] || 3000));
 app.set('view engine', 'jsx');
 app.set('views', __dirname + '/views');
-app.engine('jsx', require('express-react-views').createEngine());
+app.engine('jsx', require('express-react-views').createEngine({ transformViews: false }));
 
 require('babel/register');
 
@@ -50,19 +50,15 @@ After that, create `index.jsx` in the 'views' directory.
 Please copy the code below into `index.jsx`
 
 ```
-var React = require('react');
+import React from 'react';
 
-var TodoBox = React.createClass({
-  render: function() {
-    return (
-      <div className="todoBox">
+export default class TodoBox extends React.Component{
+  render() {
+    return <div className="todoBox">
         Hello, world!
       </div>
-    );
   }
-});
-
-module.exports = TodoBox;
+}
 ```
 
 This code uses the optional React.js JSX syntax to create our views, which we

@@ -11,31 +11,32 @@
 
 
 ```
-var React = require('react');
+import React from 'react';
 
-var TodoBox = React.createClass({
+export default class TodoBox extends React.Component {
   // 省略
-});
+}
 
-var TodoList = React.createClass({
+class TodoList extends React.Component {
   // 省略
-});
+}
 
-var Todo = React.createClass({
+class Todo extends React.Component {
   // 省略
-});
-
-var TodoForm = React.createClass({
+}
+Todo.propTypes = {
   // 省略
-});
-
-var style = {
-  tableContent: {
-    border: "1px solid black"
-  }
 };
 
-module.exports = TodoBox;
+class TodoForm extends React.Component {
+  // 省略
+}
+
+let style = {
+    tableContent: {
+        border: "1px solid black"
+    }
+};
 ```
 
 同じスタイルを複数の箇所に指定している部分を、追加した `style` を使用するように変更してください。

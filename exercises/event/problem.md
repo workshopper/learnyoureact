@@ -9,43 +9,51 @@
 新しくファイルを作成しても構いません。
 
 ```
-var TodoList = React.createClass({
-  getInitialState: function() {
-    return {
-      data: this.props.data,
-      titleValue: "",
-      detailValue: ""
-    };
-  },
-  changeTitle: function(e) {
-    // ここに実装
-  },
-  changeDetail: function(e) {
-    // ここに実装
-  },
-  addTodo: function() {
-    // ここに実装
-  },
-  render: function() {
-    var todo = this.state.data.map(function(obj) {
-      return <Todo title={obj.title} key={obj.title}>{obj.detail}</Todo>;
-    });
-    return (
-      <div className = "todoList">
-        <div>
-          Title:<input type="text" value={this.state.titleValue} onChange={this.changeTitle} />
-          Detail:<input type="text" value={this.state.detailValue} onChange={this.changeDetail} />
-          <button onClick={this.addTodo}>Add</button>
+class TodoList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: this.props.data,
+            titleValue: "",
+            detailValue: ""
+        };
+        this.changeTitle = this.changeTitle.bind(this);
+        this.changeDetail = this.changeDetail.bind(this);
+        this.addTodo = this.addTodo.bind(this);
+    }
+
+    changeTitle(e) {
+      // ここに実装
+    }
+
+    changeDetail(e) {
+      // ここに実装
+    }
+
+    addTodo() {
+      // ここに実装
+    }
+
+    render() {
+      let todo = this.state.data.map(function(obj) {
+        return <Todo title={obj.title} key={obj.title}>{obj.detail}</Todo>;
+      });
+      return (
+        <div className = "todoList">
+          <div>
+            Title:<input type="text" value={this.state.titleValue} onChange={this.changeTitle} />
+            Detail:<input type="text" value={this.state.detailValue} onChange={this.changeDetail} />
+            <button onClick={this.addTodo}>Add</button>
+          </div>
+          <table style={{border: "2px solid black"}}>
+            <tbody>
+              {todo}
+            </tbody>
+          </table>
         </div>
-        <table style={{border: "2px solid black"}}>
-          <tbody>
-            {todo}
-          </tbody>
-        </table>
-      </div>
-    );
+      );
   }
-});
+}
 ```
 
 `// ここに実装` と記述してある3箇所に、入力欄に入力した `Todo` を `table` に追加するような処理を実装してください。

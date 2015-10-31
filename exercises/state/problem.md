@@ -14,38 +14,45 @@
 
 
 ```
-var React = require('react');
+import React from 'react';
 
-var TodoBox = React.createClass({
+export default class TodoBox extends React.Component {
   // 省略
-});
+}
 
-var TodoList = React.createClass({
+class TodoList extends React.Component {
   // 省略
-});
+}
 
-var Todo = React.createClass({
-  propTypes: {
-    title: React.PropTypes.string.isRequired     
-  },
-  render: function() {
-    return (
-      <tr>
-        <td style={{border: "1px solid black"}}><input type="checkbox" checked={this.state.checked} onChange={this.handleChange} /></td>
-        <td style={{border: "1px solid black"}}>{this.props.title}</td>
-        <td style={{border: "1px solid black"}}>{this.props.children}</td>
-      </tr>
-    );
-  }
-});
+class Todo extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {checked: false};
+    }
 
+    handleChange(e) {
+        this.setState({checked: e.target.checked});
+    }
 
+    render() {
+        return (
+            <tr>
+                <td style={{border: "1px solid black"}}>
+                    <input type="checkbox" checked={this.state.checked} onChange={this.handleChange}/>
+                </td>
+                <td style={{border: "1px solid black"}}>{this.props.title}</td>
+                <td style={{border: "1px solid black"}}>{this.props.children}</td>
+            </tr>
+        );
+    }
+}
+Todo.propTypes = {
+    title: React.PropTypes.string.isRequired
+};
 
-var TodoForm = React.createClass({
+class TodoForm extends React.Component {
   // 省略
-});
-
-module.exports = TodoBox;
+}
 ```
 
 `Todo` の中に、 `checked` の初期値を指定する箇所と、チェックされた際やチェックが外された際の動作を記述してください。

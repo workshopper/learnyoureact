@@ -10,9 +10,9 @@ React's JSX uses the upper vs. lower case convention to distinguish between
 local component classes and HTML tags.
 
 ```
-var MyComponent = React.createClass({/*...*/});
-var myElement = <MyComponent someProperty={true} />;
-React.render(myElement, document.getElementById('example'));
+export default class MyComponent extends React.Component {/*...*/};
+let myElement = <MyComponent someProperty={true} />;
+ReactDOM.render(myElement, document.getElementById('example'));
 ```
 
 # Challenge
@@ -21,29 +21,27 @@ React.render(myElement, document.getElementById('example'));
 Update `index.jsx` as shown below.
 
 ```
-var React = require('react');
+import React from 'react';
 
-var TodoBox = React.createClass({
-  render: function() {
-    return (
-      <div className="todoBox">
-        <h1>Todos</h1>
-        <TodoList />
-        <TodoForm />
-      </div>
-    );
-  }
-});
+export default class TodoBox extends React.Component {
+    render() {
+        return (
+            <div className="todoBox">
+                <h1>Todos</h1>
+                <TodoList />
+                <TodoForm />
+            </div>
+        );
+    }
+}
 
-var TodoList = React.createClass({
+class TodoList extends React.Component {
   // Write code here
-});
+}
 
-var TodoForm = React.createClass({
+class TodoForm extends React.Component {
   // Write code here
-});
-
-module.exports = TodoBox;
+}
 ```
 
 Implement the missing code above using JSX notation to output the HTML below.

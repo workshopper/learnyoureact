@@ -7,15 +7,16 @@ You can do this by specifying `propTypes`. `React.PropTypes` contains a range
 of validators that can be used to make sure the passed-in data is valid.
 
 ```
-React.createClass({
-  propTypes: {
+class MyComponent extends React.Component {
+  /* ... */
+}
+MyComponent.propTypes = {
     name:   React.PropTypes.string.isRequired,
     id:     React.PropTypes.number.isRequired,
     width:  React.PropTypes.number.isRequired,
     height: React.PropTypes.number.isRequired,
     alt:    React.PropTypes.string
-  },
-  /* ... */
+};
 ```
 
 In development mode, when an invalid value is provided for a prop, a warning
@@ -32,35 +33,33 @@ control, or create a new `index.jsx` for this exercise.
 
 
 ```
-var React = require('react');
+import React from 'react';
 
-var TodoBox = React.createClass({
+export default class TodoBox extends React.Component {
   // Omitted
-});
+}
 
-var TodoList = React.createClass({
+class TodoList extends React.Component {
   // Omitted
-});
+}
 
-var Todo = React.createClass({
-  propTypes: {
-    title: React.PropTypes.number.isRequired
-  },
-  render: function() {
-    return (
-      <tr>
-        <td style={{border: "1px solid black"}}>{this.props.title}</td>
-        <td style={{border: "1px solid black"}}>{this.props.children}</td>
-      </tr>
-    );
-  }
-});
+class Todo extends React.Component {
+    render() {
+        return (
+            <tr>
+                <td style={{border: "1px solid black"}}>{this.props.title}</td>
+                <td style={{border: "1px solid black"}}>{this.props.children}</td>
+            </tr>
+        );
+    }
+}
+Todo.propTypes = {
+    title: React.PropTypes.string.isRequired
+};
 
-var TodoForm = React.createClass({
+class TodoForm extends React.Component {
   // Omitted
-});
-
-module.exports = TodoBox;
+}
 ```
 
 After editing the `index.jsx` file, run your code with `learnyoureact run program.js`.

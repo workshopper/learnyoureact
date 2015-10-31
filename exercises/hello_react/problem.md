@@ -8,7 +8,7 @@
 それができたら、そのフォルダの中にモジュールをインストールしましょう。
 以下のコマンドを実行してください。
 
-`$ npm install react react-dom express body-parser express-react-views`
+`$ npm install react react-dom express body-parser express-react-views babel@5.8.23`
 
 `node_modules` というフォルダが作成されたかと思います。その中にモジュールのフォルダがあります。
 
@@ -30,7 +30,7 @@ var app = express();
 app.set('port', (process.argv[2] || 3000));
 app.set('view engine', 'jsx');
 app.set('views', __dirname + '/views');
-app.engine('jsx', require('express-react-views').createEngine());
+app.engine('jsx', require('express-react-views').createEngine({ transformViews: false }));
 
 require('babel/register');
 
@@ -47,19 +47,15 @@ app.listen(app.get('port'), function() {});
 `index.jsx` には以下のように記述してください。
 
 ```
-var React = require('react');
+import React from 'react';
 
-var TodoBox = React.createClass({
-  render: function() {
-    return (
-      <div className="todoBox">
+export default class TodoBox extends React.Component{
+  render() {
+    return <div className="todoBox">
         Hello, world!
       </div>
-    );
   }
-});
-
-module.exports = TodoBox;
+}
 ```
 
 以上の、JavaScriptの中にXMLを記述しているようなソースがReactのJSXと呼ばれる記法です。

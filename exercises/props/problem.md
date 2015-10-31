@@ -15,36 +15,34 @@
 
 
 ```
-var React = require('react');
+import React from 'react';
 
-var TodoBox = React.createClass({
+export default class TodoBox extends React.Component {
   // 省略
-});
+}
 
-var TodoList = React.createClass({
-  render: function() {
-    return (
-      <div className = "todoList">
-        <table style={{border: "2px solid black"}}>
-          <tbody>
-            <Todo title="Shopping">Milk</Todo>
-            <Todo title="Hair cut">13:00</Todo>
-          </tbody>
-        </table>
-      </div>
-    );
-  }
-});
+class TodoList extends React.Component {
+    render() {
+        return (
+            <div className="todoList">
+                <table style={{border: "2px solid black"}}>
+                    <tbody>
+                    <Todo title="Shopping">Milk</Todo>
+                    <Todo title="Hair cut">13:00</Todo>
+                    </tbody>
+                </table>
+            </div>
+        );
+    }
+}
 
-var Todo = React.createClass({
+class Todo extends React.Component {
   // ここに記述
-});
+}
 
-var TodoForm = React.createClass({
+class TodoForm extends React.Component {
   // 省略
-});
-
-module.exports = TodoBox;
+}
 ```
 
 上記の「ここに記述」と書いてある箇所に、以下のようなHTMLを出力するようにJSXを記述してください。

@@ -13,19 +13,20 @@
 まずはモジュールをインストールしましょう。
 
 ```
-$ npm install browserify reactify
+$ npm install browserify babelify babel-preset-react babel-preset-es2015
 ```
 
 次に `program.js` と同じディレクトリに `app.js` を作成してください。 `app.js` には以下のように記述してください。
 
 ```
-var React = require('react');
-var ReactDOM = require('react-dom');
-var TodoBox = require('./views/index.jsx');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import TodoBox from './views/index.jsx';
 
-var data = JSON.parse(document.getElementById('initial-data').getAttribute('data-json'));
+let data = JSON.parse(document.getElementById('initial-data').getAttribute('data-json'));
 ReactDOM.render(<TodoBox data={data} />, document.getElementById("app"));
 ```
+
 これが、フロントエンド側でReactを使用するためのコードです。 `app` というIDを持つ要素に、  `index.jsx` から読み込んだ `TodoBox` と、 `initial-data` というIDで渡される、サーバーからのデータを渡しています。
 
 次に `program.js` を修正しましょう。
@@ -42,6 +43,7 @@ var div = DOM.div;
 var script = DOM.script;
 
 var browserify = require('browserify');
+var babelify = require("babelify");
 ```
 
 次に `babel/register` を `require` している文の下に以下のように `index.jsx` を読み込む処理を1行追加してください。
@@ -57,30 +59,35 @@ var TodoBox = require('./views/index.jsx');
 `/` にアクセスが来た際には、 `index.jsx` を読み込んだものと、サーバーから渡すデータ、そして `bundle.js` をHTMLの形にして、レスポンスを返します。
 
 ```
-app.use('/bundle.js', function(req, res) {
-  res.setHeader('content-type', 'application/javascript');
-  browserify('./app.js')
-    .transform('reactify')
-    .bundle()
-    .pipe(res);
+app.use('/bundle.js', function (req, res) {
+    res.setHeader('content-type', 'application/javascript');
+
+    browserify({ debug: true })
+        .transform(babelify.configure({
+            presets: ["react", "es2015"]
+        }))
+        .require("./app.js", { entry: true })
+        .bundle()
+        .pipe(res);
 });
 
-app.use('/', function(req, res) {
-  var initialData = JSON.stringify(data);
-  var markup = ReactDOMServer.renderToString(React.createElement(TodoBox, {data: data}));
+app.use('/', function (req, res) {
+    var initialData = JSON.stringify(data);
+    var markup = ReactDOMServer.renderToString(React.createElement(TodoBox, {data: data}));
 
-  res.setHeader('Content-Type', 'text/html');
+    res.setHeader('Content-Type', 'text/html');
 
-  var html = ReactDOMServer.renderToStaticMarkup(body(null,
-      div({id: 'app', dangerouslySetInnerHTML: {__html: markup}}),
-      script({id: 'initial-data',
-              type: 'text/plain',
-              'data-json': initialData
-            }),
-      script({src: '/bundle.js'})
-  ));
+    var html = ReactDOMServer.renderToStaticMarkup(body(null,
+        div({id: 'app', dangerouslySetInnerHTML: {__html: markup}}),
+        script({
+            id: 'initial-data',
+            type: 'text/plain',
+            'data-json': initialData
+        }),
+        script({src: '/bundle.js'})
+    ));
 
-  res.end(html);
+    res.end(html);
 });
 ```
 
