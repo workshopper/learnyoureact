@@ -9,43 +9,51 @@
 새로운 파일을 작성하셔도 됩니다.
 
 ```
-var TodoList = React.createClass({
-  getInitialState: function() {
-    return {
-      data: this.props.data,
-      titleValue: "",
-      detailValue: ""
-    };
-  },
-  changeTitle: function(e) {
-    // 여기에 구현
-  },
-  changeDetail: function(e) {
-    // 여기에 구현
-  },
-  addTodo: function() {
-    // 여기에 구현
-  },
-  render: function() {
-    var todo = this.state.data.map(function(obj) {
-      return <Todo title={obj.title} key={obj.title}>{obj.detail}</Todo>;
-    });
-    return (
-      <div className = "todoList">
-        <div>
-          Title:<input type="text" value={this.state.titleValue} onChange={this.changeTitle} />
-          Detail:<input type="text" value={this.state.detailValue} onChange={this.changeDetail} />
-          <button onClick={this.addTodo}>Add</button>
-        </div>
-        <table style={{border: "2px solid black"}}>
-          <tbody>
-            {todo}
-          </tbody>
-        </table>
-      </div>
-    );
+class TodoList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: this.props.data,
+            titleValue: "",
+            detailValue: ""
+        };
+        this.changeTitle = this.changeTitle.bind(this);
+        this.changeDetail = this.changeDetail.bind(this);
+        this.addTodo = this.addTodo.bind(this);
+    }
+
+    changeTitle(e) {
+        // 여기에 구현
+    }
+
+    changeDetail(e) {
+        // 여기에 구현
+    }
+
+    addTodo() {
+        // 여기에 구현
+    }
+
+    render() {
+        let todo = this.state.data.map(function(obj) {
+          return <Todo title={obj.title} key={obj.title}>{obj.detail}</Todo>;
+        });
+        return (
+          <div className = "todoList">
+            <div>
+              Title:<input type="text" value={this.state.titleValue} onChange={this.changeTitle} />
+              Detail:<input type="text" value={this.state.detailValue} onChange={this.changeDetail} />
+              <button onClick={this.addTodo}>Add</button>
+            </div>
+            <table style={{border: "2px solid black"}}>
+              <tbody>
+                {todo}
+              </tbody>
+            </table>
+          </div>
+        );
   }
-});
+}
 ```
 
 `여기에 구현`이라 적힌 3곳에 진짜 코드를 구현하세요.
