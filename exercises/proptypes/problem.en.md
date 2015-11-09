@@ -26,7 +26,7 @@ will be shown in your browser's JavaScript console.
 # Challenge
 ---
 
-Modify `TodoList` in `index.jsx` like below. 
+Modify `Todo` in `index.jsx` like below.
 
 Before you start, you may want to check your current `index.jsx` into source
 control, or create a new `index.jsx` for this exercise.
