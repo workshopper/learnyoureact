@@ -17,19 +17,23 @@ exercise = filecheck(exercise);
 
 // execute the solution and submission in parallel with spawn()
 exercise = execute(exercise);
-exercise.getSolutionFiles= function (callback) { 
-  var solutionDir = path.join(this.dir, './solution');
+exercise.getSolutionFiles = function (callback) {
+    var solutionDir = path.join(this.dir, './solution');
 
-  fs.readdir(solutionDir, function (err, list) { 
-    if (err) return callback(err);
-      list.push("views/index.jsx"); 
-      list = list 
-        .filter(function (f) { return (/\.js.*$/).test(f) }) 
-        .map(function (f) { return path.join(solutionDir, f)});
-      callback(null, list); 
-  });
+    fs.readdir(solutionDir, function (err, list) {
+        if (err) return callback(err);
+        list.push("views/index.jsx");
+        list = list
+            .filter(function (f) {
+                return (/\.js.*$/).test(f)
+            })
+            .map(function (f) {
+                return path.join(solutionDir, f)
+            });
+        callback(null, list);
+    });
 }
-  
+
 function rndport() {
     return 1024 + Math.floor(Math.random() * 64511);
 }
@@ -58,47 +62,43 @@ exercise.addProcessor(function (mode, callback) {
         this.solutionStdout = through2();
     }
 
-    setTimeout(query.bind(this, mode), 3000);
+    setTimeout(query.bind(this, mode), 5000);
 
     process.nextTick(function () {
-        callback(null, true)
+        callback(null, true);
     });
 });
 
-// delayed for 3000ms to wait for servers to start so we can start
+// delayed for 5000ms to wait for servers to start so we can start
 // playing with them
-function query (mode) {
-    var exercise = this
+function query(mode) {
+    var exercise = this;
 
-    function verify (port, stream) {
+    function verify(port, stream) {
 
         var url = 'http://localhost:' + port;
 
-        function error (err) {
-            exercise.emit('fail', 'Error connecting to http://localhost:' + port + ': ' + err.code)
+        function onData(err, _data) {
+            if (err) {
+                exercise.emit('fail', exercise.__('fail.connection', {address: url, message: err.message}));
+            } else {
+                var data = beautify_html(_data.toString(), null);
+                stream.write(data);
+            }
+
+            stream.end();
         }
 
-        hyperquest.get(url)
-            .on('error', error)
-            .pipe(bl(function (err, data) {
+        return hyperquest.get(url).pipe(bl(onData));
 
-                if (err)
-                    return stream.emit('error', err)
-
-                var data = beautify_html(data.toString(), null);
-                stream.write(data + '\n');
-                stream.end();
-            }));
     }
 
-    verify(this.submissionPort, this.submissionStdout)
-
-    if (mode == 'verify') {
+    verify(this.submissionPort, this.submissionStdout);
+    if (mode == 'verify')
         verify(this.solutionPort, this.solutionStdout);
-    }
 }
 
 // compare stdout of solution and submission
-exercise = comparestdout(exercise)
+exercise = comparestdout(exercise);
 
 module.exports = exercise;
