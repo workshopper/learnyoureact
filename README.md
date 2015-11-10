@@ -2,7 +2,7 @@ learnyoureact
 ================
 Let's learn React.js and server side rendering!
 
-[![Join the chat at https://gitter.im/tako-black/learnyoureact](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/tako-black/learnyoureact?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/kohei-takata/learnyoureact](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/kohei-takata/learnyoureact?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [![NPM](https://nodei.co/npm/learnyoureact.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/learnyoureact/)
 

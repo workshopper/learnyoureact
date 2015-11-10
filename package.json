@@ -28,14 +28,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/tako-black/learnyoureact.git"
+    "url": "git://github.com/kohei-takata/learnyoureact.git"
   },
   "author": "Kohei TAKATA",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tako-black/learnyoureact/issues"
+    "url": "https://github.com/kohei-takata/learnyoureact/issues"
   },
-  "homepage": "https://github.com/tako-black/learnyoureact",
+  "homepage": "https://github.com/kohei-takata/learnyoureact",
   "preferGlobal": true,
   "keywords": [
     "react",
