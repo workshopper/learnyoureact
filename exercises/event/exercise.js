@@ -75,7 +75,7 @@ exercise.addProcessor(function (mode, callback) {
         this.solutionStdout = through2();
     }
 
-    setTimeout(query.bind(this, mode), 5000);
+    setTimeout(query.bind(this, mode), 100);
 
     process.nextTick(function () {
         callback(null, true)
@@ -109,7 +109,23 @@ function query(mode) {
             stream.end();
         }
 
-        return hyperquest.get(url).pipe(bl(onData));
+        var attempt = 0;
+        var doRequest = function () {
+            hyperquest.get(url).pipe(bl(function (err, data) {
+                if (err !== null) {
+                    attempt++;
+                    if (attempt < 100) {
+                        setTimeout(doRequest, 100);
+                    } else {
+                        hyperquest.get(url).pipe(bl(onData));
+                    }
+                } else {
+                    hyperquest.get(url).pipe(bl(onData));
+                }
+            }));
+        };
+
+        return doRequest();
     }
 
     verify(this.submissionPort, this.submissionStdout);

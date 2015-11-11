@@ -17,17 +17,21 @@ exercise = filecheck(exercise);
 
 // execute the solution and submission in parallel with spawn()
 exercise = execute(exercise);
-exercise.getSolutionFiles= function (callback) { 
-  var solutionDir = path.join(this.dir, './solution');
+exercise.getSolutionFiles = function (callback) {
+    var solutionDir = path.join(this.dir, './solution');
 
-  fs.readdir(solutionDir, function (err, list) { 
-    if (err) return callback(err);
-      list.push("views/index.jsx"); 
-      list = list 
-        .filter(function (f) { return (/\.js.*$/).test(f) }) 
-        .map(function (f) { return path.join(solutionDir, f)});
-      callback(null, list); 
-  });
+    fs.readdir(solutionDir, function (err, list) {
+        if (err) return callback(err);
+        list.push("views/index.jsx");
+        list = list
+            .filter(function (f) {
+                return (/\.js.*$/).test(f)
+            })
+            .map(function (f) {
+                return path.join(solutionDir, f)
+            });
+        callback(null, list);
+    });
 }
 
 function rndport() {
@@ -71,7 +75,7 @@ exercise.addProcessor(function (mode, callback) {
         this.solutionStdout = through2();
     }
 
-    setTimeout(query.bind(this, mode), 5000);
+    setTimeout(query.bind(this, mode), 100);
 
     process.nextTick(function () {
         callback(null, true)
@@ -90,6 +94,7 @@ function query(mode) {
         function onData(err, _data) {
             if (err) {
                 exercise.emit('fail', exercise.__('fail.connection', {address: url, message: err.message}));
+                return;
             } else {
                 var data = _data.toString().replace(/data-react-checksum=".{1,20}"/, "");
                 while (data.match(/data-reactid=".{1,20}"/)) {
@@ -105,7 +110,23 @@ function query(mode) {
             stream.end();
         }
 
-        return hyperquest.get(url).pipe(bl(onData));
+        var attempt = 0;
+        var doRequest = function () {
+            hyperquest.get(url).pipe(bl(function (err, data) {
+                if (err !== null) {
+                    attempt++;
+                    if (attempt < 100) {
+                        setTimeout(doRequest, 100);
+                    } else {
+                        hyperquest.get(url).pipe(bl(onData));
+                    }
+                } else {
+                    hyperquest.get(url).pipe(bl(onData));
+                }
+            }));
+        };
+
+        return doRequest();
     }
 
     verify(this.submissionPort, this.submissionStdout);
