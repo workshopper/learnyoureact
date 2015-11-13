@@ -5,6 +5,7 @@
   "main": "learnyoureact.js",
   "bin": "./learnyoureact.js",
   "dependencies": {
+    "babel": "^5.8.23",
     "bl": "~0.9.4",
     "body-parser": "~1.12.3",
     "browserify": "~10.1.3",
@@ -22,7 +23,6 @@
     "workshopper-exercise": "~2.3.0",
     "workshopper-wrappedexec": "~0.1.2"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
