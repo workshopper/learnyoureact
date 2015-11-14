@@ -62,7 +62,7 @@ exercise.addProcessor(function (mode, callback) {
         this.solutionStdout = through2();
     }
 
-    setTimeout(query.bind(this, mode), 100);
+    setTimeout(query.bind(this, mode), 3000);
 
     process.nextTick(function () {
         callback(null, true)

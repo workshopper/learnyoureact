@@ -6,7 +6,9 @@ app.set('view engine', 'jsx');
 app.set('views', __dirname + '/views');
 app.engine('jsx', require('express-react-views').createEngine({ transformViews: false }));
 
-require('babel/register');
+require('babel/register')({
+	ignore: false
+});
 
 app.use('/', function(req, res) {
 	res.render('index', '');
