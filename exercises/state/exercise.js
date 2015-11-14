@@ -69,7 +69,7 @@ exercise.addProcessor(function (mode, callback) {
     });
 });
 
-// delayed for 5000ms to wait for servers to start so we can start
+// delayed for 3000ms to wait for servers to start so we can start
 // playing with them
 function query(mode) {
     var exercise = this;

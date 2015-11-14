@@ -30,11 +30,11 @@ var data = [
 app.use('/bundle.js', function (req, res) {
     res.setHeader('content-type', 'application/javascript');
 
-    browserify({ debug: true })
+    browserify({debug: true})
         .transform(babelify.configure({
             presets: ["react", "es2015"]
         }))
-        .require("./app.js", { entry: true })
+        .require("./app.js", {entry: true})
         .bundle()
         .pipe(res);
 });

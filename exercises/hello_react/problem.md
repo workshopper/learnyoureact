@@ -10,8 +10,6 @@
 
 `$ npm install react react-dom express body-parser express-react-views@0.9.0 babel@5.8.23`
 
-`@5.8.23`
-
 `node_modules` というフォルダが作成されたかと思います。その中にモジュールのフォルダがあります。
 
 次に `program.js` を作成します。

@@ -19,6 +19,7 @@ app.engine('jsx', require('express-react-views').createEngine());
 require('babel/register')({
     ignore: false
 });
+
 var TodoBox = require('./views/index.jsx');
 
 var data = [
