@@ -1,6 +1,6 @@
 {
   "name": "learnyoureact",
-  "version": "0.10.4",
+  "version": "0.10.6",
   "description": "Learn React.js and server side rendering!",
   "main": "learnyoureact.js",
   "bin": "./learnyoureact.js",
