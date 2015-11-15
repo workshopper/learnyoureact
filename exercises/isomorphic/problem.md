@@ -49,7 +49,10 @@ var babelify = require("babelify");
 次に `babel/register` を `require` している文の下に以下のように `index.jsx` を読み込む処理を1行追加してください。
 
 ```
-require('babel/register');
+require('babel/register')({
+    ignore: false
+});
+
 var TodoBox = require('./views/index.jsx');
 ```
 

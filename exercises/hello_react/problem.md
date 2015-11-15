@@ -10,8 +10,6 @@
 
 `$ npm install react react-dom express body-parser express-react-views@0.9.0 babel@5.8.23`
 
-`@5.8.23`
-
 `node_modules` というフォルダが作成されたかと思います。その中にモジュールのフォルダがあります。
 
 次に `program.js` を作成します。
@@ -34,7 +32,9 @@ app.set('view engine', 'jsx');
 app.set('views', __dirname + '/views');
 app.engine('jsx', require('express-react-views').createEngine({ transformViews: false }));
 
-require('babel/register');
+require('babel/register')({
+    ignore: false
+});
 
 app.use('/', function(req, res) {
   res.render('index', '');

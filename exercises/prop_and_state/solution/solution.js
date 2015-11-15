@@ -16,7 +16,10 @@ app.set('view engine', 'jsx');
 app.set('views', __dirname + '/views');
 app.engine('jsx', require('express-react-views').createEngine());
 
-require('babel/register');
+require('babel/register')({
+    ignore: false
+});
+
 var TodoBox = require('./views/index.jsx');
 
 var data = [
@@ -31,7 +34,7 @@ app.use('/bundle.js', function (req, res) {
         .transform(babelify.configure({
             presets: ["react", "es2015"]
         }))
-        .require("./app.js", {entry: true})
+        .require("prop_and_state/solution/app.js", {entry: true})
         .bundle()
         .pipe(res);
 });
