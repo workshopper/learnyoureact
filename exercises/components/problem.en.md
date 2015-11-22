@@ -49,11 +49,11 @@ Note: you don't have to change server-side code (`program.js`).
 Don't forget `render` and `return`! :-)
 
 ```
-<div class = "todoList">
+<div class="todoList">
   I am a TodoList.
 </div>
 
-<div class = "todoForm">
+<div class="todoForm">
   I am a TodoForm.
 </div>
 ```
