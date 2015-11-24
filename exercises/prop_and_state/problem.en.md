@@ -15,10 +15,10 @@ class Todo extends React.Component {
   }
   handleChange(e) {
     // Omitted 
-  }, 
+  }
   _onDelete() {
     this.props.onDelete(this.props.title); 
-  }, 
+  }
   render() {
     return ( 
       <tr style={this.state.TodoStyle}> 
