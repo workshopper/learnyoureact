@@ -1,6 +1,8 @@
 まずは `Hello World` を出力してみましょう！
 
-前準備として、今回作業を行うフォルダを作成しましょう。以下のコマンドで作成できます。
+前準備として、今回作業を行うフォルダを作成し、その中に移動しましょう。
+そのフォルダには[package.json](https://docs.npmjs.com/getting-started/using-a-package.json)を作成しましょう。
+package.jsonによって、npmはどのフォルダにパッケージをインストールするか判断します。
 `learnyoureact` をお好きなフォルダ名に変更してください。
 
 `$ mkdir learnyoureact`
