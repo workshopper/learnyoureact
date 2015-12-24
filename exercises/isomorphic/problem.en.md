@@ -1,12 +1,12 @@
 Let's use React on the front-end too!
 
-From this excercise on, we'll use React not only on the server side but also on the front-end.
+From this exercise on, we'll use React not only on the server side but also on the front-end.
 Let's raise the event on the front-end, and see what will happen.
-In the past exercises, there was a code which raised the front-end event, but it does not work. Where is that?
+In the past exercises, there was some code that raised a front-end event, but it did not work. Where is that?
 
 The code is the check of the `checkbox` event you wrote in `State`.
 At `State`, to tell the truth, you can check the `checkbox` no matter what code you write.
-In this excercise, let's confirm if you can write the right code or not.
+In this exercise, let's confirm if you can write the right code or not.
 There is a lot of code to change !
 Let's try it!
 
