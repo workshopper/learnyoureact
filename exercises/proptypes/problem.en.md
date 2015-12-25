@@ -1,4 +1,4 @@
-Let's learn to validate that our components get passed all needed properties.
+Let's learn to validate that our components get passed all the necessary properties.
 
 As you build and rely on common components (buttons, form fields etc.), it's
 helpful to ensure the components are being used correctly.

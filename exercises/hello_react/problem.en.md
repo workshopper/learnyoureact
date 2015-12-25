@@ -1,7 +1,7 @@
 First things first, let's print `Hello World`!
 
-Make directory you write codes in that and enter it. It needs to contain a [package.json](https://docs.npmjs.com/getting-started/using-a-package.json) file
-for npm to know in which folder to install the subsequent packages.
+First, create the directory where you will write your code. It needs to contain a [package.json](https://docs.npmjs.com/getting-started/using-a-package.json) file
+for npm to know in which folder to install the subsequent packages - `npm init` does this for us.
 You can change `learnyoureact` to any name you like.
 
 `$ mkdir learnyoureact; cd learnyoureact; npm init -y;
