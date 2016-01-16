@@ -107,8 +107,8 @@ allows passing values into your program from the command line. Specifically, it
 says that the third command line argument is the port, and if it doesn't exist,
 it defaults to `3000`.
 
-Make the value of `detail` for the first object equal to the third command line
-argument, and `detail` for the second object equal to the fourth command line
+Make the value of `detail` for the first object equal to the fourth command line
+argument, and `detail` for the second object equal to the fifth command line
 argument.
 
 Verify your code by running `node program.js 3000 Milk 13:00` and visiting
