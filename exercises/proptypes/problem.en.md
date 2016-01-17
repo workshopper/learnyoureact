@@ -40,7 +40,19 @@ export default class TodoBox extends React.Component {
 }
 
 class TodoList extends React.Component {
-  // Omitted
+    render() {
+        return (
+            <div className="todoList">
+                <table style={{border: "2px solid black"}}>
+                  <tbody>
+                    <Todo title="Shopping">Milk</Todo>
+                    <Todo title="Hair cut">13:00</Todo>
+                    <Todo>15:00</Todo>
+                  </tbody>
+                </table>
+            </div>
+        );
+    }
 }
 
 class Todo extends React.Component {
@@ -64,7 +76,7 @@ class TodoForm extends React.Component {
 
 After editing the `index.jsx` file, run your code with `learnyoureact run program.js`.
 You can see that React.js prints a `Warning` in the console.
-Read the warning and modify `Todo` to fix it.
+Read the warning and add title "Learn React" to the last `Todo` to fix it.
 
 Reusable Components: https://facebook.github.io/react/docs/reusable-components.html
 
