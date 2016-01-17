@@ -5,7 +5,7 @@
 package.jsonによって、npmはどのフォルダにパッケージをインストールするか判断します。
 `learnyoureact` をお好きなフォルダ名に変更してください。
 
-`$ mkdir learnyoureact`
+`$ mkdir learnyoureact; cd learnyoureact; npm init -y;`
 
 それができたら、そのフォルダの中にモジュールをインストールしましょう。
 以下のコマンドを実行してください。

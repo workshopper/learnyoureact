@@ -4,7 +4,7 @@ First, create the directory where you will write your code. It needs to contain 
 for npm to know in which folder to install the subsequent packages - `npm init` does this for us.
 You can change `learnyoureact` to any name you like.
 
-`$ mkdir learnyoureact; cd learnyoureact; npm init -y;
+`$ mkdir learnyoureact; cd learnyoureact; npm init -y;`
 
 Start by installing the required modules. Run this command:
 

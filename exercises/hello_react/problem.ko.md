@@ -1,12 +1,11 @@
 먼저 `Hello World`를 출력해 봅시다!
 
-다음 명령을 실행해 코드를 넣을 디렉터리를 만듭니다.
-
-```
-$ mkdir learnyoureact
-```
-
+전에 준비로 이번 작업 폴더 를 만들고 그 안에 이동 합시다.
+그 폴더 에 [package.json](https://docs.npmjs.com/getting-started/using-a-package.json) 을 작성 합시다.
+package.json 하여 npm 은 어느 폴더에 패키지 를 설치 하거나 판단 합니다.
 `learnyoureact`를 좋아하는 이름으로 바꾸셔도 됩니다.
+
+`$ mkdir learnyoureact; cd learnyoureact; npm init -y;`
 
 필요한 모듈을 설치하려면 밑의 명령을 실행해 보세요.
 
