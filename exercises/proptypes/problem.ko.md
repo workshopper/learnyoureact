@@ -39,7 +39,19 @@ export default class TodoBox extends React.Component {
 }
 
 class TodoList extends React.Component {
-  // 생략
+    render() {
+        return (
+            <div className="todoList">
+                <table style={{border: "2px solid black"}}>
+                  <tbody>
+                    <Todo title="Shopping">Milk</Todo>
+                    <Todo title="Hair cut">13:00</Todo>
+                    <Todo>15:00</Todo>
+                  </tbody>
+                </table>
+            </div>
+        );
+    }
 }
 
 class Todo extends React.Component {
@@ -53,7 +65,7 @@ class Todo extends React.Component {
     }
 }
 Todo.propTypes = {
-    title: React.PropTypes.string.isRequired
+    title: React.PropTypes.number.isRequired
 };
 
 class TodoForm extends React.Component {
@@ -64,7 +76,7 @@ class TodoForm extends React.Component {
 `index.jsx`를 수정한 다음, `learnyoureact run program.js`를 실행해 주세요.
 React.js가 콘솔에 `Warning`을 출력하는 것을 볼 수 있습니다.
 그 내용을 읽어, `Warning`이 나오지 않도록 `Todo`를 수정해 주세요.
-
+마지막 ` Todo` 에 ` Learn React` 라는 타이틀을 추가 하십시오.
 
 재사용가능한 컴포넌트: https://facebook.github.io/react/docs/reusable-components-ko-KR.html
 

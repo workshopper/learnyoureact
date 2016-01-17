@@ -66,7 +66,7 @@ class Todo extends React.Component {
     }
 }
 Todo.propTypes = {
-    title: React.PropTypes.string.isRequired
+    title: React.PropTypes.number.isRequired
 };
 
 class TodoForm extends React.Component {
@@ -76,7 +76,8 @@ class TodoForm extends React.Component {
 
 After editing the `index.jsx` file, run your code with `learnyoureact run program.js`.
 You can see that React.js prints a `Warning` in the console.
-Read the warning and add title "Learn React" to the last `Todo` to fix it.
+Read the warning and modify `Todo` to fix it.
+And add title `Learn React` to the last `Todo`.
 
 Reusable Components: https://facebook.github.io/react/docs/reusable-components.html
 

@@ -36,7 +36,19 @@ export default class TodoBox extends React.Component {
 }
 
 class TodoList extends React.Component {
-  // 省略
+    render() {
+        return (
+            <div className="todoList">
+                <table style={{border: "2px solid black"}}>
+                  <tbody>
+                    <Todo title="Shopping">Milk</Todo>
+                    <Todo title="Hair cut">13:00</Todo>
+                    <Todo>15:00</Todo>
+                  </tbody>
+                </table>
+            </div>
+        );
+    }
 }
 
 class Todo extends React.Component {
@@ -50,7 +62,7 @@ class Todo extends React.Component {
     }
 }
 Todo.propTypes = {
-    title: React.PropTypes.string.isRequired
+    title: React.PropTypes.number.isRequired
 };
 
 class TodoForm extends React.Component {
@@ -61,6 +73,7 @@ class TodoForm extends React.Component {
 その後、 `learnyoureact run program.js` を実行してみてください。
 コンソールに、 `Warning` が出力されたと思います。
 その内容を読み、 `Warning` が出なくなるように `Todo` を修正してください。
+最後の `Todo` に `Learn React` というタイトルを追加してください。
 `propTypes` は必ず使用してください。
 
 再利用可能なコンポーネントに関しては、こちらのドキュメントを参照してください。 : https://facebook.github.io/react/docs/reusable-components-ja-JP.html
