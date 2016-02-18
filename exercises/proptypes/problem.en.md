@@ -76,8 +76,8 @@ class TodoForm extends React.Component {
 
 After editing the `index.jsx` file, run your code with `learnyoureact run program.js`.
 You can see that React.js prints a `Warning` in the console.
-Read the warning and modify `Todo` to fix it.
-And add title `Learn React` to the last `Todo`.
+Read the warning and modify the `propTypes` property of `Todo` to fix it.
+Also, add the title `Learn React` to the last `Todo`.
 
 Reusable Components: https://facebook.github.io/react/docs/reusable-components.html
 

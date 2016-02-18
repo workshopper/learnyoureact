@@ -11,7 +11,13 @@ Update `Todo` in `index.jsx` as shown below.
 ``` 
 class Todo extends React.Component {
   constructor(props) {
-    // Omitted
+    super(props);
+    this.state = {
+      checked: false,
+      TodoStyle: style.notCheckedTodo
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this._onDelete = this._onDelete.bind(this);
   }
   handleChange(e) {
     // Omitted 
