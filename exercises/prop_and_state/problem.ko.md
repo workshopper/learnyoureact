@@ -11,7 +11,13 @@ Todo가 너무 많네요! 이제 오래된 Todo를 지울 수 있도록 해봅�
 ```
 class Todo extends React.Component {
   constructor(props) {
-    // 생략
+    super(props);
+    this.state = {
+      checked: false,
+      TodoStyle: style.notCheckedTodo
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this._onDelete = this._onDelete.bind(this);
   }
   handleChange(e) {
     // 생략

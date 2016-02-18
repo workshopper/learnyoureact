@@ -13,7 +13,13 @@ Todoを削除するボタンを作成しましょう。
 ```
 class Todo extends React.Component {
   constructor(props) {
-    // 省略
+    super(props);
+    this.state = {
+      checked: false,
+      TodoStyle: style.notCheckedTodo
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this._onDelete = this._onDelete.bind(this);
   }
   handleChange(e) {
     // 省略
