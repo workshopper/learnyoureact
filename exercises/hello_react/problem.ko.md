@@ -9,7 +9,7 @@ package.json 하여 npm 은 어느 폴더에 패키지 를 설치 하거나 판�
 
 필요한 모듈을 설치하려면 밑의 명령을 실행해 보세요.
 
-`$ npm install react react-dom express body-parser express-react-views@0.9.0 babel@5.8.23`
+`$ npm install --save react react-dom express body-parser express-react-views@0.9.0 babel@5.8.23`
 
 이제 `node_modules` 디렉터리가 만들어진 것을 볼 수 있습니다.
 
@@ -17,8 +17,9 @@ package.json 하여 npm 은 어느 폴더에 패키지 를 설치 하거나 판�
 
 ```
 learnyoureact
-├── program.js
-└── node_modules
+├── node_modules/
+├── package.json
+└── program.js
 ```
 
 `program.js`에 다음 코드를 복사하세요.
