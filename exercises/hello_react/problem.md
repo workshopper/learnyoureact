@@ -10,7 +10,7 @@ package.jsonによって、npmはどのフォルダにパッケージをイン�
 それができたら、そのフォルダの中にモジュールをインストールしましょう。
 以下のコマンドを実行してください。
 
-`$ npm install react react-dom express body-parser express-react-views@0.9.0 babel@5.8.23`
+`$ npm install --save react react-dom express body-parser express-react-views@0.9.0 babel@5.8.23`
 
 `node_modules` というフォルダが作成されたかと思います。その中にモジュールのフォルダがあります。
 
@@ -19,8 +19,9 @@ package.jsonによって、npmはどのフォルダにパッケージをイン�
 
 ```
 learnyoureact
-├── program.js
-└── node_modules
+├── node_modules/
+├── package.json
+└── program.js
 ```
 
 `program.js` には以下のように記述してください。
