@@ -42,7 +42,7 @@ let style = {
 同じスタイルを複数の箇所に指定している部分を、追加した `style` を使用するように変更してください。
 ※似たスタイルではありますが、少し違うスタイルを指定している箇所があるので注意してください。
 
-インラインスタイルに関してはこちらのドキュメントを参照してください : https://facebook.github.io/react/tips/inline-styles-ja-JP.html
+インラインスタイルに関してはこちらのドキュメントを参照してください(英語) : https://facebook.github.io/react/tips/inline-styles.html
 
 それができたら、 `node program.js` を実行し、 `http://localhost:3000` にアクセスして、実際にHTMLが出力されていることを確認してください。
 見た目上の変化はないかと思います。
