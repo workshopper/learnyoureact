@@ -32,7 +32,8 @@ app.use('/bundle.js', function (req, res) {
 
     browserify({debug: true})
         .transform(babelify.configure({
-            presets: ["react", "es2015"]
+            presets: ["react", "es2015"],
+            compact: false
         }))
         .require("event/solution/app.js", {entry: true})
         .bundle()
