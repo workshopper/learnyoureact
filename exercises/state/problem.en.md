@@ -10,7 +10,7 @@ a function to control the behavior of check events.
 # Challenge
 ---
 
-Modify `Todo` in `index.jsx` like below. 
+Modify `Todo` in `index.jsx` like below.
 
 Before you start, you may want to check your current `index.jsx` into source
 control, or create a new `index.jsx` for this exercise.
@@ -30,18 +30,13 @@ class TodoList extends React.Component {
 class Todo extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {checked: false};
-    }
-
-    handleChange(e) {
-        this.setState({checked: e.target.checked});
     }
 
     render() {
         return (
             <tr>
                 <td style={{border: "1px solid black"}}>
-                    <input type="checkbox" checked={this.state.checked} onChange={this.handleChange}/>
+                    <input type="checkbox" checked={this.state.checked} onChange={this.handleChange.bind(this)}/>
                 </td>
                 <td style={{border: "1px solid black"}}>{this.props.title}</td>
                 <td style={{border: "1px solid black"}}>{this.props.children}</td>
@@ -59,7 +54,6 @@ class TodoForm extends React.Component {
 ```
 
 Write code to set the initial value of `checked` and define `handleChange`.
-You can set the initial value of `checked` in a special `getInitialState` function.
 Within `handleChange`, you should update the component's `state` by using `this.setState`.
 
 The resources are always recommended, but may be especially helpful here:

@@ -51,7 +51,7 @@ class TodoForm extends React.Component {
 ```
 
 `Todo` の中に、 `checked` の初期値を指定する箇所と、チェックされた際やチェックが外された際の動作を記述してください。
-また、データに変更があった場合には `handleChange` 関数を作成し、その中で `this.setState` を行うことで更新ができます。
+データに変更があった場合には `handleChange` 関数を作成し、その中で `this.setState` を行うことで更新ができます。
 
 以下のドキュメントが参考になるでしょう。
 コンポーネントAPI : https://facebook.github.io/react/docs/component-api-ja-JP.html

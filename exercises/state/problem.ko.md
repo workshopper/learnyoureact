@@ -28,18 +28,13 @@ class TodoList extends React.Component {
 class Todo extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {checked: false};
-    }
-
-    handleChange(e) {
-        this.setState({checked: e.target.checked});
     }
 
     render() {
         return (
             <tr>
                 <td style={{border: "1px solid black"}}>
-                    <input type="checkbox" checked={this.state.checked} onChange={this.handleChange}/>
+                    <input type="checkbox" checked={this.state.checked} onChange={this.handleChange.bind(this)}/>
                 </td>
                 <td style={{border: "1px solid black"}}>{this.props.title}</td>
                 <td style={{border: "1px solid black"}}>{this.props.children}</td>
@@ -57,7 +52,6 @@ class TodoForm extends React.Component {
 ```
 
 `Todo` 안에 `checked`의 초기값을 지정하는 곳과 `handleChange`을 정의하세요.
-`checked`의 초기값은 `getInitialState`로 설정할 수 있습니다.
 `handleChange` 안에서 `this.setState`를 사용해 컴포넌트의 `state`를 변경할 수 있습니다.
 
 자료를 찾아보는 것도 좋습니다. 특히 이문서가 도움이 될 것 같습니다.
