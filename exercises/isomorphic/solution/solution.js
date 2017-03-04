@@ -28,7 +28,7 @@ var data = [
 ];
 
 app.use('/bundle.js', function (req, res) {
-    res.setHeader('content-type', 'application/javascript');
+    res.setHeader('Content-Type', 'application/javascript');
 
     browserify({debug: true})
         .transform(babelify.configure({

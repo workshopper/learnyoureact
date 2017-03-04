@@ -65,7 +65,7 @@ If you have an access to `/`, you response HTML that consists of reading `index.
 
 ```
 app.use('/bundle.js', function (req, res) {
-    res.setHeader('content-type', 'application/javascript');
+    res.setHeader('Content-Type', 'application/javascript');
 
     browserify({ debug: true })
         .transform(babelify.configure({
