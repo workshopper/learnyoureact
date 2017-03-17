@@ -95,13 +95,10 @@ function query(mode) {
             if (err) {
                 exercise.emit('fail', exercise.__('fail.connection', {address: url, message: err.message}));
             } else {
-                var data = _data.toString().replace(/data-react-checksum=".{1,20}"/, "");
-                while (data.match(/data-reactid=".{1,20}"/)) {
-                    data = data.replace(/data-reactid=".{1,20}"/, "");
-                }
-                while (data.match(/data-reactid=".{1,35}"/)) {
-                    data = data.replace(/data-reactid=".{1,35}"/, "");
-                }
+                var data = _data.toString().replace(/data-react-checksum="[^"]{1,20}"/, "");
+                data = data.replace(/data-reactroot=""/, "");
+                data = data.replace(/data-reactid="[^"]{1,35}"/g, "");
+                data = data.replace(/data-reactid="[^"]{1,35}"/g, "");
                 data = beautify_html(data, null);
                 stream.write(data);
             }
