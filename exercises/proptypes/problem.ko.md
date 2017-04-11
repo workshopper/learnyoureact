@@ -1,21 +1,35 @@
 넘긴 값의 타입을 제약하는 법을 배워봅시다.
 
-컴포넌트에 넘겨진 데이터는 일반 컴포넌트(버튼, 폼 필드 등)에서 만들고 의존하는 `this.props`를 통해 `render()`에서 접근할 수 있습니다.
+공통 구성 요소 (버튼, 양식 필드 등)를 빌드하고 사용함에 따라
+구성 요소가 올바르게 사용되는지 확인하는 데 도움이됩니다. `propTypes`를 지정하면됩니다.
 
-이는 컴포넌트가 재대로 사용되고 있는지 확인하는데 도움이 됩니다.
+먼저 다음 명령을 실행하여`prop-types` 패키지를 설치해야합니다 :
 
-제약은 `propTypes`을 지정해 할 수 있습니다. 개발 모드에서 `React.PropTypes`는 재대로된 데이터를 받았는지 확인하는 벨리데이터를 범위를 명시합니다.
+`$ npm install --save prop-types`
+
+그런 다음 아래와 같이`index.jsx`를 수정하여 새로운`import` 문을 포함 시키십시오 :
+
+```
+import React from 'react';
+import PropTypes from 'prop-types';
+
+export default class TodoBox extends React.Component {
+  // 생략 됨
+}
+```
+
+이제`prop-types` 패키지를 설치하고, 패키지에서`PropTypes` 메소드를 가져온 후에, 컴포넌트에 전달 된 데이터에 대해 유효성 검사기 범위를 사용할 수 있습니다.
 
 ```
 class MyComponent extends React.Component {
   /* ... */
 }
 MyComponent.propTypes = {
-    name:   React.PropTypes.string.isRequired,
-    id:     React.PropTypes.number.isRequired,
-    width:  React.PropTypes.number.isRequired,
-    height: React.PropTypes.number.isRequired,
-    alt:    React.PropTypes.string
+    name:   PropTypes.string.isRequired,
+    id:     PropTypes.number.isRequired,
+    width:  PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired,
+    alt:    PropTypes.string
 };
 ```
 
@@ -65,7 +79,7 @@ class Todo extends React.Component {
     }
 }
 Todo.propTypes = {
-    title: React.PropTypes.number.isRequired
+    title: PropTypes.number.isRequired
 };
 
 class TodoForm extends React.Component {
