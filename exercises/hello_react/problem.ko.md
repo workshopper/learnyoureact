@@ -41,7 +41,9 @@ app.use('/', function(req, res) {
   res.render('index', '');
 });
 
-app.listen(app.get('port'), function() {});
+app.listen(app.get('port'), function() {
+  console.log('Express server is up on port 3000');
+});
 ```
 위의 코드는 React 컴포넌트를 렌더링을 하는 작은 Express 서버의 코드입니다.
 누군가 `/`에 들어오면 `views/index.jsx`을 렌더합니다. 이 프로그램은 `express-react-views` 모듈을 사용합니다.
