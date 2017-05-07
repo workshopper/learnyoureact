@@ -10,7 +10,7 @@ Start by installing the required modules. Run this command:
 
 `$ npm install --save react react-dom express body-parser express-react-views@0.9.0 babel@5.8.23`
 
-You can see `node_modules` directory maked.
+You can see `node_modules` directory made.
 Files of module is in the directory.
 
 Next, create `program.js`.
