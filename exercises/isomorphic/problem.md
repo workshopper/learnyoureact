@@ -49,9 +49,7 @@ var babelify = require("babelify");
 次に `babel/register` を `require` している文の下に以下のように `index.jsx` を読み込む処理を1行追加してください。
 
 ```
-require('babel/register')({
-    ignore: false
-});
+require('babel/register');
 
 var TodoBox = require('./views/index.jsx');
 ```
@@ -65,12 +63,8 @@ var TodoBox = require('./views/index.jsx');
 app.use('/bundle.js', function (req, res) {
     res.setHeader('content-type', 'application/javascript');
 
-    browserify({ debug: true })
-        .transform(babelify.configure({
-            presets: ["react", "es2015"],
-            compact: false
-        }))
-        .require("./app.js", { entry: true })
+    browserify("./app.js")
+        .transform("babelify", {presets: ["es2015", "react"]})
         .bundle()
         .pipe(res);
 });

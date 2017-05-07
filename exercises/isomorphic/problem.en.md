@@ -52,9 +52,7 @@ var babelify = require("babelify");
 Next, add a line that reads `index.jsx` under the sentence that `require` s `babel/register`.
 
 ```
-require('babel/register')({
-    ignore: false
-});
+require('babel/register');
 
 var TodoBox = require('./views/index.jsx');
 ```
@@ -67,12 +65,8 @@ Requests to `/` will render the corresponding react view on the server and respo
 app.use('/bundle.js', function (req, res) {
     res.setHeader('content-type', 'application/javascript');
 
-    browserify({ debug: true })
-        .transform(babelify.configure({
-            presets: ["react", "es2015"],
-            compact: false
-        }))
-        .require("./app.js", { entry: true })
+    browserify("./app.js")
+        .transform("babelify", {presets: ["es2015", "react"]})
         .bundle()
         .pipe(res);
 });
