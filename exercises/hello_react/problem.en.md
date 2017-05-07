@@ -42,7 +42,9 @@ app.use('/', function(req, res) {
   res.render('index', '');
 });
 
-app.listen(app.get('port'), function() {});
+app.listen(app.get('port'), function() {
+    console.log('Express server is up on port 3000');
+});
 ```
 
 The code above creates a small Express server that renders our React
