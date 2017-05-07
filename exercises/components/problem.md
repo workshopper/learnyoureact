@@ -51,12 +51,12 @@ class TodoForm extends React.Component {
 `render` と `return` を記述するのを忘れないようにしてください( ´ ▽ ` )ﾉ
 
 ```
-<div class="todoList">
+<div className="todoList">
   I am a TodoList.
 </div>
 ```
 ```
-<div class="todoForm">
+<div className="todoForm">
   I am a TodoForm.
 </div>
 ```

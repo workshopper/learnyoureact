@@ -50,11 +50,11 @@ class TodoForm extends React.Component {
 `render`와 `return`도 잊지마세요. 'ㅁ'/
 
 ```
-<div class="todoList">
+<div className="todoList">
   I am a TodoList.
 </div>
 
-<div class="todoForm">
+<div className="todoForm">
   I am a TodoForm.
 </div>
 ```
