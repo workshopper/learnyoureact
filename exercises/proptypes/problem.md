@@ -1,19 +1,33 @@
-渡した値の型の制約を指定する方法を勉強しましょう
+一般的なコンポーネント（ボタン、フォームフィールドなど）を構築し、それに依存すると、
+コンポーネントが正しく使用されていることを確認するのに役立ちます。 これを行うには `propTypes`を指定します。
 
-componentが渡された値を正しく利用していることを保証することは、アプリケーションを作成する上での助けになります。
+まず、次のコマンドを実行して `prop-types`パッケージをインストールする必要があります：
 
-`React.createClass()` の中で、
+`$ npm install --save prop-types`
+
+次に、下記のように `index.jsx`を変更して新しい` import`文をインクルードします：
+
+```
+import React from 'react';
+import PropTypes from 'prop-types';
+
+export default class TodoBox extends React.Component {
+   //省略された
+}
+```
+
+今度は、 `prop-types`パッケージをインストールし、そのパッケージから` PropTypes`メソッドをインポートした後で、あなたのコンポーネントに渡されたデータに対して一連のバリデータを使うことができます。
 
 ```
 class MyComponent extends React.Component {
   /* ... */
 }
 MyComponent.propTypes = {
-    name:   React.PropTypes.string.isRequired,
-    id:     React.PropTypes.number.isRequired,
-    width:  React.PropTypes.number.isRequired,
-    height: React.PropTypes.number.isRequired,
-    alt:    React.PropTypes.string
+    name:   PropTypes.string.isRequired,
+    id:     PropTypes.number.isRequired,
+    width:  PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired,
+    alt:    PropTypes.string
 };
 ```
 
@@ -62,7 +76,7 @@ class Todo extends React.Component {
     }
 }
 Todo.propTypes = {
-    title: React.PropTypes.number.isRequired
+    title: PropTypes.number.isRequired
 };
 
 class TodoForm extends React.Component {
