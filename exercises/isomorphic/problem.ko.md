@@ -61,7 +61,7 @@ var TodoBox = require('./views/index.jsx');
 
 ```
 app.use('/bundle.js', function (req, res) {
-    res.setHeader('content-type', 'application/javascript');
+    res.setHeader('Content-Type', 'application/javascript');
 
     browserify("./app.js")
         .transform("babelify", {presets: ["es2015", "react"]})
