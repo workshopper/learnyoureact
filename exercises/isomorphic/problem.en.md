@@ -52,27 +52,21 @@ var babelify = require("babelify");
 Next, add a line that reads `index.jsx` under the sentence that `require` s `babel/register`.
 
 ```
-require('babel/register')({
-    ignore: false
-});
+require('babel/register');
 
 var TodoBox = require('./views/index.jsx');
 ```
 
-Finally, fix the router of `/bundle.js` and `/` like below.
-If you have an access to `/bundle.js`, you change `app.js` that can work on the front-end and response.
-If you have an access to `/`, you response HTML that consists of reading `index.jsx`, and data from server, and `bundle.js`.
+Finally, add routes for `/bundle.js` and `/` by copying the code below.
+`/bundle.js` will contain `app.js` and dependencies (view template and react) transformed to ES5 and bundled for the browser.
+Requests to `/` will render the corresponding react view on the server and respond with HTML, including a script tag with `bundle.js` and data from the server for the react view.
 
 ```
 app.use('/bundle.js', function (req, res) {
-    res.setHeader('content-type', 'application/javascript');
+    res.setHeader('Content-Type', 'application/javascript');
 
-    browserify({ debug: true })
-        .transform(babelify.configure({
-            presets: ["react", "es2015"],
-            compact: false
-        }))
-        .require("./app.js", { entry: true })
+    browserify("./app.js")
+        .transform("babelify", {presets: ["es2015", "react"]})
         .bundle()
         .pipe(res);
 });

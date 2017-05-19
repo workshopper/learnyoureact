@@ -10,7 +10,7 @@ Start by installing the required modules. Run this command:
 
 `$ npm install --save react react-dom express body-parser express-react-views@0.9.0 babel@5.8.23`
 
-You can see `node_modules` directory maked.
+You can see `node_modules` directory made.
 Files of module is in the directory.
 
 Next, create `program.js`.
@@ -42,7 +42,9 @@ app.use('/', function(req, res) {
   res.render('index', '');
 });
 
-app.listen(app.get('port'), function() {});
+app.listen(app.get('port'), function() {
+    console.log('Express server is up on port 3000');
+});
 ```
 
 The code above creates a small Express server that renders our React

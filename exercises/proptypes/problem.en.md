@@ -1,21 +1,35 @@
 Let's learn to validate that our components get passed all the necessary properties.
 
 As you build and rely on common components (buttons, form fields etc.), it's
-helpful to ensure the components are being used correctly.
+helpful to ensure the components are being used correctly. You can do this by specifying `propTypes`.
 
-You can do this by specifying `propTypes`. `React.PropTypes` contains a range
-of validators that can be used to make sure the passed-in data is valid.
+First, you will need to install the `prop-types` package by running the following command:
+
+`$ npm install --save prop-types`
+
+Then, modify `index.jsx` to include a new `import` statement, as seen below:
+
+```
+import React from 'react';
+import PropTypes from 'prop-types';
+
+export default class TodoBox extends React.Component {
+  // Omitted
+}
+```
+
+Now, having installed the `prop-types` package, and having imported the `PropTypes` method from that package, you can use a range of validators on the data passed into your components.
 
 ```
 class MyComponent extends React.Component {
   /* ... */
 }
 MyComponent.propTypes = {
-    name:   React.PropTypes.string.isRequired,
-    id:     React.PropTypes.number.isRequired,
-    width:  React.PropTypes.number.isRequired,
-    height: React.PropTypes.number.isRequired,
-    alt:    React.PropTypes.string
+    name:   PropTypes.string.isRequired,
+    id:     PropTypes.number.isRequired,
+    width:  PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired,
+    alt:    PropTypes.string
 };
 ```
 
@@ -66,7 +80,7 @@ class Todo extends React.Component {
     }
 }
 Todo.propTypes = {
-    title: React.PropTypes.number.isRequired
+    title: PropTypes.number.isRequired
 };
 
 class TodoForm extends React.Component {

@@ -39,7 +39,7 @@ class Todo extends React.Component {
     }
 }
 Todo.propTypes = {
-    title: React.PropTypes.string.isRequired
+    title: PropTypes.string.isRequired
 };
 
 class TodoForm extends React.Component {

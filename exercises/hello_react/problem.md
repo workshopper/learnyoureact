@@ -43,7 +43,9 @@ app.use('/', function(req, res) {
   res.render('index', '');
 });
 
-app.listen(app.get('port'), function() {});
+app.listen(app.get('port'), function() {
+  console.log('Express server is up on port 3000');
+});
 ```
 以上がレンダリングを行うサーバー側のコードです。 `express-react-views` というモジュールを使用して、 `/` にアクセスが来た際に `views/index.jsx` を読み込むようになっています。
 
