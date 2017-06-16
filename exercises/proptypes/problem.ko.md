@@ -47,6 +47,7 @@ MyComponent.propTypes = {
 
 ```
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class TodoBox extends React.Component {
   // 생략
