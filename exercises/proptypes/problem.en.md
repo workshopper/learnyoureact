@@ -48,6 +48,7 @@ control, or create a new `index.jsx` for this exercise.
 
 ```
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class TodoBox extends React.Component {
   // Omitted
