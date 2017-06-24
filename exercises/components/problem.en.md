@@ -6,6 +6,9 @@ These use HTML tags together with JSX notation.
 To render a React Component, create a local variable that starts with an
 upper-case letter.
 
+JSX allows you to write near-HTML inline in your JavaScript, rather than writing
+JavaScript code that creates and modifies DOM nodes.
+
 React's JSX uses the upper vs. lower case convention to distinguish between
 local component classes and HTML tags.
 
@@ -18,7 +21,7 @@ ReactDOM.render(myElement, document.getElementById('example'));
 # Challenge
 ---
 
-Update `index.jsx` as shown below.
+Update `views/index.jsx` as shown below.
 
 ```
 import React from 'react';

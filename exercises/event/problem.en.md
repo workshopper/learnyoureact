@@ -1,11 +1,11 @@
-It's time to add new todos! Let's make a form for adding new ones.
+It's time to add new todos! Let's make a form for adding them.
 
-# Challenge 
+# Challenge
 ---
 
 Update `TodoList` in `index.jsx` as shown below.
 
-``` 
+```
 class TodoList extends React.Component {
     constructor(props) {
         super(props);
@@ -55,6 +55,9 @@ class TodoList extends React.Component {
 
 Now change the three `Write code here` comments into some real code. You'll
 want to make each of them use `setState`.
+
+Hint: As the inputs are changed, update the state of the `TodoList` component,
+and when the Add button is clicked, use those props to add a new item to data.
 
 When you are ready, run `node program.js 3000 Milk 13:00` and visit
 `http://localhost:3000` to see the HTML output in the browser.
