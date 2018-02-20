@@ -18,7 +18,7 @@ There is a lot of code to change!
 Start by installing the required modules. Run the command below:
 
 ```
-$ npm install browserify babelify babel-preset-react babel-preset-es2015
+$ npm install -g browserify babelify babel-preset-react babel-preset-es2015
 ```
 
 Next, create `app.js` in the same directory as `program.js` and copy the code below into it:
