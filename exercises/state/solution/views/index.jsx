@@ -41,11 +41,11 @@ class Todo extends React.Component {
     render() {
         return (
             <tr>
-                <td style={{border: "1px solid black"}}>
+                <td style={{border: "1px solid black\;"}}>
                     <input type="checkbox" checked={this.state.checked} onChange={this.handleChange}/>
                 </td>
-                <td style={{border: "1px solid black"}}>{this.props.title}</td>
-                <td style={{border: "1px solid black"}}>{this.props.children}</td>
+                <td style={{border: "1px solid black\;"}}>{this.props.title}</td>
+                <td style={{border: "1px solid black\;"}}>{this.props.children}</td>
             </tr>
         );
     }
